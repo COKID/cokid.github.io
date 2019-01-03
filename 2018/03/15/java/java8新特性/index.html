@@ -86,7 +86,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '6.4.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -266,22 +266,6 @@
     <a href="/schedule/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-sitemap">
-    <a href="/sitemap.xml" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />站点地图</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-commonweal">
-    <a href="/404/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />公益 404</a>
-  </li>
 
       
       
@@ -322,11 +306,13 @@
 
   
   
+    
+  
   
 
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal true" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -401,20 +387,11 @@
 
           
           
-             <span id="/2018/03/15/java/java8新特性/" class="leancloud_visitors" data-flag-title="java8新特性">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
 
           
 
+          
+          
           
 
           
@@ -652,7 +629,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/15/技术总结/http/" rel="next" title="http">
+              <a href="/2018/03/15/技术总结/计算机网络/" rel="next" title="http">
                 <i class="fa fa-chevron-left"></i> http
               </a>
             
@@ -734,7 +711,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">46</span>
+                    <span class="site-state-item-count">45</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -836,7 +813,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">24</span>
+                      
+                    
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>
@@ -886,7 +865,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lambda表达式"><span class="nav-number">1.</span> <span class="nav-text">Lambda表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lambda-表达式语法"><span class="nav-number">1.1.</span> <span class="nav-text">Lambda 表达式语法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数式接口"><span class="nav-number">2.</span> <span class="nav-text">函数式接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java内置四大核心函数式接口"><span class="nav-number">2.1.</span> <span class="nav-text">Java内置四大核心函数式接口</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法引用"><span class="nav-number">3.</span> <span class="nav-text">方法引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构造器引用"><span class="nav-number">4.</span> <span class="nav-text">构造器引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组引用"><span class="nav-number">5.</span> <span class="nav-text">数组引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Stream-API"><span class="nav-number">6.</span> <span class="nav-text">Stream API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Stream-的操作三个步骤"><span class="nav-number">6.1.</span> <span class="nav-text">Stream 的操作三个步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组创建流"><span class="nav-number">6.1.0.1.</span> <span class="nav-text">数组创建流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#由值创建流"><span class="nav-number">6.1.0.2.</span> <span class="nav-text">由值创建流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#由函数创建流：创建无限流"><span class="nav-number">6.1.0.3.</span> <span class="nav-text">由函数创建流：创建无限流</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#并行流与串行流"><span class="nav-number">7.</span> <span class="nav-text">并行流与串行流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fork-Join-框架"><span class="nav-number">8.</span> <span class="nav-text">Fork/Join 框架</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口中的默认方法与静态方法"><span class="nav-number">9.</span> <span class="nav-text">接口中的默认方法与静态方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Optional类"><span class="nav-number">10.</span> <span class="nav-text">Optional类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重复注解与类型注解"><span class="nav-number">11.</span> <span class="nav-text">重复注解与类型注解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合的底层源码实现"><span class="nav-number">12.</span> <span class="nav-text">集合的底层源码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList、LinkedList、Vector区别？"><span class="nav-number">12.0.1.</span> <span class="nav-text">ArrayList、LinkedList、Vector区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList-源码分析："><span class="nav-number">12.0.2.</span> <span class="nav-text">ArrayList 源码分析：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap和Hashtable的对比"><span class="nav-number">12.0.3.</span> <span class="nav-text">HashMap和Hashtable的对比</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap的底层实现原理"><span class="nav-number">12.0.3.1.</span> <span class="nav-text">HashMap的底层实现原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#负载因子值的大小，对HashMap有什么影响"><span class="nav-number">12.0.3.2.</span> <span class="nav-text">负载因子值的大小，对HashMap有什么影响</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#新时间API"><span class="nav-number">13.</span> <span class="nav-text">新时间API</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lambda表达式"><span class="nav-text">Lambda表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lambda-表达式语法"><span class="nav-text">Lambda 表达式语法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数式接口"><span class="nav-text">函数式接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java内置四大核心函数式接口"><span class="nav-text">Java内置四大核心函数式接口</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法引用"><span class="nav-text">方法引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构造器引用"><span class="nav-text">构造器引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组引用"><span class="nav-text">数组引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Stream-API"><span class="nav-text">Stream API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Stream-的操作三个步骤"><span class="nav-text">Stream 的操作三个步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组创建流"><span class="nav-text">数组创建流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#由值创建流"><span class="nav-text">由值创建流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#由函数创建流：创建无限流"><span class="nav-text">由函数创建流：创建无限流</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#并行流与串行流"><span class="nav-text">并行流与串行流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fork-Join-框架"><span class="nav-text">Fork/Join 框架</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口中的默认方法与静态方法"><span class="nav-text">接口中的默认方法与静态方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Optional类"><span class="nav-text">Optional类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重复注解与类型注解"><span class="nav-text">重复注解与类型注解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合的底层源码实现"><span class="nav-text">集合的底层源码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList、LinkedList、Vector区别？"><span class="nav-text">ArrayList、LinkedList、Vector区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList-源码分析："><span class="nav-text">ArrayList 源码分析：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap和Hashtable的对比"><span class="nav-text">HashMap和Hashtable的对比</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap的底层实现原理"><span class="nav-text">HashMap的底层实现原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#负载因子值的大小，对HashMap有什么影响"><span class="nav-text">负载因子值的大小，对HashMap有什么影响</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#新时间API"><span class="nav-text">新时间API</span></a></li></ol></div>
             
 
           </div>
@@ -931,7 +910,12 @@
   <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.4.0</div>
 
 
-
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+<span id="busuanzi_container_site_uv" style='display:none'>有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+<div>
 
 
         
@@ -1077,72 +1061,6 @@
 
 
   
-
-  
-  <script>
-    
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
-        .done(function ({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
-            
-            .done(function () {
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
-            })
-            
-            .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-            })
-          } else {
-            
-              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
-                .done(function () {
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(1);
-                })
-                .fail(function () {
-                  console.log('Failed to create');
-                });
-            
-          }
-        })
-      .fail(function ({ responseJSON }) {
-        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
-      });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + "oGsBWh72tqHrNVGmA9kSkN9O-gzGzoHsz")
-        .done(function ({ api_server }) {
-          var Counter = function (method, url, data) {
-            return $.ajax({
-              method: method,
-              url: `https://${api_server}/1.1${url}`,
-              headers: {
-                'X-LC-Id': "oGsBWh72tqHrNVGmA9kSkN9O-gzGzoHsz",
-                'X-LC-Key': "ngWmBvpNuti55zjUcUzDFDfM",
-                'Content-Type': 'application/json',
-              },
-              data: data,
-            });
-          };
-          
-          addCount(Counter);
-          
-        })
-    });
-  </script>
-
-
 
   
 
