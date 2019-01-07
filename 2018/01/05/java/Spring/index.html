@@ -112,18 +112,19 @@
 
 
 
-  <meta name="description" content="Spring相关知识">
+  <meta name="description" content="学Java没有不知道Spring的。简单来说Spring 是一个开源框架，是一个IOC(DI)和AOP容器框架，为了简化企业级应用开发而生。从一开始的Spring到Spring MVC到现在的SpringBoot和SpringCloud，Spring社区越来与庞大，项目的封装越来越便于使用。但不管怎么封装Spring的核心思想是不会变的。">
+<meta name="keywords" content="Spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring">
 <meta property="og:url" content="/2018/01/05/java/Spring/index.html">
 <meta property="og:site_name" content="COKID">
-<meta property="og:description" content="Spring相关知识">
+<meta property="og:description" content="学Java没有不知道Spring的。简单来说Spring 是一个开源框架，是一个IOC(DI)和AOP容器框架，为了简化企业级应用开发而生。从一开始的Spring到Spring MVC到现在的SpringBoot和SpringCloud，Spring社区越来与庞大，项目的封装越来越便于使用。但不管怎么封装Spring的核心思想是不会变的。">
 <meta property="og:image" content="/2018/01/05/java/Spring/1.png">
 <meta property="og:image" content="/2018/01/05/java/Spring/Spring/1.png">
-<meta property="og:updated_time" content="2018-05-05T06:17:03.809Z">
+<meta property="og:updated_time" content="2019-01-07T14:45:58.898Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring">
-<meta name="twitter:description" content="Spring相关知识">
+<meta name="twitter:description" content="学Java没有不知道Spring的。简单来说Spring 是一个开源框架，是一个IOC(DI)和AOP容器框架，为了简化企业级应用开发而生。从一开始的Spring到Spring MVC到现在的SpringBoot和SpringCloud，Spring社区越来与庞大，项目的封装越来越便于使用。但不管怎么封装Spring的核心思想是不会变的。">
 <meta name="twitter:image" content="/2018/01/05/java/Spring/1.png">
 
 
@@ -404,13 +405,43 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-05-05 14:17:03" itemprop="dateModified" datetime="2018-05-05T14:17:03+08:00">2018-05-05</time>
+                <time title="修改时间：2019-01-07 22:45:58" itemprop="dateModified" datetime="2019-01-07T22:45:58+08:00">2019-01-07</time>
               
             
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
 
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/05/java/Spring/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/01/05/java/Spring/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -446,15 +477,15 @@
       
 
       
-        <p>Spring相关知识</p>
+        <p>学Java没有不知道Spring的。简单来说Spring 是一个开源框架，是一个IOC(DI)和AOP容器框架，为了简化企业级应用开发而生。从一开始的Spring到Spring MVC到现在的SpringBoot和SpringCloud，Spring社区越来与庞大，项目的封装越来越便于使用。但不管怎么封装Spring的核心思想是不会变的。</p>
 <a id="more"></a>
-<!--TOC-->
-<p>[TOC]</p>
-<h3 id="Spring是什么"><a href="#Spring是什么" class="headerlink" title="Spring是什么"></a>Spring是什么</h3><p>简单来说Spring 是一个开源框架，是一个IOC(DI)和AOP容器框架，为了简化企业级应用开发而生。</p>
-<p>Spring 模块如下：</p>
+<h1 id="Spring家族产品"><a href="#Spring家族产品" class="headerlink" title="Spring家族产品"></a>Spring家族产品</h1><p>虽然Spring家族产品众多，但都是基于最原始Spring特性IOC(DI)和AOP发展起来的</p>
+<h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><p>首先有一点就是Spring不要和WEB联系起来，虽然他更多用于解决web问题，但本身是用于解决java开发中问题，而不仅仅局限于web问题。</p>
+<p>Spring的框架如下</p>
 <img src="/2018/01/05/java/Spring/1.png" alt="1.png" title="">
-<p><img src="Spring\1.png" alt="1"></p>
-<h3 id="Spring的特性"><a href="#Spring的特性" class="headerlink" title="Spring的特性"></a>Spring的特性</h3><ul>
+<p><img src="Spring/1.png" alt="1"></p>
+<p>Spring特性有以下特性</p>
+<ul>
 <li><p>方便解耦，简化开发</p>
 <p>通过Spring提供的IoC容器，我们可以将对象之间的依赖关系交由Spring进行控制，避免硬编码所造成的过度程序耦合。</p>
 </li>
@@ -474,7 +505,30 @@
 <p>Spring对很多难用的Java EE API（如JDBC，JavaMail，远程调用等）提供了一个薄薄的封装层，通过Spring的简易封装，这些Java EE API的使用难度大为降低。</p>
 </li>
 </ul>
-<h3 id="IOC-amp-DI"><a href="#IOC-amp-DI" class="headerlink" title="IOC&amp;DI"></a>IOC&amp;DI</h3><p><a href="http://blog.csdn.net/qq_22654611/article/details/52606960" target="_blank" rel="external">http://blog.csdn.net/qq_22654611/article/details/52606960</a> 这篇博客介绍的简单易懂</p>
+<h2 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h2><p>Spring MVC是一个基于Servlet API的框架，它使用<strong>同步阻塞IO架构</strong>，一个请求一个线程的模式。主要是用于解决Spring开发web应用的问题</p>
+<h2 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h2><p>用过SpringMVC开发的都知道，光配置就让初学者头疼，尤其是不了解IOC和AOP特性的情况下只能照葫芦画瓢也不懂什么意思去配置一大堆文件。</p>
+<p>因此SpringBoot出现了，SpringBoot使用默认大于配置的方式，而且现在都用maven配置项目，避免的到处去下Jar包，让初学者很简单就能开启一个HelloWorld服务器。</p>
+<p>SpringBoot的初衷是为了更注重微服务后台开发，不开发前端视图，其前端推荐使用Thymeleaf。SpringBoot会将项目打包成jar包而不是以前MVC时代的WAR包需要放在单独的tomcat服务器运行，jar包作为单文件直接可以运行，其内部已经整合tomcat基本组件。</p>
+<p>这里推荐一个博客去学习SpringBoot <a href="http://www.ityouknow.com/" target="_blank" rel="external">http://www.ityouknow.com/</a></p>
+<h2 id="SpringCloud"><a href="#SpringCloud" class="headerlink" title="SpringCloud"></a>SpringCloud</h2><p>SpringCloud也是注重为服务开发，因此可以理解成和SpringBoot一样，不过SpringCloud更关注全局微服务整合和管理，可以理解成管理多个SpringBoot搭建的单体微服务的集合。</p>
+<h2 id="Spring-WebFlux"><a href="#Spring-WebFlux" class="headerlink" title="Spring WebFlux"></a>Spring WebFlux</h2><p>Spring WebFlux是Spring Framework 5.0中引入的新的反应式Web框架。与Spring MVC不同，它不需要Servlet API，<strong>完全异步且无阻塞</strong>，并通过Reactor项目实现<strong>Reactive Streams</strong>规范。</p>
+<p>Spring5必须使用java8，那么函数式编程就是java8重要的特点之一，而WebFlux支持函数式编程来定义路由端点处理请求。</p>
+<p>Spring MVC和Spring WebFlux都可以用注解式编程模型，都可以运行在tomcat，jetty，undertow等servlet容器当中。但是SpringMVC采用命令式编程方式，代码一句一句的执行，这样更有利于理解与调试，而WebFlux则是基于异步响应式编程，对于初次接触的码农们来说会不习惯。对于这两种框架官方给出的建议是：</p>
+<ul>
+<li><p>如果原先使用用SpringMVC好好的话，则没必要迁移。因为命令式编程是编写、理解和调试代码的最简单方法。因为老项目的类库与代码都是基于阻塞式的。</p>
+</li>
+<li><p>如果你的团队打算使用非阻塞式web框架，WebFlux确实是一个可考虑的技术路线，而且它支持类似于SpringMVC的Annotation的方式实现编程模式，也可以在微服务架构中让WebMvc与WebFlux共用Controller，切换使用的成本相当小</p>
+</li>
+<li><p>在SpringMVC项目里如果需要调用远程服务的话，你不妨考虑一下使用WebClient，而且方法的返回值可以考虑使用Reactive Type类型的，当每个调用的延迟时间越长，或者调用之间的相互依赖程度越高，其好处就越大</p>
+</li>
+</ul>
+<h1 id="Spring核心思想"><a href="#Spring核心思想" class="headerlink" title="Spring核心思想"></a>Spring核心思想</h1><p>IOC(DI)和AOP是Spring至今仍然火热的最核心的设计思想</p>
+<h2 id="IOC-DI"><a href="#IOC-DI" class="headerlink" title="IOC(DI)"></a>IOC(DI)</h2><p>IOC全称Inversion of Control直译”控制反转”，这是一种设计思想。</p>
+<p>既然是控制反转，那么没反转之前是什么样的？我们为什么要反转？</p>
+<p>在传统的Java程序中我们习惯直接使用new关键字创建对象，是程序去主动创建对象。而IOC中是有一个专门的容器去创建这些对象，也就是说IOC容器控制了对象。IOC控制了外部资源的获取，不仅仅是对象还有文件等。大家一开始配置Spring配置文件的时候都有写过那个巨长的xml文件，其中有一个属性是bean，我们只需要指定需要自动获取的类，以及这个类所需要参数的获取方式。Ioc容器就可以自动装配好这个类供我们使用，而不是我们使用new去主动创建。比如我需要一个汽车，我只需要告诉他汽车需要四个轮子，一个发动机，一个方向盘，那么他就可以自己组装好一个汽车。所有对象的创建，销毁都由Spring来控制。</p>
+<p>DI（Dependency Injection）依赖注入就很好理解了，我们把轮胎，发动机，方向盘，这些组件，注入到汽车这个对象里面就可以完成一辆汽车的生产。我们并不用关心对象来自何处，由谁实现，有对象拿来用即可。</p>
+<p>IoC和DI说的其实是同一种东西，不过是不同角度去描述，下面推荐两个博客可以更加深理解。</p>
+<p><a href="http://blog.csdn.net/qq_22654611/article/details/52606960" target="_blank" rel="external">http://blog.csdn.net/qq_22654611/article/details/52606960</a> 这篇博客介绍的简单易懂</p>
 <p><a href="https://www.imooc.com/learn/901" target="_blank" rel="external">https://www.imooc.com/learn/901</a> 虽然这个课程是介绍Google Juice的但是里面很巧妙的介绍了依赖注入</p>
 <h3 id="IOC注入方式"><a href="#IOC注入方式" class="headerlink" title="IOC注入方式"></a>IOC注入方式</h3><ul>
 <li><p>构造函数注入(Spring支持)</p>
@@ -486,10 +540,20 @@
 <p>属性注入使用 <code>&lt;property&gt;</code>元素,使用name属性指定Bean的属性名称，value属性或<code>&lt;value&gt;</code>子节点指定属性值</p>
 </li>
 <li><p>接口注入</p>
-<p>​</p>
+<p>如果采用接口注入一个Bean，那么通过注入的Bean就必须要实现这个接口，也就是如果类中含有一个接口类型比如下面这种情况，那么通过注入的bean必须实现这个接口。不常用也不建议用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public interface A&#123;</div><div class="line">    </div><div class="line">&#125;</div><div class="line">class B&#123;</div><div class="line">    int value;</div><div class="line">    A a;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h3><p><a href="http://blog.csdn.net/qq_22654611/article/details/52608593" target="_blank" rel="external">http://blog.csdn.net/qq_22654611/article/details/52608593</a></p>
+<h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><p>AOP全称Aspect Oriented Program直译”面向切面编程“,</p>
+<p>我们知道，面向对象的特点是继承、多态和封装。而封装就要求将功能分散到不同的对象中去，这在软件设计中往往称为职责分配。实际上也就是说，让不同的类设计不同的方法。这样代码就分散到一个个的类中去了。这样做的好处是降低了代码的复杂程度，使类可重用。 但是人们也发现，在分散代码的同时，也增加了代码的重复性。什么意思呢？比如说，我们在两个类中，可能都需要在每个方法中做日志。按面向对象的设计方法，我们就必须在两个类的方法中都加入日志的内容。也许他们是完全相同的，但就是因为面向对象的设计让类与类之间无法联系，而不能将这些重复的代码统一起来。</p>
+<p>也许有人会说，那好办啊，我们可以将这段代码写在一个独立的类独立的方法里，然后再在这两个类中调用。但是，这样一来，这两个类跟我们上面提到的独立的类就有耦合了，它的改变会影响这两个类。那么，有没有什么办法，能让我们在需要的时候，随意地加入代码呢？这种在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程。 </p>
+<p>一般而言，我们管切入到指定类指定方法的代码片段称为切面，而切入到哪些类、哪些方法则叫切入点。有了AOP，我们就可以把几个类共有的代码，抽取到一个切片中，等到需要时再切入对象中去，从而改变其原有的行为。</p>
+<p>这样看来，AOP其实只是OOP的补充而已。OOP从横向上区分出一个个的类来，而AOP则从纵向上向对象中加入特定的代码。有了AOP，OOP变得立体了。如果加上时间维度，AOP使OOP由原来的二维变为三维了，由平面变成立体了。从技术上来说，AOP基本上是通过代理机制实现的。 </p>
+<p>AOP在编程历史上可以说是里程碑式的，对OOP编程是一种十分有益的补充。</p>
+<p>Aspect Oriented Programming  面向切面编程。解耦是程序员编码开发过程中一直追求的。AOP也是为了解耦所诞生。</p>
+<p>具体思想是：定义一个切面，在切面的纵向定义处理方法，处理完成之后，回到横向业务流。</p>
+<p>AOP 在Spring框架中被作为核心组成部分之一，的确Spring将AOP发挥到很强大的功能。最常见的就是事务控制。工作之余，对于使用的工具，不免需要了解其所以然。学习了一下，写了些程序帮助理解。</p>
+<p><a href="http://blog.csdn.net/qq_22654611/article/details/52608593" target="_blank" rel="external">http://blog.csdn.net/qq_22654611/article/details/52608593</a></p>
 <p>spring aop的应用场景：</p>
 <ul>
 <li><p>AOP用来封装横切关注点，具体可以在下面的场景中使用</p>
@@ -506,6 +570,22 @@
 <p>Synchronization 同步</p>
 <p>Transactions 事务</p>
 </li>
+</ul>
+<h1 id="Spring事务"><a href="#Spring事务" class="headerlink" title="Spring事务"></a>Spring事务</h1><p>关于事务是什么，事务的四大特性ACID，请参见Redis的文章</p>
+<h3 id="Spring事务管理接口"><a href="#Spring事务管理接口" class="headerlink" title="Spring事务管理接口"></a>Spring事务管理接口</h3><ul>
+<li><p>PlatFormTransactionManager 事务管理器</p>
+<p>Spring为不同的持久化框架提供了不同 PlatFormTransactionManager 接口实现 </p>
+</li>
+<li><p>TransactionDefinition 事务定义信息(隔离、传播、超时、只读)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> PROPAGATION_REQUIRED = <span class="number">0</span>;<span class="comment">//支持当前事务，如果不存在，就新建一个</span></div><div class="line"><span class="keyword">int</span> PROPAGATION_SUPPORTS = <span class="number">1</span>;<span class="comment">//支持当前事务，如果不存在，就不使用事务</span></div><div class="line"><span class="keyword">int</span> PROPAGATION_MANDATORY = <span class="number">2</span>;<span class="comment">//支持当前事务，如果不存在，就抛出异常</span></div><div class="line"><span class="keyword">int</span> PROPAGATION_REQUIRES_NEW = <span class="number">3</span>;<span class="comment">//如果有事务存在，挂起当前事务，创建一个新的事务</span></div><div class="line"><span class="keyword">int</span> PROPAGATION_NOT_SUPPORTED = <span class="number">4</span>;<span class="comment">//以非事务方式运行，如果有事务存在，挂起当前事务</span></div><div class="line"><span class="keyword">int</span> PROPAGATION_NEVER = <span class="number">5</span>;<span class="comment">//以非事务方式运行，如果有事务存在，就抛出异常</span></div><div class="line"><span class="keyword">int</span> PROPAGATION_NESTED = <span class="number">6</span>;<span class="comment">//如果当前事务存在，则嵌套事务执行</span></div><div class="line"><span class="keyword">int</span> ISOLATION_DEFAULT = -<span class="number">1</span>;</div><div class="line"><span class="keyword">int</span> ISOLATION_READ_UNCOMMITTED = <span class="number">1</span>;</div><div class="line"><span class="keyword">int</span> ISOLATION_READ_COMMITTED = <span class="number">2</span>;</div><div class="line"><span class="keyword">int</span> ISOLATION_REPEATABLE_READ = <span class="number">4</span>;</div><div class="line"><span class="keyword">int</span> ISOLATION_SERIALIZABLE = <span class="number">8</span>;</div><div class="line"><span class="keyword">int</span> TIMEOUT_DEFAULT = -<span class="number">1</span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p>TransactionStatus 事务具体运行状态</p>
+</li>
+</ul>
+<h3 id="对事务抛出异常的注意"><a href="#对事务抛出异常的注意" class="headerlink" title="对事务抛出异常的注意"></a>对事务抛出异常的注意</h3><ul>
+<li>不要随意使用事务的传播属性</li>
+<li>不要随意对事务中的代码进行try/catch操作</li>
+<li>不要随意让事务方法方法抛出异常</li>
 </ul>
 
       
@@ -559,6 +639,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Spring/" rel="tag"># Spring</a>
+          
+        </div>
+      
 
       
       
@@ -578,8 +664,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/05/技术总结/设计模式/" rel="prev" title="设计模式">
-                设计模式 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/09/java/HashMap/" rel="prev" title="HashMap">
+                HashMap <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -601,6 +687,13 @@
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -650,7 +743,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -691,11 +784,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -756,9 +845,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>
@@ -808,7 +895,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring是什么"><span class="nav-text">Spring是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring的特性"><span class="nav-text">Spring的特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IOC-amp-DI"><span class="nav-text">IOC&DI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IOC注入方式"><span class="nav-text">IOC注入方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AOP"><span class="nav-text">AOP</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring家族产品"><span class="nav-text">Spring家族产品</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring"><span class="nav-text">Spring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringMVC"><span class="nav-text">SpringMVC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot"><span class="nav-text">SpringBoot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringCloud"><span class="nav-text">SpringCloud</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-WebFlux"><span class="nav-text">Spring WebFlux</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring核心思想"><span class="nav-text">Spring核心思想</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IOC-DI"><span class="nav-text">IOC(DI)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IOC注入方式"><span class="nav-text">IOC注入方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP"><span class="nav-text">AOP</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring事务"><span class="nav-text">Spring事务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring事务管理接口"><span class="nav-text">Spring事务管理接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对事务抛出异常的注意"><span class="nav-text">对事务抛出异常的注意</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
