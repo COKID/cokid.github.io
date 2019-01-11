@@ -119,7 +119,7 @@
 <meta property="og:url" content="/2018/10/18/数据结构/数据结构算法/index.html">
 <meta property="og:site_name" content="COKID">
 <meta property="og:description" content="数据结构算法总结">
-<meta property="og:updated_time" content="2019-01-03T12:47:54.044Z">
+<meta property="og:updated_time" content="2019-01-08T08:45:43.734Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构算法">
 <meta name="twitter:description" content="数据结构算法总结">
@@ -402,7 +402,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-03 20:47:54" itemprop="dateModified" datetime="2019-01-03T20:47:54+08:00">2019-01-03</time>
+                <time title="修改时间：2019-01-08 16:45:43" itemprop="dateModified" datetime="2019-01-08T16:45:43+08:00">2019-01-08</time>
               
             
           </span>
@@ -427,6 +427,18 @@
             </span>
           
 
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/18/数据结构/数据结构算法/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/10/18/数据结构/数据结构算法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -464,7 +476,6 @@
       
         <p>数据结构算法总结</p>
 <a id="more"></a>
-<p>[TOC]</p>
 <h1 id="顺序表"><a href="#顺序表" class="headerlink" title="顺序表"></a>顺序表</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="meta"># <span class="meta-keyword">define</span> maxSize 100</span></div><div class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">DataType</span>&gt;</span></div><div class="line"><span class="title">class</span> <span class="title">SeqList</span>&#123;</div><div class="line">	<span class="keyword">private</span>: </div><div class="line">		DataType data[maxSize];</div><div class="line">		<span class="keyword">int</span> length;</div><div class="line">	<span class="keyword">public</span>:</div><div class="line">		SeqList(DataType a[],<span class="keyword">int</span> n)&#123;</div><div class="line">			<span class="keyword">if</span>(n&gt;maxSize)<span class="keyword">throw</span> <span class="string">"exception"</span>;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</div><div class="line">				data[i]=a[i];</div><div class="line">			&#125;</div><div class="line">			length=n;</div><div class="line">		&#125;</div><div class="line">		<span class="function"><span class="keyword">bool</span> <span class="title">Insert</span><span class="params">(<span class="keyword">int</span> i,DataType x)</span></span>&#123;</div><div class="line">			<span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;length+<span class="number">1</span>)<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">			<span class="keyword">if</span>(length&gt;=maxSize)<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=length;j&gt;=i;j--)</div><div class="line">				data[j]=data[j<span class="number">-1</span>];</div><div class="line">			data[i<span class="number">-1</span>]=x;</div><div class="line">			length++;</div><div class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="function">DataType <span class="title">Delete</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;<span class="comment">//删除i位置上的元素 </span></div><div class="line">			<span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;length+<span class="number">1</span>)<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">			DataType x=data[i<span class="number">-1</span>];</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;length;j++) data[j<span class="number">-1</span>]=data[j];</div><div class="line">			length--;</div><div class="line">			<span class="keyword">return</span> <span class="literal">true</span>; </div><div class="line">		&#125;</div><div class="line">		<span class="function"><span class="keyword">int</span> <span class="title">Local</span><span class="params">(DataType x)</span></span>&#123;<span class="comment">//查找X </span></div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length;i++)&#123;</div><div class="line">				<span class="keyword">if</span>(data[i]==x)<span class="keyword">return</span> i+<span class="number">1</span>;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="function">DataType <span class="title">Get</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</div><div class="line">			<span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;length)<span class="keyword">throw</span> <span class="string">"exception"</span>;</div><div class="line">			<span class="keyword">else</span> <span class="keyword">return</span> data[i<span class="number">-1</span>];</div><div class="line">		&#125;</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="meta"># <span class="meta-keyword">define</span> maxSize 100 </span></div><div class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">DT</span>&gt;</span></div><div class="line"><span class="title">struct</span> <span class="title">Node</span>&#123;</div><div class="line">	DT data;</div><div class="line">	Node&lt;DT&gt; *next;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">DT</span>&gt;</span></div><div class="line"><span class="title">class</span> <span class="title">LinkList</span>&#123;</div><div class="line">	<span class="keyword">private</span>:</div><div class="line">		Node&lt;DT&gt; *first;</div><div class="line">	<span class="keyword">public</span>:</div><div class="line">		LinkList()&#123;</div><div class="line">			first=<span class="keyword">new</span> Node&lt;DT&gt;;</div><div class="line">			first-&gt;next=<span class="literal">NULL</span>;</div><div class="line">		&#125;</div><div class="line">		LinkList_Head(DT a[],<span class="keyword">int</span> n)&#123;</div><div class="line">			first=<span class="keyword">new</span> Node&lt;DT&gt;;</div><div class="line">			first-&gt;next=<span class="literal">NULL</span>;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</div><div class="line">				Node&lt;DT&gt; *s=<span class="keyword">new</span> Node&lt;DT&gt;;</div><div class="line">				s-&gt;data=a[i];</div><div class="line">				s-&gt;next=first-&gt;next;</div><div class="line">				first-&gt;next=s;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		LinkList_Tail(DT a[],<span class="keyword">int</span> n)&#123;</div><div class="line">			first=<span class="keyword">new</span> Node&lt;DT&gt;;</div><div class="line">			Node&lt;DT&gt; *r=first;</div><div class="line">			Node&lt;DT&gt; *s=<span class="keyword">new</span> Node&lt;DT&gt;;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</div><div class="line">				s-&gt;data=a[i];</div><div class="line">				r-&gt;next=s;</div><div class="line">				r=s;</div><div class="line">			&#125;</div><div class="line">			r-&gt;next=<span class="literal">NULL</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="function"><span class="keyword">int</span> <span class="title">Length</span><span class="params">()</span></span>&#123;</div><div class="line">			Node&lt;DT&gt; *p=first-&gt;next;</div><div class="line">			<span class="keyword">int</span> count=<span class="number">0</span>;</div><div class="line">			<span class="keyword">while</span>(p!=<span class="literal">NULL</span>)&#123;</div><div class="line">				p=p-&gt;next;</div><div class="line">				count++;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">return</span> count;</div><div class="line">		&#125;</div><div class="line">		<span class="function">DT <span class="title">Get</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</div><div class="line">			Node&lt;DT&gt; *p=first-&gt;next;</div><div class="line">			<span class="keyword">int</span> count=<span class="number">1</span>;</div><div class="line">			<span class="keyword">while</span>(p!=<span class="literal">NULL</span>&amp;&amp;count&lt;i)&#123;</div><div class="line">				p=p-&gt;next;</div><div class="line">				count++;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">return</span> p-&gt;data; </div><div class="line">		&#125;</div><div class="line">		<span class="function"><span class="keyword">int</span> <span class="title">Locate</span><span class="params">(DT x)</span></span>&#123;</div><div class="line">			Node&lt;DT&gt; *p=first-&gt;next;</div><div class="line">			<span class="keyword">int</span> count=<span class="number">1</span>;</div><div class="line">			<span class="keyword">while</span>(p!=<span class="literal">NULL</span>)&#123;</div><div class="line">				<span class="keyword">if</span>(p-&gt;data==x)<span class="keyword">return</span> count;</div><div class="line">				p=p-&gt;next;</div><div class="line">				count++;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="function"><span class="keyword">void</span> <span class="title">Insert</span><span class="params">(<span class="keyword">int</span> i,DT x)</span></span>&#123;</div><div class="line">			Node&lt;DT&gt; *p=first;</div><div class="line">			<span class="keyword">int</span> count=<span class="number">0</span>;</div><div class="line">			<span class="keyword">while</span>(p!=<span class="literal">NULL</span>&amp;&amp;count&lt;i<span class="number">-1</span>)&#123;</div><div class="line">				p=p-&gt;next;</div><div class="line">				count++;</div><div class="line">			&#125;</div><div class="line">			Node&lt;DT&gt; *s=<span class="keyword">new</span> Node&lt;DT&gt;;</div><div class="line">			s-&gt;data=x;</div><div class="line">			s-&gt;next=p-&gt;next;</div><div class="line">			p-&gt;next=s;</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">		<span class="function">DT <span class="title">Delete</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</div><div class="line">			Node&lt;DT&gt; *p=first;</div><div class="line">			count=<span class="number">0</span>;</div><div class="line">			<span class="keyword">while</span>(p!=<span class="literal">NULL</span>&amp;&amp;count&lt;i<span class="number">-1</span>)&#123;</div><div class="line">				p=p-&gt;next;</div><div class="line">				count++;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">if</span>(p==<span class="literal">NULL</span>||p-&gt;next==<span class="literal">NULL</span>)&#123;</div><div class="line">				<span class="keyword">throw</span> <span class="string">"位置"</span>;</div><div class="line">			&#125;<span class="keyword">else</span>&#123;</div><div class="line">				Node&lt;DT&gt; *q=p-&gt;next;</div><div class="line">				DT x=q-&gt;data;</div><div class="line">				p-&gt;next=q-&gt;next;</div><div class="line">				<span class="keyword">delete</span> q;</div><div class="line">				<span class="keyword">return</span> x;</div><div class="line">			&#125;</div><div class="line">		&#125; </div><div class="line">		</div><div class="line">&#125;; </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="number">1</span>&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="顺序栈"><a href="#顺序栈" class="headerlink" title="顺序栈"></a>顺序栈</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="meta"># <span class="meta-keyword">define</span> StackSize 100 </span></div><div class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">DT</span>&gt;</span></div><div class="line"><span class="title">class</span> <span class="title">SeqStack</span>&#123;</div><div class="line">	<span class="keyword">private</span>:</div><div class="line">		DT data[StackSize];</div><div class="line">		<span class="keyword">int</span> top;</div><div class="line">	<span class="keyword">public</span>:</div><div class="line">		SeqStack()&#123;top=<span class="number">-1</span>;&#125;</div><div class="line">		<span class="function"><span class="keyword">void</span> <span class="title">Push</span><span class="params">(DT x)</span></span>&#123;</div><div class="line">			<span class="keyword">if</span>(top==StackSize<span class="number">-1</span>)<span class="keyword">throw</span> <span class="string">"溢出"</span>;</div><div class="line">			data[++top]=x; </div><div class="line">		&#125;</div><div class="line">		<span class="function">DT <span class="title">Pop</span><span class="params">()</span></span>&#123;</div><div class="line">			<span class="keyword">if</span>(top==<span class="number">-1</span>)<span class="keyword">throw</span> <span class="string">"溢出"</span>;</div><div class="line">			DT x=data[top--];</div><div class="line">			<span class="keyword">return</span> x; </div><div class="line">		&#125;</div><div class="line">		<span class="function">DT <span class="title">GetTop</span><span class="params">()</span></span>&#123;</div><div class="line">			<span class="keyword">if</span>(top!=<span class="number">-1</span>)</div><div class="line">			<span class="keyword">return</span> data[top];</div><div class="line">		&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -530,57 +541,57 @@
 <tbody>
 <tr>
 <td><strong>插入排序</strong></td>
-<td><strong>O($ n^2 $)</strong></td>
+<td><strong>O(n^2)</strong></td>
 <td><strong>O(n)</strong></td>
-<td><strong>O($n^2$)</strong></td>
+<td><strong>O(n^2)</strong></td>
 <td><strong>O(1)</strong></td>
 <td><strong>稳定</strong></td>
 </tr>
 <tr>
 <td><strong>冒泡排序</strong></td>
-<td><strong>O($ n^2 $)</strong></td>
+<td><strong>O( n^2 )</strong></td>
 <td><strong>O(n)</strong></td>
-<td><strong>O($n^2$)</strong></td>
+<td><strong>O(n^2)</strong></td>
 <td><strong>O(1)</strong></td>
 <td><strong>稳定</strong></td>
 </tr>
 <tr>
 <td><strong>选择排序</strong></td>
-<td><strong>O($ n^2 $)</strong></td>
-<td><strong>O($ n^2 $)</strong></td>
-<td><strong>O($n^2$)</strong></td>
+<td><strong>O( n^2 )</strong></td>
+<td><strong>O( n^2 )</strong></td>
+<td><strong>O(n^2)</strong></td>
 <td><strong>O(1)</strong></td>
 <td><strong>不稳定</strong></td>
 </tr>
 <tr>
 <td><strong>希尔排序</strong></td>
-<td><strong>O($ n \log n $)~O($n^2$)</strong></td>
-<td><strong>O($ n^{1.3} $)</strong></td>
-<td><strong>O($ n^2 $)</strong></td>
+<td><strong>O( nlog n )~O(n^2)</strong></td>
+<td><strong>O( n^{1.3} )</strong></td>
+<td><strong>O( n^2 )</strong></td>
 <td><strong>O(1)</strong></td>
 <td><strong>不稳定</strong></td>
 </tr>
 <tr>
 <td><strong>快速排序</strong></td>
-<td><strong>O($ n\log n $)</strong></td>
-<td><strong>O($ n\log n $)</strong></td>
-<td><strong>O($ n^2 $)</strong></td>
-<td><strong>O($\log n$)~O($n$)</strong></td>
+<td><strong>O( nlog n )</strong></td>
+<td><strong>O( nlog n )</strong></td>
+<td><strong>O( n^2 )</strong></td>
+<td><strong>O(log n)~O(n)</strong></td>
 <td><strong>不稳定</strong></td>
 </tr>
 <tr>
 <td><strong>堆排序</strong></td>
-<td><strong>O($ n\log n $)</strong></td>
-<td><strong>O($ n\log n $)</strong></td>
-<td><strong>O($ n\log n $)</strong></td>
+<td><strong>O( nlog n )</strong></td>
+<td><strong>O( nlog n )</strong></td>
+<td><strong>O( nlog n )</strong></td>
 <td><strong>O(1)</strong></td>
 <td><strong>不稳定</strong></td>
 </tr>
 <tr>
 <td>归并排序</td>
-<td>O($ n\log n $)</td>
-<td>O($ n\log n $)</td>
-<td>O($ n\log n $)</td>
+<td>O( nlog n )</td>
+<td>O( nlog n )</td>
+<td>O( nlog n )</td>
 <td>O(n)</td>
 <td>稳定</td>
 </tr>
@@ -596,7 +607,7 @@
 <td>线性排序-桶排序</td>
 <td>O(n+k)</td>
 <td>O(n+k)</td>
-<td>O($ n^2 $)</td>
+<td>O( n^2)</td>
 <td>O(n+k)</td>
 <td>稳定</td>
 </tr>
@@ -712,6 +723,13 @@
           </div>
           
 
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
         </div>
         
           
@@ -760,7 +778,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-count">32</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -797,11 +815,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -862,7 +876,21 @@
                     
                       
                     
-                    <span class="site-state-item-count">24</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">31</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>
@@ -1538,6 +1566,30 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 

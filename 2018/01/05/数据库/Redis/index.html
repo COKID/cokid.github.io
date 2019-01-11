@@ -129,7 +129,7 @@
 <meta property="og:image" content="/2018/01/05/数据库/Redis/redis/4.jpg">
 <meta property="og:image" content="/2018/01/05/数据库/Redis/5.jpg">
 <meta property="og:image" content="/2018/01/05/数据库/Redis/redis/5.jpg">
-<meta property="og:updated_time" content="2018-03-12T06:24:26.595Z">
+<meta property="og:updated_time" content="2019-01-08T08:38:48.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis">
 <meta name="twitter:description" content="本文从零开始总结Redis技术相关问题，Redis的内容都在这">
@@ -413,7 +413,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-03-12 14:24:26" itemprop="dateModified" datetime="2018-03-12T14:24:26+08:00">2018-03-12</time>
+                <time title="修改时间：2019-01-08 16:38:48" itemprop="dateModified" datetime="2019-01-08T16:38:48+08:00">2019-01-08</time>
               
             
           </span>
@@ -430,7 +430,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Redis/" itemprop="url" rel="index"><span itemprop="name">Redis</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
 
                 
                 
@@ -438,6 +438,18 @@
             </span>
           
 
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/05/数据库/Redis/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/01/05/数据库/Redis/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -475,8 +487,6 @@
       
         <p>本文从零开始总结Redis技术相关问题，Redis的内容都在这</p>
 <a id="more"></a>
-<!--TOC-->
-<p>[TOC]</p>
 <h1 id="Nosql概述"><a href="#Nosql概述" class="headerlink" title="Nosql概述"></a>Nosql概述</h1><p>在介绍Redis之前，首先先要介绍Nosql的概念。</p>
 <h3 id="互联网架构发展"><a href="#互联网架构发展" class="headerlink" title="互联网架构发展"></a>互联网架构发展</h3><p>在90年代的时候，计算机访问量一般不大，单个数据库足以应付，网页更多的是静态网页，动态交互性。于是出现了下面的架构</p>
 <img src="/2018/01/05/数据库/Redis/1.jpg" alt="1.jpg" title="">
@@ -942,6 +952,13 @@
           </div>
           
 
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
         </div>
         
           
@@ -990,7 +1007,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-count">32</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1027,11 +1044,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1092,7 +1105,21 @@
                     
                       
                     
-                    <span class="site-state-item-count">24</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">31</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>
@@ -1768,6 +1795,30 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 

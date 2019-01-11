@@ -121,7 +121,7 @@
 <meta property="og:description" content="学Java没有不知道Spring的。简单来说Spring 是一个开源框架，是一个IOC(DI)和AOP容器框架，为了简化企业级应用开发而生。从一开始的Spring到Spring MVC到现在的SpringBoot和SpringCloud，Spring社区越来与庞大，项目的封装越来越便于使用。但不管怎么封装Spring的核心思想是不会变的。">
 <meta property="og:image" content="/2018/01/05/java/Spring/1.png">
 <meta property="og:image" content="/2018/01/05/java/Spring/Spring/1.png">
-<meta property="og:updated_time" content="2019-01-07T14:45:58.898Z">
+<meta property="og:updated_time" content="2019-01-08T08:28:41.582Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring">
 <meta name="twitter:description" content="学Java没有不知道Spring的。简单来说Spring 是一个开源框架，是一个IOC(DI)和AOP容器框架，为了简化企业级应用开发而生。从一开始的Spring到Spring MVC到现在的SpringBoot和SpringCloud，Spring社区越来与庞大，项目的封装越来越便于使用。但不管怎么封装Spring的核心思想是不会变的。">
@@ -405,7 +405,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-07 22:45:58" itemprop="dateModified" datetime="2019-01-07T22:45:58+08:00">2019-01-07</time>
+                <time title="修改时间：2019-01-08 16:28:41" itemprop="dateModified" datetime="2019-01-08T16:28:41+08:00">2019-01-08</time>
               
             
           </span>
@@ -546,16 +546,12 @@
 </ul>
 <h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><p>AOP全称Aspect Oriented Program直译”面向切面编程“,</p>
 <p>我们知道，面向对象的特点是继承、多态和封装。而封装就要求将功能分散到不同的对象中去，这在软件设计中往往称为职责分配。实际上也就是说，让不同的类设计不同的方法。这样代码就分散到一个个的类中去了。这样做的好处是降低了代码的复杂程度，使类可重用。 但是人们也发现，在分散代码的同时，也增加了代码的重复性。什么意思呢？比如说，我们在两个类中，可能都需要在每个方法中做日志。按面向对象的设计方法，我们就必须在两个类的方法中都加入日志的内容。也许他们是完全相同的，但就是因为面向对象的设计让类与类之间无法联系，而不能将这些重复的代码统一起来。</p>
-<p>也许有人会说，那好办啊，我们可以将这段代码写在一个独立的类独立的方法里，然后再在这两个类中调用。但是，这样一来，这两个类跟我们上面提到的独立的类就有耦合了，它的改变会影响这两个类。那么，有没有什么办法，能让我们在需要的时候，随意地加入代码呢？这种在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程。 </p>
-<p>一般而言，我们管切入到指定类指定方法的代码片段称为切面，而切入到哪些类、哪些方法则叫切入点。有了AOP，我们就可以把几个类共有的代码，抽取到一个切片中，等到需要时再切入对象中去，从而改变其原有的行为。</p>
-<p>这样看来，AOP其实只是OOP的补充而已。OOP从横向上区分出一个个的类来，而AOP则从纵向上向对象中加入特定的代码。有了AOP，OOP变得立体了。如果加上时间维度，AOP使OOP由原来的二维变为三维了，由平面变成立体了。从技术上来说，AOP基本上是通过代理机制实现的。 </p>
-<p>AOP在编程历史上可以说是里程碑式的，对OOP编程是一种十分有益的补充。</p>
-<p>Aspect Oriented Programming  面向切面编程。解耦是程序员编码开发过程中一直追求的。AOP也是为了解耦所诞生。</p>
-<p>具体思想是：定义一个切面，在切面的纵向定义处理方法，处理完成之后，回到横向业务流。</p>
-<p>AOP 在Spring框架中被作为核心组成部分之一，的确Spring将AOP发挥到很强大的功能。最常见的就是事务控制。工作之余，对于使用的工具，不免需要了解其所以然。学习了一下，写了些程序帮助理解。</p>
-<p><a href="http://blog.csdn.net/qq_22654611/article/details/52608593" target="_blank" rel="external">http://blog.csdn.net/qq_22654611/article/details/52608593</a></p>
-<p>spring aop的应用场景：</p>
-<ul>
+<p>也许有人会说，那好办啊，我们可以将这段代码写在一个独立的类独立的方法里，然后再在这两个类中调用。但是，这样一来，这两个类跟我们上面提到的独立的类就有耦合了，它的改变会影响这两个类。那么，有没有什么办法，能让我们在需要的时候，随意地加入代码呢？<strong>这种在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程。</strong>具体思想是：定义一个切面，在切面的纵向定义处理方法，处理完成之后，回到横向业务流</p>
+<p>AOP强调我们只需要关注业务的主要流程，而对于不重要的流程（比如日志打印），我们不需要每次都写入到业务流程的代码中，而是将打印日志功能单独抽取出来，然后告诉程序哪些业务需要打印日志功能（具体操作就是在函数上面通过注解来标识）。</p>
+<p>AOP其实只是OOP的补充而已。OOP从横向上区分出一个个的类来，而AOP则从纵向上向对象中加入特定的代码。有了AOP，OOP变得立体了。从技术上来说，AOP基本上是通过代理机制实现的。 </p>
+<p>解耦是程序员编码开发过程中一直追求的。AOP也是为了解耦所诞生。AOP 在Spring框架中被作为核心组成部分之一，的确Spring将AOP发挥到很强大的功能。最常见的就是事务控制。</p>
+<h3 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h3><p>关于普通静态代理就是设计模式中常讲的代理模式，而普通动态代理虽然实现了隐藏了具体实现，但是当扩展接口方法时所有代理类和委托类都需要实现接口方法，增加了维护的工作量。动态代理是AOP的核心，而动态代理实现的核心就是反射，反射为程序员提供了运行时创建类对象的可能性。我们只需要在代理类用反射获取类的运行状态，传递给Proxy.newProxyInstance()就可以返回这个类的代理类因为返回的是Object对象可以随意转换。</p>
+<h3 id="spring-aop的应用场景"><a href="#spring-aop的应用场景" class="headerlink" title="spring aop的应用场景"></a>spring aop的应用场景</h3><ul>
 <li><p>AOP用来封装横切关注点，具体可以在下面的场景中使用</p>
 <p>Authentication 权限</p>
 <p>Caching 缓存</p>
@@ -664,8 +660,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/09/java/HashMap/" rel="prev" title="HashMap">
-                HashMap <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/09/java/Java常用原码分析/" rel="prev" title="Java常用原码分析">
+                Java常用原码分析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -743,7 +739,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-count">32</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -780,11 +776,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -845,7 +837,21 @@
                     
                       
                     
-                    <span class="site-state-item-count">24</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">31</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>
@@ -895,7 +901,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring家族产品"><span class="nav-text">Spring家族产品</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring"><span class="nav-text">Spring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringMVC"><span class="nav-text">SpringMVC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot"><span class="nav-text">SpringBoot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringCloud"><span class="nav-text">SpringCloud</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-WebFlux"><span class="nav-text">Spring WebFlux</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring核心思想"><span class="nav-text">Spring核心思想</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IOC-DI"><span class="nav-text">IOC(DI)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IOC注入方式"><span class="nav-text">IOC注入方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP"><span class="nav-text">AOP</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring事务"><span class="nav-text">Spring事务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring事务管理接口"><span class="nav-text">Spring事务管理接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对事务抛出异常的注意"><span class="nav-text">对事务抛出异常的注意</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring家族产品"><span class="nav-text">Spring家族产品</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring"><span class="nav-text">Spring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringMVC"><span class="nav-text">SpringMVC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot"><span class="nav-text">SpringBoot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringCloud"><span class="nav-text">SpringCloud</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-WebFlux"><span class="nav-text">Spring WebFlux</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring核心思想"><span class="nav-text">Spring核心思想</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IOC-DI"><span class="nav-text">IOC(DI)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IOC注入方式"><span class="nav-text">IOC注入方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP"><span class="nav-text">AOP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#动态代理"><span class="nav-text">动态代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spring-aop的应用场景"><span class="nav-text">spring aop的应用场景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring事务"><span class="nav-text">Spring事务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring事务管理接口"><span class="nav-text">Spring事务管理接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对事务抛出异常的注意"><span class="nav-text">对事务抛出异常的注意</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1521,6 +1527,30 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
