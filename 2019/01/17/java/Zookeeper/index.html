@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="ZooKeeper是一个分布式的，开放源码的分布式应用程序协调服务。本文从零开始介绍Zookeeper，希望对你有所帮助。">
+<meta name="keywords" content="zookeeper">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zookeeper">
+<meta property="og:url" content="/2019/01/17/java/Zookeeper/index.html">
+<meta property="og:site_name" content="COKID">
+<meta property="og:description" content="ZooKeeper是一个分布式的，开放源码的分布式应用程序协调服务。本文从零开始介绍Zookeeper，希望对你有所帮助。">
+<meta property="og:image" content="/2019/01/17/java/Zookeeper/1.jpg">
+<meta property="og:image" content="/2019/01/17/java/Zookeeper/Zookeeper/1.jpg">
+<meta property="og:image" content="/2019/01/17/java/Zookeeper/2.jpg">
+<meta property="og:image" content="/2019/01/17/java/Zookeeper/Zookeeper/2.jpg">
+<meta property="og:updated_time" content="2019-01-18T15:09:05.223Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Zookeeper">
+<meta name="twitter:description" content="ZooKeeper是一个分布式的，开放源码的分布式应用程序协调服务。本文从零开始介绍Zookeeper，希望对你有所帮助。">
+<meta name="twitter:image" content="/2019/01/17/java/Zookeeper/1.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="/2019/01/17/java/Zookeeper/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Zookeeper | COKID</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">COKID</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Enjoy code</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="/2019/01/17/java/Zookeeper/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="COKID">
+      <meta itemprop="description" content="任何事物都有两面性,不被表象疑惑">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="COKID">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Zookeeper
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-17 15:05:40" itemprop="dateCreated datePublished" datetime="2019-01-17T15:05:40+08:00">2019-01-17</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-18 23:09:05" itemprop="dateModified" datetime="2019-01-18T23:09:05+08:00">2019-01-18</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/17/java/Zookeeper/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/17/java/Zookeeper/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/01/17/java/Zookeeper/" class="leancloud_visitors" data-flag-title="Zookeeper">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>ZooKeeper是一个分布式的，开放源码的分布式应用程序协调服务。本文从零开始介绍Zookeeper，希望对你有所帮助。</p>
+<a id="more"></a>
+<h1 id="Zookeeper概述"><a href="#Zookeeper概述" class="headerlink" title="Zookeeper概述"></a>Zookeeper概述</h1><p>Zookeeper从设计模式角度来理解是一个基于观察者模式的分布式服务管理框架，他负责存储和管理大家都关系的数据，然后接受观察者的注册，一旦这些数据的状态发生变化，Zookeeper就将负责通知已经在Zookeeper上注册那些观察者做出相应的反应。</p>
+<ul>
+<li><p>服务器启动时去Zookeeper注册信息</p>
+</li>
+<li><p>客户端获取当前在线的服务器列表，并注册监听，</p>
+</li>
+<li><p>如果服务器结点下线，则Zookeeper可以通知客户端，</p>
+</li>
+<li><p>然后客户端会重新获取服务器列表，并注册监听</p>
+</li>
+</ul>
+<p>Zookeeper=文件系统+通知机制</p>
+<h2 id="Zookeeper特点"><a href="#Zookeeper特点" class="headerlink" title="Zookeeper特点"></a>Zookeeper特点</h2><img src="/2019/01/17/java/Zookeeper/1.jpg" alt="1.jpg" title="">
+<p><img src="Zookeeper\1.jpg" alt="1"></p>
+<p>上图展示了一个Zookeeper集群，其中有一个Leader和四个Follower。集群有以下特点</p>
+<ul>
+<li>Zookeeper：一个领导者，多个跟随者组成的集群</li>
+<li>集群中只要有半数以上的结点存活，Zookeeper集群就能正常服务</li>
+<li>全局一致性：每个Server保存一份相同的数据副本，Client无论连接到哪个Server，数据都是一致的。</li>
+<li>更新请求顺序进行，来自同一个Client的更新请求按其发送顺序依次执行</li>
+<li>数据更新原子性，一次数据更新要么成功，要么失败。</li>
+<li>实时性，在一定时间范围内，Client能读到最新数据。</li>
+</ul>
+<h2 id="Zookeeper-数据结构"><a href="#Zookeeper-数据结构" class="headerlink" title="Zookeeper 数据结构"></a>Zookeeper 数据结构</h2><p>Zookeeper数据模型的结构整体上可以看作是一棵树，每个结点称作一个ZNode。每一个ZNode默认能够存储1MB数据，每个ZNode都可以通过其路径唯一标识。</p>
+<h2 id="Zookeeper应用场景"><a href="#Zookeeper应用场景" class="headerlink" title="Zookeeper应用场景"></a>Zookeeper应用场景</h2><ul>
+<li><p>统一命名服务：</p>
+<p>在分布式环境下，经常需要对应用/服务进行统一命名，便于识别。</p>
+</li>
+<li><p>统一配置管理：</p>
+<p>在分布式环境下，配置文件同步非常常见。一般要求一个集群中，所有节点的配置信息是一致的，比如Kafka集群。对配置文件后希望能够快速同步到各个节点上。这些操作都可以交给Zookeeper来实现。将配置信息写入Zookeeper上的ZNode，其他各个客户端服务器监听这个ZNode。一旦Znode中的数据被修改，Zookeeper将通知各个客户端服务器。</p>
+</li>
+<li><p>统一集群管理：</p>
+<p>分布式环境中，实时掌握每个节点的状态是必要的。可根据结点实时状态做出一些调整。Zookeeper可以实现实时监控结点状态变化，可将节点信息写入Zookeeper上的一个ZNode。监听这个ZNode可获取他的实时状 态变化。</p>
+</li>
+<li><p>服务器动态上下线：</p>
+<p>客户端能实时洞察到服务器上下线的变化</p>
+</li>
+<li><p>软负载均衡</p>
+<p> 在Zookeeper中记录每台服务器的访问数，让访问数最少的服务器去处理最新的客户端请求。</p>
+</li>
+</ul>
+<h1 id="Zookeeper安装与启动"><a href="#Zookeeper安装与启动" class="headerlink" title="Zookeeper安装与启动"></a>Zookeeper安装与启动</h1><p>直接去官网下载Zookeeper安装包，是一个扩展名为tar.gz的压缩包，虽然Zookeeper框架最终生产实践都是在Linux环境下，但是作为初学可以直接在windows下直接使用，因为这个压缩包不仅提供了在linux下的.sh相关脚本，也提供了windows环境下.bat脚本，我们直接解压即可使用。</p>
+<ul>
+<li>修改配置<ul>
+<li>我们需要进入Zookeeper目录下的conf目录，会看见一个zoo_sample.cfg文件，我们拷贝一份改为zoo.cfg</li>
+<li>修改zoo.cfg的dataDir参数，指定文件夹来存储zookeeper数据，这个文件夹需要提前创建好。</li>
+</ul>
+</li>
+</ul>
+<p>上述操作完成后基本Zookeeper就安装好了，然后我们来启动服务</p>
+<ul>
+<li><p>启动</p>
+<ul>
+<li>进入Zookeeper的bin目录可以看到一些脚本。</li>
+<li>windows用户直接双击zkServer.bat 直接可以启动</li>
+<li>linux用户需要使用zkServer.sh start命令运行</li>
+<li>然后启动zkCli.bat</li>
+<li>linux用户直接运行zkCli.sh 不用start参数</li>
+</ul>
+</li>
+<li><p>停止</p>
+<ul>
+<li>windows用户直接关窗口就行了</li>
+<li>linux用户退出zkcli使用quit命令</li>
+<li>linux退出zkServer使用zkServer stop命令</li>
+</ul>
+</li>
+<li><p>附录（cfg参数意义）</p>
+<ul>
+<li>tickTime=2000：2s钟一次心跳（可以理解成时钟）</li>
+<li>initLimit=10：用10乘以上面的2s得到20s代表Leader和Follower刚开始通信时候的最大延迟时间</li>
+<li>syncLimit=5：5*2s代表集群已经正常启动后Leader和Follower之间的通信延时</li>
+<li>clientPort：客户端端口号</li>
+</ul>
+</li>
+<li><p>集群</p>
+<ul>
+<li><p>为每个机器都放置一份Zookeeper</p>
+</li>
+<li><p>然后在配置的dataDir目录下生成一个myid文件，在里面填入数字，每台机器的myid必须是唯一的</p>
+</li>
+<li><p>修改cfg文件增加配置格式为   server.A=B:C:D</p>
+<ul>
+<li>A是一个数字，表示是第几号服务器，也就是刚才的myid</li>
+<li>B为A服务器的IP地址</li>
+<li>C为A服务器与集群中的Leader服务器交换信息的端口</li>
+<li>D为如果集群中Leader服务器挂掉，需要一个新的端口重新进行选举，这个端口就是用来执行选举时服务器相互通信的端口</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">server.1=server001:2888:3888</div><div class="line">server.2=server004:2888:3888</div><div class="line">server.3=server003:2888:3888</div></pre></td></tr></table></figure>
+</li>
+<li><p>每台机器cfg都是上述配置</p>
+</li>
+<li><p>重启每台服务器</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="内部命令"><a href="#内部命令" class="headerlink" title="内部命令"></a>内部命令</h2><p>进入zkCli之后有一些命令可以使用，你可以直接输入help查看可用命令。</p>
+<ul>
+<li>ls / ：查看znode中包含的内容</li>
+<li>ls2 /  ：查看当前节点详细数据</li>
+<li>create  /node1  “node1”：创建一个节点</li>
+<li>create /node1/node1_1 “node1_1”</li>
+<li>get /node1/node1_1 ：获取结点信息</li>
+<li>create -e /node1/node1_2 “node1_2” ：创建短暂结点</li>
+<li>create  -s /node1/node1_3 “node1_3”：创建序号结点</li>
+<li>set /node1/node1_1 “update_node1_1”： 修改结点</li>
+<li>get /node1 watch   ：注册监听 node1结点的变化，一次命令只能监听一次变化 </li>
+<li>ls /node1 watch：监听node路径下的变化，一次命令监听一次变化</li>
+<li>delete /node1/node1_3 ：删除节点</li>
+<li>stat /node1 ：查看节点状态 <ul>
+<li>czxid：创建事务的zxid</li>
+<li>ctime：被创建的毫秒数</li>
+<li>mzxid：最后更新的事务zxid</li>
+<li>pZxid：最后更新的子节点zxid</li>
+<li>cversion：子节点修改次数</li>
+<li>dataversion：数据变化号</li>
+<li>aclVersion：访问控制列表的变化号</li>
+<li>ephemeralOwener：如果是临时结点，这个是znode拥有者的session id。如果不是临时结点为0</li>
+<li>dataLength：znode数据长度</li>
+<li>numChildren：znode子节点数量</li>
+</ul>
+</li>
+<li>rmr /node1：递归删除结点</li>
+</ul>
+<h1 id="Zookeeper内部原理"><a href="#Zookeeper内部原理" class="headerlink" title="Zookeeper内部原理"></a>Zookeeper内部原理</h1><h2 id="选举机制"><a href="#选举机制" class="headerlink" title="选举机制"></a>选举机制</h2><ul>
+<li>半数机制：集群中半数以上机器存活，集群可用。所以Zookeeper适合安装奇数台服务器</li>
+<li>Zookeeper虽然在配置文件中没有指定Master和Slave，但是它工作时是有一个节点为Leader其他则作为Follower，Leader是通过内部的选举机制临时产生的。简单来说就是按照服务器启动顺序，选择服务器ID号较大的，当半数以上的机器启动起来后，则会可以产生Leader，后面剩下再启动的机器只能作为Follower。</li>
+</ul>
+<h2 id="节点类型"><a href="#节点类型" class="headerlink" title="节点类型"></a>节点类型</h2><p>ZNode结点分为两大类：</p>
+<ul>
+<li>持久（Persistent）节点：客户端与服务器断开连接后，创建的结点不删除</li>
+<li>短暂（Ephemeral）节点：客户端与服务器断开连接后，创建的结点自己删除</li>
+</ul>
+<p>目录结点可以进行编号，创建Znode时可以设置顺序标识，znode名称后会附加一个值，顺序号是一个单调递增的计数器，由父节点维护。</p>
+<p>在分布式系统中，顺序号可以被用于为所有的事件进行全局排序，这样的客户端可以通过顺序号推断时间的顺序。</p>
+<h2 id="监听器原理"><a href="#监听器原理" class="headerlink" title="监听器原理"></a>监听器原理</h2><h3 id="监听流程"><a href="#监听流程" class="headerlink" title="监听流程"></a>监听流程</h3><ul>
+<li>首先有一个main线程</li>
+<li>在main线程中创建Zookeeper客户端，这时会建立两个线程，一个负责网络连接通信（connect），一个负责监听（listener）</li>
+<li>通过connect线程将注册的监听事件发送给Zookeeper</li>
+<li>在Zookeeper的注册监听器列表中将注册的监听事件添加到列表中。</li>
+<li>Zookeeper监听到有数据或路径变化，就会将这个消息发送给listener线程</li>
+<li>listener线程内部调用了process()方法</li>
+</ul>
+<h3 id="常见的监听"><a href="#常见的监听" class="headerlink" title="常见的监听"></a>常见的监听</h3><ul>
+<li><p>监听节点数据的变化</p>
+<p>get path [watch]</p>
+</li>
+<li><p>监听子节点增减的变化</p>
+<p>ls path [watch]</p>
+</li>
+</ul>
+<h2 id="写数据流程"><a href="#写数据流程" class="headerlink" title="写数据流程"></a>写数据流程</h2><img src="/2019/01/17/java/Zookeeper/2.jpg" alt="2.jpg" title="">
+<p><img src="Zookeeper/2.jpg" alt="2"></p>
+<ul>
+<li>Client向Zookeeper的Server1上写数据，发送给一个写请求</li>
+<li>如果Server1不是Leader，那么Server1会把接收到的请求转发给Leader，Leader将写请求广播给各个Server，比如Server1和Server2，各个Server写成功后就会通知Leader</li>
+<li>当Leader收到大多数Server写入成功，就说明数据写成功了，Leader会通知Server1数据写成功了</li>
+<li>Server1会进一步通知Client数据写成功了，这时就认为整个写操作成功</li>
+</ul>
+<h1 id="Zookeeper-API"><a href="#Zookeeper-API" class="headerlink" title="Zookeeper API"></a>Zookeeper API</h1><p>下面的原码展示了如何用Zookeeper的API操作Zookeeper，使用前请先启动Zookeeper服务端。</p>
+<h2 id="基本API测试"><a href="#基本API测试" class="headerlink" title="基本API测试"></a>基本API测试</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> ZookeeperDemo;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.apache.zookeeper.*;</div><div class="line"><span class="keyword">import</span> org.apache.zookeeper.data.Stat;</div><div class="line"><span class="keyword">import</span> org.junit.Before;</div><div class="line"><span class="keyword">import</span> org.junit.Test;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ZookeeperTest</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ZooKeeper zkClient;</div><div class="line">    <span class="keyword">private</span> String connectString=<span class="string">"127.0.0.1:2181"</span>;<span class="comment">//如有多个服务器请用逗号隔开</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> sessionTimeout=<span class="number">2000</span>;</div><div class="line">    <span class="keyword">private</span> Watcher watcher=<span class="keyword">new</span> Watcher() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">process</span><span class="params">(WatchedEvent watchedEvent)</span> </span>&#123;</div><div class="line">            List&lt;String&gt; children = <span class="keyword">null</span>;<span class="comment">//获取路径下所有子节点并监控</span></div><div class="line">            System.out.println(<span class="string">"-------------start--------------"</span>);</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                children = zkClient.getChildren(<span class="string">"/"</span>, <span class="keyword">true</span>);</div><div class="line">                <span class="keyword">for</span> (String child:children) &#123;</div><div class="line">                    System.out.println(child);</div><div class="line">                &#125;</div><div class="line">            System.out.println(<span class="string">"-------------end--------------"</span>);</div><div class="line">            &#125; <span class="keyword">catch</span> (KeeperException e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="meta">@Before</span><span class="comment">//初始化连接</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">        zkClient = <span class="keyword">new</span> ZooKeeper(connectString, sessionTimeout, watcher);</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Test</span><span class="comment">//创建结点</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">createNode</span><span class="params">()</span> <span class="keyword">throws</span> KeeperException, InterruptedException </span>&#123;</div><div class="line">        String path = zkClient.create(<span class="string">"/cokid"</span>, <span class="string">"system"</span>.getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);</div><div class="line">        System.out.println(path);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Test</span><span class="comment">//获取子节点，并监控数据的变化</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getDataAndWatch</span><span class="params">()</span> <span class="keyword">throws</span> KeeperException, InterruptedException </span>&#123;</div><div class="line"></div><div class="line">        Thread.sleep(Long.MAX_VALUE);<span class="comment">//让主线程休息不要结束，让监听器线程可以监听到变化</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Test</span><span class="comment">//判断节点是否存在</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">isExist</span><span class="params">()</span> <span class="keyword">throws</span> KeeperException, InterruptedException </span>&#123;</div><div class="line">        Stat stat = zkClient.exists(<span class="string">"/cokid"</span>, <span class="keyword">false</span>);</div><div class="line">        System.out.println(stat==<span class="keyword">null</span>?<span class="string">"not exist"</span>:<span class="string">"exist"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="动态监听服务器上下线"><a href="#动态监听服务器上下线" class="headerlink" title="动态监听服务器上下线"></a>动态监听服务器上下线</h2><ul>
+<li>本例创建临时有序结点，请根据实际情况修改。</li>
+<li>代码中的服务端和客户端是相对于实际产品，而这些(所谓的客户端服务端)相对于Zookeeper来说都是客户端</li>
+<li>我们使用Zookeeper动态监听，使用时请启动Zookeeper服务在节点目录下创建Servers结点。</li>
+<li>首先启动DistributeClient</li>
+<li>运行DistributeServer，需要注意的是本例采用从main方法args参数获取服务器编号，运行时请务必添加args参数。</li>
+<li>可以运行多个DistributeServer添加不同参数</li>
+</ul>
+<p>服务器端</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> ZookeeperDemo;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.apache.zookeeper.*;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DistributeServer</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException, KeeperException, InterruptedException </span>&#123;</div><div class="line">        DistributeServer server=<span class="keyword">new</span> DistributeServer();</div><div class="line">        <span class="comment">//连接Zookeeper</span></div><div class="line">        server.getConnect();</div><div class="line"></div><div class="line">        <span class="comment">//服务器去Zookeeper注册</span></div><div class="line">        server.regist(args[<span class="number">0</span>]);</div><div class="line"></div><div class="line">        <span class="comment">//业务逻辑处理</span></div><div class="line">        server.business();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">business</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</div><div class="line">        Thread.sleep(Long.MAX_VALUE);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">regist</span><span class="params">(String hostname)</span> <span class="keyword">throws</span> KeeperException, InterruptedException </span>&#123;</div><div class="line">        String path = zkClient.create(<span class="string">"/servers/server"</span>, hostname.getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);</div><div class="line">        System.out.println(hostname+<span class="string">" is online"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ZooKeeper zkClient;</div><div class="line">    <span class="keyword">private</span> String connectString=<span class="string">"127.0.0.1:2181"</span>;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> sessionTimeout=<span class="number">2000</span>;</div><div class="line">    <span class="keyword">private</span> Watcher watcher=<span class="keyword">new</span> Watcher() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">process</span><span class="params">(WatchedEvent watchedEvent)</span> </span>&#123;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">getConnect</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">        zkClient = <span class="keyword">new</span> ZooKeeper(connectString, sessionTimeout, watcher);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>客户端</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> ZookeeperDemo;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.apache.zookeeper.KeeperException;</div><div class="line"><span class="keyword">import</span> org.apache.zookeeper.WatchedEvent;</div><div class="line"><span class="keyword">import</span> org.apache.zookeeper.Watcher;</div><div class="line"><span class="keyword">import</span> org.apache.zookeeper.ZooKeeper;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">import</span> java.util.ArrayList;</div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DistributeClient</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException, KeeperException, InterruptedException </span>&#123;</div><div class="line"></div><div class="line">        DistributeClient client = <span class="keyword">new</span> DistributeClient();</div><div class="line"></div><div class="line">        <span class="comment">//获取Zookeeper连接</span></div><div class="line">        client.getConnect();</div><div class="line"></div><div class="line">        <span class="comment">//注册监听</span></div><div class="line">        client.getChildren();</div><div class="line"></div><div class="line">        <span class="comment">//业务逻辑处理</span></div><div class="line">        client.business();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">business</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</div><div class="line">        Thread.sleep(Long.MAX_VALUE);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">getChildren</span><span class="params">()</span> <span class="keyword">throws</span> KeeperException, InterruptedException </span>&#123;</div><div class="line">        List&lt;String&gt; children = zkClient.getChildren(<span class="string">"/servers"</span>, <span class="keyword">true</span>);</div><div class="line">        <span class="comment">//存储服务器节点名称</span></div><div class="line">        ArrayList&lt;String&gt; hosts = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">        <span class="keyword">for</span>(String child:children)&#123;</div><div class="line">            <span class="keyword">byte</span>[] data = zkClient.getData(<span class="string">"/servers/"</span> + child, <span class="keyword">false</span>, <span class="keyword">null</span>);</div><div class="line"></div><div class="line">            hosts.add(<span class="keyword">new</span> String(data));</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//将所有在线主机打印到控制台</span></div><div class="line">        System.out.println(hosts);</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ZooKeeper zkClient;</div><div class="line">    <span class="keyword">private</span> String connectString=<span class="string">"127.0.0.1:2181"</span>;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> sessionTimeout=<span class="number">2000</span>;</div><div class="line">    <span class="keyword">private</span> Watcher watcher=<span class="keyword">new</span> Watcher() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">process</span><span class="params">(WatchedEvent watchedEvent)</span> </span>&#123;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                getChildren();</div><div class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125; <span class="keyword">catch</span> (KeeperException e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">getConnect</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">        zkClient = <span class="keyword">new</span> ZooKeeper(connectString, sessionTimeout, watcher);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果对你有帮助，请赏包辣条</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="COKID 微信"/>
+        <p>微信</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="COKID 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/bitcoin.jpg" alt="COKID 红包码"/>
+        <p>红包码</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/zookeeper/" rel="tag"># zookeeper</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/17/java/Kafka/" rel="next" title="Kafka">
+                <i class="fa fa-chevron-left"></i> Kafka
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2096/05/21/置顶/" rel="prev" title="置顶">
+                置顶 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="COKID" />
+            
+              <p class="site-author-name" itemprop="name">COKID</p>
+              <p class="site-description motion-element" itemprop="description">任何事物都有两面性,不被表象疑惑</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/COKID" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:COKIDCC@outlook.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Zookeeper概述"><span class="nav-text">Zookeeper概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Zookeeper特点"><span class="nav-text">Zookeeper特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zookeeper-数据结构"><span class="nav-text">Zookeeper 数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zookeeper应用场景"><span class="nav-text">Zookeeper应用场景</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Zookeeper安装与启动"><span class="nav-text">Zookeeper安装与启动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内部命令"><span class="nav-text">内部命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Zookeeper内部原理"><span class="nav-text">Zookeeper内部原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#选举机制"><span class="nav-text">选举机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#节点类型"><span class="nav-text">节点类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监听器原理"><span class="nav-text">监听器原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#监听流程"><span class="nav-text">监听流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的监听"><span class="nav-text">常见的监听</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写数据流程"><span class="nav-text">写数据流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Zookeeper-API"><span class="nav-text">Zookeeper API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本API测试"><span class="nav-text">基本API测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态监听服务器上下线"><span class="nav-text">动态监听服务器上下线</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">COKID</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+<span id="busuanzi_container_site_uv" style='display:none'>有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+<div>
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'oGsBWh72tqHrNVGmA9kSkN9O-gzGzoHsz',
+        appKey: 'ngWmBvpNuti55zjUcUzDFDfM',
+        placeholder: '欢迎指正',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
+                .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function () {
+                  console.log('Failed to create');
+                });
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "oGsBWh72tqHrNVGmA9kSkN9O-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "oGsBWh72tqHrNVGmA9kSkN9O-gzGzoHsz",
+                'X-LC-Key': "ngWmBvpNuti55zjUcUzDFDfM",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "default";
+      
+          flOptions.boxForm = "vertical";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+</body>
+</html>
