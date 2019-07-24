@@ -121,7 +121,13 @@
 <meta property="og:description" content="现在招聘Java后端越来越严格了，不仅要会基本的Java那一套，还要你会DBA的活，运维的活，测试的活，还有大数据的活你也得懂点。kafka作为Apache下面的高吞吐量的分布式发布订阅消息系统，在大数据方面有很广的应用，在普通的Java开发中也是现在比较重要的中间件。">
 <meta property="og:image" content="/2019/01/17/java/Kafka/1.jpg">
 <meta property="og:image" content="/2019/01/17/java/Kafka/Kafka/1.jpg">
-<meta property="og:updated_time" content="2019-01-17T07:12:15.326Z">
+<meta property="og:image" content="/2019/01/17/java/Kafka/Kafka/2.jpg">
+<meta property="og:image" content="/2019/01/17/java/Kafka/3.jpg">
+<meta property="og:image" content="/2019/01/17/java/Kafka/Kafka/3.jpg">
+<meta property="og:image" content="/2019/01/17/java/Kafka/kafka/4.jpg">
+<meta property="og:image" content="/2019/01/17/java/Kafka/5.jpg">
+<meta property="og:image" content="/2019/01/17/java/Kafka/kafka/5.jpg">
+<meta property="og:updated_time" content="2019-01-19T08:15:17.337Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kafka">
 <meta name="twitter:description" content="现在招聘Java后端越来越严格了，不仅要会基本的Java那一套，还要你会DBA的活，运维的活，测试的活，还有大数据的活你也得懂点。kafka作为Apache下面的高吞吐量的分布式发布订阅消息系统，在大数据方面有很广的应用，在普通的Java开发中也是现在比较重要的中间件。">
@@ -180,6 +186,9 @@
   </style>
 </noscript>
 
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+  <script src="/live2d-widget/autoload.js"></script>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -206,7 +215,7 @@
     </div>
     
       
-        <p class="site-subtitle">Enjoy code</p>
+        <p class="site-subtitle">请多多阅读文章</p>
       
     
   </div>
@@ -350,7 +359,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="COKID">
-      <meta itemprop="description" content="任何事物都有两面性,不被表象疑惑">
+      <meta itemprop="description" content="Enjoy Code&Life">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
@@ -388,12 +397,24 @@
                 
               
 
-              <time title="创建时间：2019-01-17 11:40:37 / 修改时间：15:12:15" itemprop="dateCreated datePublished" datetime="2019-01-17T11:40:37+08:00">2019-01-17</time>
+              <time title="创建时间：2019-01-17 11:40:37" itemprop="dateCreated datePublished" datetime="2019-01-17T11:40:37+08:00">2019-01-17</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-19 16:15:17" itemprop="dateModified" datetime="2019-01-19T16:15:17+08:00">2019-01-19</time>
               
             
           </span>
@@ -482,6 +503,154 @@
 <li>顺序保证：</li>
 </ul>
 <h1 id="Kafka概述"><a href="#Kafka概述" class="headerlink" title="Kafka概述"></a>Kafka概述</h1><p>Kafka是一个分布式消息队列系统，由scala语言编写，Kafka对消息保存时根据Topic进行归类，发送消息者成为Producer，消息的接受者成为Consumer，Kafka集群有多个kafka实例组成，每个实例（server）称为broker。无论是kafka集群还是consumer都依赖于zookeeper集群保存一些meta信息保证系统可用性。</p>
+<p><img src="Kafka\2.jpg" alt="2"></p>
+<ul>
+<li>Topic 可以理解成一个简单队列</li>
+<li>Consumer Group（CG）：这是kafka用来实现topic消息的广播和单播的手段，一个Topic可以有多个Consumer group。topic的消息会复制到所有的CG上（概念上复制，不是真复制），但每个partition只会把消息发给该CG中的一个Consumer。</li>
+<li>Broker：一台kafka服务器就是一个broker，一个集群由多个Broker组成，一个Broker可以容纳多个topic。</li>
+<li>Partition：为了实现扩展性，一个非常大的topic可以分布到多个broker上，一个topic可以分为多个partition。每个partition是一个有序的队列。partition中每条消息都有一个有序的id。kafka只保证按一个partition中的顺序将消息发个consumer，不保证一个topic整体的顺序。</li>
+</ul>
+<h1 id="kafka-安装与启动"><a href="#kafka-安装与启动" class="headerlink" title="kafka 安装与启动"></a>kafka 安装与启动</h1><p>kafka实际应用更多的是在linux系统上，不过windows用户也不用担心，kafka内部也提供了windows相关操作，windows用户与linux用户用的是同一个安装包。<strong>在安装kafka之前请先安装好Zookeeper</strong>，本博客Zookeeper文章有介绍。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>直接去官网下载kafka安装包，是一个扩展名.tgz的压缩包文件。直接解压即可</li>
+<li><p>在kafka安装目录下新建logs文件夹</p>
+</li>
+<li><p>进入kafka的config目录编辑server.properties文件</p>
+</li>
+<li>修改broker.id参数，如果是单机本地使用则不用修改，如果是集群使用请确保每一台机器的broker.id不同</li>
+<li>修改log.dirs参数为刚才建立logs文件夹的目录，windows用户建议使用 / 这个斜杠。</li>
+<li>修改Zookeeper.connect参数，如果是本地使用则不用修改，如果是集群使用，请修改为集群的服务器地址和端口，多台服务器之间用逗号隔开</li>
+</ul>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>进入kafka下的bin目录windows脚本和linux脚本主要是扩展名上的区别，相同命令都可以执行，下文不再具体区分，相关用户选择对应脚本。请先启动Zookeeper服务端程序。</p>
+<ul>
+<li><p>windows 用户使用kafka-server-start.bat ../../config/server.properties</p>
+</li>
+<li><p>linux用户使用 kafka-server-start.sh ../config/server.properties</p>
+<ul>
+<li>因为目录深度不同所以有所区别</li>
+</ul>
+</li>
+<li><blockquote>
+<p>kafka-topics.bat —create —zookeeper 127.0.0.1:2181 —partitions 2 —replication-factor 1 —topic first</p>
+</blockquote>
+<p>使用命令创建一个topic，分两个区，一个副本（如果是集群可以设多个副本）</p>
+</li>
+<li><p>kafka-topics.bat —list —zookeeper 127.0.0.1:2181 查看创建的topic</p>
+</li>
+<li>现在进入kafka的logs(存放数据)目录可以看到里面有我们创建的结点</li>
+<li>常用命令<ul>
+<li>kafka-topics.bat —delete —zookeeper 127.0.0.1:2181 —topic first 删除topic</li>
+<li>kafka-console-producer.bat —broker-list 127.0.0.1:9092 —topic first 生产者</li>
+<li>kafka-console-consumer.bat  —bootstrap-server 127.0.0.1:9092 —from-beginning —topic first 消费者把first主题中所有数据都读出来（低版本中—bootstrap-server 127.0.0.1:9092修改为—Zookeeper 127.0.0.1:2181因为数据存在Zookeeper中，高版本中数据存在kafka本地中）</li>
+<li>kafka-topics.bat —list —zookeeper 127.0.0.1:2181 —describe —topic first查看topic详情</li>
+</ul>
+</li>
+</ul>
+<h1 id="Kafka生产"><a href="#Kafka生产" class="headerlink" title="Kafka生产"></a>Kafka生产</h1><h2 id="写入方式"><a href="#写入方式" class="headerlink" title="写入方式"></a>写入方式</h2><p>producer采用推模式将消息发布到Broker，每条消息都被追加到分区中，属于顺序写磁盘（顺序写磁盘比随机写内存效率高）</p>
+<h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><p>​       Kafka集群有多个消息代理服务器（broker-server）组成，发布到Kafka集群的每条消息都有一个类别，用主题（topic）来表示。通常，不同应用产生不同类型的数据，可以设置不同的主题。一个主题一般会有多个消息的订阅者，当生产者发布消息到某个主题时，订阅了这个主题的消费者都可以接收到生成者写入的新消息。</p>
+<p>Kafka集群为每个主题维护了分布式的分区（partition）日志文件，物理意义上可以把主题（topic）看作进行了分区的日志文件（partition log）。主题的每个分区都是一个有序的、不可变的记录序列，新的消息会不断追加到日志中。分区中的每条消息都会按照时间顺序分配到一个单调递增的顺序编号，叫做偏移量（offset），这个偏移量能够唯一地定位当前分区中的每一条消息。</p>
+<p>每个Partition中的消息都是有序的，生产的消息被不断追加到Partition log上，其中的每一个消息都被赋予了一个唯一的offset值。</p>
+<p>发布到Kafka主题的每条消息包括键值和时间戳。消息到达服务器端的指定分区后，都会分配到一个自增的偏移量。原始的消息内容和分配的偏移量以及其他一些元数据信息最后都会存储到分区日志文件中。消息的键也可以不用设置，这种情况下消息会均衡地分布到不同的分区。</p>
+<p>分区的原因：</p>
+<ul>
+<li>方便在集群中扩展，每个Partition可以通过调整以适应它所在的机器，而一个topic又可以有多个Partition组成，因此整个集群可以适应任意大小的数据。</li>
+<li>可以提高并发，以partition为单位写</li>
+</ul>
+<p>传统消息系统在服务端保持消息的顺序，如果有多个消费者消费同一个消息队列，服务端会以消费存储的顺序依次发送给消费者。但由于消息是异步发送给消费者的，消息到达消费者的顺序可能是无序的，这就意味着在并行消费时，传统消息系统无法很好地保证消息被顺序处理。虽然我们可以设置一个专用的消费者只消费一个队列，以此来解决消息顺序的问题，但是这就使得消费处理无法真正执行。</p>
+<p>Kafka比传统消息系统有更强的顺序性保证，它使用主题的分区作为消息处理的并行单元。Kafka以分区作为最小的粒度，将每个分区分配给消费者组中不同的而且是唯一的消费者，并确保一个分区只属于一个消费者，即这个消费者就是这个分区的唯一读取线程。那么，只要分区的消息是有序的，消费者处理的消息顺序就有保证。每个主题有多个分区，不同的消费者处理不同的分区，所以Kafka不仅保证了消息的有序性，也做到了消费者的负载均衡。</p>
+<h2 id="副本"><a href="#副本" class="headerlink" title="副本"></a>副本</h2><p>同一个partition可能会有多个replication（对应 server.properties 配置中的default.replication.factor=N）。没有replication的情况下，一旦broker宕机，其上所有 patition 的数据都不可被消费，同时producer也不能再将数据存于其上的patition。引入replication之后，同一个partition可能会有多个replication，而这时需要在这些replication之间选出一个leader，producer和consumer只与这个leader交互，其它replication作为follower从leader 中复制数据。</p>
+<h2 id="写入流程"><a href="#写入流程" class="headerlink" title="写入流程"></a>写入流程</h2><ul>
+<li><p>producer先从zookeeper的 “/brokers/…/state”节点找到该partition的leader</p>
+</li>
+<li><p>producer将消息发送给该leader</p>
+</li>
+<li><p>leader将消息写入本地log</p>
+</li>
+<li><p>followers从leader pull消息，写入本地log后向leader发送ACK</p>
+</li>
+<li><p>leader收到所有ISR中的replication的ACK后，增加HW（high watermark，最后commit 的offset）并向producer发送ACK</p>
+</li>
+</ul>
+<h1 id="Kafka消息保存"><a href="#Kafka消息保存" class="headerlink" title="Kafka消息保存"></a>Kafka消息保存</h1><img src="/2019/01/17/java/Kafka/3.jpg" alt="3.jpg" title="">
+<p><img src="Kafka\3.jpg" alt="3"></p>
+<p>上图展示了kafka在Zookeeper保存数据的目录结构。</p>
+<p>物理上把topic分成一个或多个patition（对应 server.properties 中的num.partitions配置），每个patition物理上对应一个文件夹（该文件夹存储该patition的所有消息和索引文件）。</p>
+<p>无论消息是否被消费，kafka都会保留所有消息。有两种策略可以删除旧数据：</p>
+<p>1）基于时间：log.retention.hours=168</p>
+<p>2）基于大小：log.retention.bytes=1073741824</p>
+<p>需要注意的是，因为Kafka读取特定消息的时间复杂度为O(1)，即与文件大小无关，所以这里删除过期文件与提高 Kafka 性能无关。</p>
+<h1 id="Kafka消费"><a href="#Kafka消费" class="headerlink" title="Kafka消费"></a>Kafka消费</h1><p>消息由生产者发布到Kafka集群后，会被消费者消费。消息的消费模型有两种：推送模型（push）和拉取模型（pull）。</p>
+<p>基于推送模型（push）的消息系统，由消息代理记录消费者的消费状态。消息代理在将消息推送到消费者后，标记这条消息为已消费，但这种方式无法很好地保证消息被处理。比如，消息代理把消息发送出去后，当消费进程挂掉或者由于网络原因没有收到这条消息时，就有可能造成消息丢失（因为消息代理已经把这条消息标记为已消费了，但实际上这条消息并没有被实际处理）。如果要保证消息被处理，消息代理发送完消息后，要设置状态为“已发送”，只有收到消费者的确认请求后才更新为“已消费”，这就需要消息代理中记录所有的消费状态，这种做法显然是不可取的。</p>
+<p>Kafka采用拉取模型，由消费者自己记录消费状态，每个消费者互相独立地顺序读取每个分区的消息。如下图所示，有两个消费者（不同消费者组）拉取同一个主题的消息，消费者A的消费进度是3，消费者B的消费进度是6。消费者拉取的最大上限通过最高水位（watermark）控制，生产者最新写入的消息如果还没有达到备份数量，对消费者是不可见的。这种由消费者控制偏移量的优点是：消费者可以按照任意的顺序消费消息。比如，消费者可以重置到旧的偏移量，重新处理之前已经消费过的消息；或者直接跳到最近的位置，从当前的时刻开始消费。</p>
+<p><img src="kafka/4.jpg" alt="4"></p>
+<p>​       在一些消息系统中，消息代理会在消息被消费之后立即删除消息。如果有不同类型的消费者订阅同一个主题，消息代理可能需要冗余地存储同一消息；或者等所有消费者都消费完才删除，这就需要消息代理跟踪每个消费者的消费状态，这种设计很大程度上限制了消息系统的整体吞吐量和处理延迟。Kafka的做法是生产者发布的所有消息会一致保存在Kafka集群中，不管消息有没有被消费。用户可以通过设置保留时间来清理过期的数据，比如，设置保留策略为两天。那么，在消息发布之后，它可以被不同的消费者消费，在两天之后，过期的消息就会自动清理掉。</p>
+<p>push（推）模式很难适应消费速率不同的消费者，因为消息发送速率是由broker决定的。它的目标是尽可能以最快速度传递消息，但是这样很容易造成consumer来不及处理消息，典型的表现就是拒绝服务以及网络拥塞。而pull模式则可以根据consumer的消费能力以适当的速率消费消息。</p>
+<p>对于Kafka而言，pull模式更合适，它可简化broker的设计，consumer可自主控制消费消息的速率，同时consumer可以自己控制消费方式——即可批量消费也可逐条消费，同时还能选择不同的提交方式从而实现不同的传输语义。</p>
+<p>pull模式不足之处是，如果kafka没有数据，消费者可能会陷入循环中，一直等待数据到达。为了避免这种情况，我们在我们的拉请求中有参数，允许消费者请求在等待数据到达的“长轮询”中进行阻塞（并且可选地等待到给定的字节数，以确保大的传输大小）。</p>
+<h1 id="Kafka-API"><a href="#Kafka-API" class="headerlink" title="Kafka API"></a>Kafka API</h1><h2 id="高级API"><a href="#高级API" class="headerlink" title="高级API"></a>高级API</h2><ul>
+<li><p>优点</p>
+<p>高级API 写起来简单</p>
+<p>不需要自行去管理offset，系统通过zookeeper自行管理。</p>
+<p>不需要管理分区，副本等情况，.系统自动管理。</p>
+<p>消费者断线会自动根据上一次记录在zookeeper中的offset去接着获取数据（默认设置1分钟更新一下zookeeper中存的offset）</p>
+<p>可以使用group来区分对同一个topic 的不同程序访问分离开来（不同的group记录不同的offset，这样不同程序读取同一个topic才不会因为offset互相影响）</p>
+</li>
+<li><p>缺点</p>
+<p>不能自行控制offset（对于某些特殊需求来说）</p>
+<p>不能细化控制如分区、副本、zk等</p>
+</li>
+</ul>
+<h2 id="低级API"><a href="#低级API" class="headerlink" title="低级API"></a>低级API</h2><ul>
+<li><p>优点</p>
+<p>能够让开发者自己控制offset，想从哪里读取就从哪里读取。</p>
+<p>自行控制连接分区，对分区自定义进行负载均衡</p>
+<p>对zookeeper的依赖性降低（如：offset不一定非要靠zk存储，自行存储offset即可，比如存在文件或者内存中）</p>
+</li>
+<li><p>缺点</p>
+<p>太过复杂，需要自行控制offset，连接哪个分区，找到分区leader 等。</p>
+</li>
+</ul>
+<h1 id="Kafka-拦截器"><a href="#Kafka-拦截器" class="headerlink" title="Kafka 拦截器"></a>Kafka 拦截器</h1><p>Producer拦截器(interceptor)是在Kafka 0.10版本被引入的，主要用于实现clients端的定制化控制逻辑。</p>
+<p>对于producer而言，interceptor使得用户在消息发送前以及producer回调逻辑前有机会对消息做一些定制化需求，比如修改消息等。同时，producer允许用户指定多个interceptor按序作用于同一条消息从而形成一个拦截链(interceptor chain)。Intercetpor的实现接口是org.apache.kafka.clients.producer.ProducerInterceptor，其定义的方法包括：</p>
+<p>（1）configure(configs)</p>
+<p>获取配置信息和初始化数据时调用。</p>
+<p>（2）onSend(ProducerRecord)：</p>
+<p>该方法封装进KafkaProducer.send方法中，即它运行在用户主线程中。Producer确保在消息被序列化以及计算分区前调用该方法。用户可以在该方法中对消息做任何操作，但最好保证不要修改消息所属的topic和分区，否则会影响目标分区的计算</p>
+<p>（3）onAcknowledgement(RecordMetadata, Exception)：</p>
+<p>该方法会在消息被应答或消息发送失败时调用，并且通常都是在producer回调逻辑触发之前。onAcknowledgement运行在producer的IO线程中，因此不要在该方法中放入很重的逻辑，否则会拖慢producer的消息发送效率</p>
+<p>（4）close：</p>
+<p>关闭interceptor，主要用于执行一些资源清理工作</p>
+<p>如前所述，interceptor可能被运行在多个线程中，因此在具体实现时用户需要自行确保线程安全。另外倘若指定了多个interceptor，则producer将按照指定顺序调用它们，并仅仅是捕获每个interceptor可能抛出的异常记录到错误日志中而非在向上传递。这在使用过程中要特别留意。</p>
+<h1 id="Kafka-Stream"><a href="#Kafka-Stream" class="headerlink" title="Kafka Stream"></a>Kafka Stream</h1><p>Kafka Streams。Apache Kafka开源项目的一个组成部分。是一个功能强大，易于使用的库。用于在Kafka上构建高可分布式、拓展性，容错的应用程序。</p>
+<h2 id="Kafka-Streams特点"><a href="#Kafka-Streams特点" class="headerlink" title="Kafka Streams特点"></a>Kafka Streams特点</h2><ul>
+<li><p>功能强大 </p>
+<p>高扩展性，弹性，容错 </p>
+</li>
+<li><p>轻量级 </p>
+<p>无需专门的集群 </p>
+<p>一个库，而不是框架</p>
+</li>
+<li><p>完全集成 </p>
+<p>100%的Kafka 0.10.0版本兼容</p>
+<p>易于集成到现有的应用程序 </p>
+</li>
+<li><p>实时性</p>
+<p>毫秒级延迟 </p>
+<p>并非微批处理 </p>
+<p>窗口允许乱序数据 </p>
+<p>允许迟到数据</p>
+</li>
+</ul>
+<h2 id="为什么要有Kafka-Stream"><a href="#为什么要有Kafka-Stream" class="headerlink" title="为什么要有Kafka Stream"></a>为什么要有Kafka Stream</h2><p>当前已经有非常多的流式处理系统，最知名且应用最多的开源流式处理系统有Spark Streaming和Apache Storm。Apache Storm发展多年，应用广泛，提供记录级别的处理能力，当前也支持SQL on Stream。而Spark Streaming基于Apache Spark，可以非常方便与图计算，SQL处理等集成，功能强大，对于熟悉其它Spark应用开发的用户而言使用门槛低。另外，目前主流的Hadoop发行版，如Cloudera和Hortonworks，都集成了Apache Storm和Apache Spark，使得部署更容易。</p>
+<p>既然Apache Spark与Apache Storm拥用如此多的优势，那为何还需要Kafka Stream呢？主要有如下原因。</p>
+<p>第一，Spark和Storm都是流式处理框架，而Kafka Stream提供的是一个基于Kafka的流式处理类库。框架要求开发者按照特定的方式去开发逻辑部分，供框架调用。开发者很难了解框架的具体运行方式，从而使得调试成本高，并且使用受限。而Kafka Stream作为流式处理类库，直接提供具体的类给开发者调用，整个应用的运行方式主要由开发者控制，方便使用和调试。</p>
+<img src="/2019/01/17/java/Kafka/5.jpg" alt="5.jpg" title="">
+<p><img src="kafka/5.jpg" alt="5"></p>
+<p>第二，虽然Cloudera与Hortonworks方便了Storm和Spark的部署，但是这些框架的部署仍然相对复杂。而Kafka Stream作为类库，可以非常方便的嵌入应用程序中，它对应用的打包和部署基本没有任何要求。</p>
+<p>第三，就流式处理系统而言，基本都支持Kafka作为数据源。例如Storm具有专门的kafka-spout，而Spark也提供专门的spark-streaming-kafka模块。事实上，Kafka基本上是主流的流式处理系统的标准数据源。换言之，大部分流式系统中都已部署了Kafka，此时使用Kafka Stream的成本非常低。</p>
+<p>第四，使用Storm或Spark Streaming时，需要为框架本身的进程预留资源，如Storm的supervisor和Spark on YARN的node manager。即使对于应用实例而言，框架本身也会占用部分资源，如Spark Streaming需要为shuffle和storage预留内存。但是Kafka作为类库不占用系统资源。</p>
+<p>第五，由于Kafka本身提供数据持久化，因此Kafka Stream提供滚动部署和滚动升级以及重新计算的能力。</p>
+<p>第六，由于Kafka Consumer Rebalance机制，Kafka Stream可以在线动态调整并行度。</p>
 
       
     </div>
@@ -628,7 +797,7 @@
                 alt="COKID" />
             
               <p class="site-author-name" itemprop="name">COKID</p>
-              <p class="site-description motion-element" itemprop="description">任何事物都有两面性,不被表象疑惑</p>
+              <p class="site-description motion-element" itemprop="description">Enjoy Code&Life</p>
           </div>
 
           
@@ -806,7 +975,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#消息队列"><span class="nav-text">消息队列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka概述"><span class="nav-text">Kafka概述</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#消息队列"><span class="nav-text">消息队列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka概述"><span class="nav-text">Kafka概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kafka-安装与启动"><span class="nav-text">kafka 安装与启动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka生产"><span class="nav-text">Kafka生产</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#写入方式"><span class="nav-text">写入方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分区"><span class="nav-text">分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#副本"><span class="nav-text">副本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写入流程"><span class="nav-text">写入流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka消息保存"><span class="nav-text">Kafka消息保存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka消费"><span class="nav-text">Kafka消费</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka-API"><span class="nav-text">Kafka API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高级API"><span class="nav-text">高级API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#低级API"><span class="nav-text">低级API</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka-拦截器"><span class="nav-text">Kafka 拦截器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka-Stream"><span class="nav-text">Kafka Stream</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka-Streams特点"><span class="nav-text">Kafka Streams特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要有Kafka-Stream"><span class="nav-text">为什么要有Kafka Stream</span></a></li></ol></li></ol></div>
             
 
           </div>
