@@ -112,19 +112,19 @@
 
 
 
-  <meta name="description" content="一文收集java8,9,10,11新特性">
+  <meta name="description" content="一文收集java8——12新特性">
 <meta name="keywords" content="新特性">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java新特性">
 <meta property="og:url" content="/2018/12/25/java/java新特性/index.html">
 <meta property="og:site_name" content="COKID">
-<meta property="og:description" content="一文收集java8,9,10,11新特性">
+<meta property="og:description" content="一文收集java8——12新特性">
 <meta property="og:image" content="/2018/12/25/java/java新特性/java新特性/1.png">
 <meta property="og:image" content="/2018/12/25/java/java新特性/java新特性/2.png">
-<meta property="og:updated_time" content="2019-03-22T11:31:20.556Z">
+<meta property="og:updated_time" content="2019-09-23T10:29:03.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java新特性">
-<meta name="twitter:description" content="一文收集java8,9,10,11新特性">
+<meta name="twitter:description" content="一文收集java8——12新特性">
 <meta name="twitter:image" content="/2018/12/25/java/java新特性/java新特性/1.png">
 
 
@@ -408,7 +408,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-22 19:31:20" itemprop="dateModified" datetime="2019-03-22T19:31:20+08:00">2019-03-22</time>
+                <time title="修改时间：2019-09-23 18:29:03" itemprop="dateModified" datetime="2019-09-23T18:29:03+08:00">2019-09-23</time>
               
             
           </span>
@@ -480,7 +480,7 @@
       
 
       
-        <p>一文收集java8,9,10,11新特性</p>
+        <p>一文收集java8——12新特性</p>
 <a id="more"></a>
 <h1 id="Java8-新特性"><a href="#Java8-新特性" class="headerlink" title="Java8 新特性"></a>Java8 新特性</h1><h2 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h2><p>第一次知道这个表达式还是在Kotlin中了解的，去查的时候发现Java8已经被使用了。</p>
 <p>Lambda 是一个匿名函数，我们可以把 Lambda表达式理解为是一段可以传递的代码（将代码像数据一样进行传递）。可以写出更简洁、更灵活的代码。作为一种更紧凑的代码风格，使Java的语言表达能力得到了提升。</p>
@@ -937,9 +937,7 @@
 <h2 id="可中止的-G1-混合-GC"><a href="#可中止的-G1-混合-GC" class="headerlink" title="可中止的 G1 混合 GC"></a>可中止的 G1 混合 GC</h2><p>如果混合 GC 的 G1 存在超出暂停目标的可能性，则使其可中止。</p>
 <h2 id="G1-及时返回未使用的已分配内存"><a href="#G1-及时返回未使用的已分配内存" class="headerlink" title="G1 及时返回未使用的已分配内存"></a>G1 及时返回未使用的已分配内存</h2><p>增强 G1 GC，以便在空闲时自动将 Java 堆内存返回给操作系统。</p>
 <p>为了实现向操作系统返回最大内存量的目标，G1 将在应用程序不活动期间定期执行或触发并发周期以确定整体 Java 堆使用情况。这将导致它自动将 Java 堆的未使用部分返回给操作系统。而在用户控制下，可以可选地执行完整的 GC，以使返回的内存量最大化。</p>
-<h1 id="版本变化带来的坑"><a href="#版本变化带来的坑" class="headerlink" title="版本变化带来的坑"></a>版本变化带来的坑</h1><ul>
-<li>在 java 9中，应用程序和扩展类都不再是 java.net.URLClassLoader 的实例。Springboot如果是1.5.x的版本则不能再java9环境中启动，需要升级到2.0以上版本。</li>
-</ul>
+<h1 id="版本变化带来的坑"><a href="#版本变化带来的坑" class="headerlink" title="版本变化带来的坑"></a>版本变化带来的坑</h1><p>在 java 9中，应用程序和扩展类都不再是 java.net.URLClassLoader 的实例。Springboot如果是1.5.x的版本则不能再java9环境中启动，需要升级到2.0以上版本。</p>
 
       
     </div>
@@ -1096,7 +1094,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1131,7 +1129,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1214,7 +1214,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">35</span>
+                      
+                    
+                    <span class="site-state-item-count">36</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
