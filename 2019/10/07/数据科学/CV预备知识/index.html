@@ -119,7 +119,7 @@
 <meta property="og:url" content="/2019/10/07/数据科学/CV预备知识/index.html">
 <meta property="og:site_name" content="COKID">
 <meta property="og:description" content="CV预备知识">
-<meta property="og:updated_time" content="2019-10-26T12:55:10.967Z">
+<meta property="og:updated_time" content="2019-11-07T08:54:04.420Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CV预备知识">
 <meta name="twitter:description" content="CV预备知识">
@@ -405,7 +405,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-26 20:55:10" itemprop="dateModified" datetime="2019-10-26T20:55:10+08:00">2019-10-26</time>
+                <time title="修改时间：2019-11-07 16:54:04" itemprop="dateModified" datetime="2019-11-07T16:54:04+08:00">2019-11-07</time>
               
             
           </span>
@@ -461,17 +461,141 @@
       
         <p>CV预备知识</p>
 <a id="more"></a>
-<h1 id="初识CV"><a href="#初识CV" class="headerlink" title="初识CV"></a>初识CV</h1><p>1.当前CV领域主要包括两个大的方向，”低层次的感知” 和 “高层次的认知”。</p>
+<h1 id="CV基本知识"><a href="#CV基本知识" class="headerlink" title="CV基本知识"></a>CV基本知识</h1><p>1.当前CV领域主要包括两个大的方向，”低层次的感知” 和 “高层次的认知”。</p>
 <p>2.主要的应用领域：视频监控、人脸识别、医学图像分析、自动驾驶、 机器人、AR、VR</p>
 <p>3.主要的技术：分类、目标检测（识别)、分割、目标追踪、边缘检测、姿势评估、理解CNN、超分辨率重建、序列学习、特征检测与匹配、图像标定，视频标定、问答系统、图片生成（文本生成图像）、视觉关注性和显著性（质量评价）、人脸识别、3D重建、推荐系统、细粒度图像分析、图像压缩</p>
 <p><a href="https://zhuanlan.zhihu.com/p/31116104?refer=ahong007" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/31116104?refer=ahong007</a></p>
+<h2 id="研究方向"><a href="#研究方向" class="headerlink" title="研究方向"></a>研究方向</h2><p>图像分类CNN（卷积神经网络）</p>
+<p>图像检测R-CNN（区域卷积神经网络）</p>
+<p>图像分割FCN（全卷积神经网络）</p>
+<p>图像描述RNN（迭代神经网络）</p>
+<p>图像问答RNN（迭代神经网络）</p>
+<p>图像生成GAN（生成对抗网络）</p>
+<h2 id="基本算法"><a href="#基本算法" class="headerlink" title="基本算法"></a>基本算法</h2><p>LeNet5</p>
+<ul>
+<li><p>CNN</p>
+<ul>
+<li>CV基础网络</li>
+<li><p>AlexNet-&gt;VGG-&gt;GoogLeNet-&gt;ResNet-&gt;ResNeXt</p>
+</li>
+<li><p>GoogLeNet(Inception V1-&gt;V2-&gt;V3-&gt;V4-&gt;Inception ResNet V1-&gt;V2)</p>
+</li>
+</ul>
+</li>
+<li><p>R-CNN</p>
+<ul>
+<li>让基础网络具备区域输出能力</li>
+<li>R-CNN-&gt;SPP-Net-&gt;Fast/Faster R-CNN</li>
+<li>YOLO-&gt;SSD-&gt;R-FCN</li>
+</ul>
+</li>
+<li><p>FCN</p>
+<ul>
+<li>让基础网络做像素输出</li>
+<li>FCN-&gt;SegNet/DeconvNet-&gt;DeepLab</li>
+<li>语义推断，分割更精确</li>
+</ul>
+</li>
+<li><p>RNN</p>
+<ul>
+<li>具有记忆功能，构建不定长序列数据的模型</li>
+<li>Vanilla RNN-&gt;LSTM-&gt;GRU</li>
+<li>应用：文本序列，区域序列，视频序列</li>
+<li>研究：图片描述，问答，机器翻译</li>
+</ul>
+</li>
+<li><p>GAN</p>
+<ul>
+<li>网络结构<ul>
+<li>生成器网络（Generator）</li>
+<li>判别器网络（Discriminator）</li>
+</ul>
+</li>
+<li>网络路线<ul>
+<li>无监督：GAN-&gt;DCGAN-wGAN</li>
+<li>有监督：SRGAN，SalGAN，RLA</li>
+</ul>
+</li>
+<li>应用<ul>
+<li>样本数据分布（生成）学习</li>
+<li>半监督问题的数据增强</li>
+<li>有监督问题的优化(Dynamic loss)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>DNN</p>
+</li>
+</ul>
+<h2 id="开源框架"><a href="#开源框架" class="headerlink" title="开源框架"></a>开源框架</h2><p>OpenCV</p>
+<p>Caffe</p>
+<p>Theano</p>
+<p>PyTorch</p>
+<p>TensorFlow</p>
+<h2 id="图像基本知识"><a href="#图像基本知识" class="headerlink" title="图像基本知识"></a>图像基本知识</h2><h3 id="图像特征"><a href="#图像特征" class="headerlink" title="图像特征"></a>图像特征</h3><ul>
+<li>颜色特征<ul>
+<li>RGB，HSV，Lab</li>
+<li>直方图</li>
+</ul>
+</li>
+<li>几何特征<ul>
+<li>Edge，Corner，Blob</li>
+</ul>
+</li>
+<li>纹理特征<ul>
+<li>HOG，LBP，Gabor</li>
+</ul>
+</li>
+<li>局部特征<ul>
+<li>SIFT，SURF，FAST</li>
+</ul>
+</li>
+</ul>
+<h3 id="图像存储"><a href="#图像存储" class="headerlink" title="图像存储"></a>图像存储</h3><ul>
+<li><p>RGB空间</p>
+</li>
+<li><p>CMY(K)印刷四色</p>
+<ul>
+<li>Cyan通道</li>
+<li>Magenta通道</li>
+<li>Yellow通道</li>
+<li>Key通道</li>
+</ul>
+</li>
+<li>HSV/HSL(I)<ul>
+<li>基于人类视觉概念，画家配色</li>
+<li>Hue：色调——颜色种类</li>
+<li>Saturation：饱和度——颜色浓淡</li>
+<li>Value：明度——颜色明亮度</li>
+<li>Lightness（Intensity）：亮度，光照亮度</li>
+</ul>
+</li>
+<li>CIE-XYZ颜色空间<ul>
+<li>给予人类颜色视觉直接测定</li>
+<li>XYZ略对应于红绿蓝</li>
+</ul>
+</li>
+<li><p>CIE-Lab对色空间</p>
+<ul>
+<li>接近人类视觉，致力于感知均匀性</li>
+<li>L：亮度</li>
+<li>a：红/绿</li>
+<li>b：黄/蓝</li>
+</ul>
+</li>
+<li><p>单通道灰度图</p>
+<ul>
+<li>Gray=R*0.3+G*0.59+B*0.11</li>
+</ul>
+</li>
+</ul>
+<h1 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h1><p>NYUDv2</p>
+<p>手写数字数据集：MNIST</p>
+<p>GAN生成人脸：<a href="https://thispersondoesnotexist.com/" target="_blank" rel="external">https://thispersondoesnotexist.com/</a> </p>
 <h1 id="收藏文章"><a href="#收藏文章" class="headerlink" title="收藏文章"></a>收藏文章</h1><p>神经网络中的梯度下降与反向传播的关系</p>
 <p><a href="https://segmentfault.com/a/1190000019862084?utm_source=tag-newest" target="_blank" rel="external">https://segmentfault.com/a/1190000019862084?utm_source=tag-newest</a> </p>
 <p>神经网络—反向传播（手算）</p>
 <p> <a href="https://blog.csdn.net/qq_41004007/article/details/83153830" target="_blank" rel="external">https://blog.csdn.net/qq_41004007/article/details/83153830</a> </p>
-<h1 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h1><p>NYUDv2</p>
-<p>手写数字数据集：MNIST</p>
-<p>GAN生成人脸：<a href="https://thispersondoesnotexist.com/" target="_blank" rel="external">https://thispersondoesnotexist.com/</a> </p>
 <h1 id="术语解释"><a href="#术语解释" class="headerlink" title="术语解释"></a>术语解释</h1><p>SOTA(State of the Art)：当前最佳结果</p>
 <p>mIoU：平均交并比</p>
 <p>cdf(cumulative distribution function)：累积分布函数</p>
@@ -814,7 +938,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初识CV"><span class="nav-text">初识CV</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#收藏文章"><span class="nav-text">收藏文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据集"><span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#术语解释"><span class="nav-text">术语解释</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CV基本知识"><span class="nav-text">CV基本知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#研究方向"><span class="nav-text">研究方向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本算法"><span class="nav-text">基本算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开源框架"><span class="nav-text">开源框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像基本知识"><span class="nav-text">图像基本知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图像特征"><span class="nav-text">图像特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图像存储"><span class="nav-text">图像存储</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据集"><span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#收藏文章"><span class="nav-text">收藏文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#术语解释"><span class="nav-text">术语解释</span></a></li></ol></div>
             
 
           </div>
