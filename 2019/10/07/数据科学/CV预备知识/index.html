@@ -119,7 +119,7 @@
 <meta property="og:url" content="/2019/10/07/数据科学/CV预备知识/index.html">
 <meta property="og:site_name" content="COKID">
 <meta property="og:description" content="CV预备知识">
-<meta property="og:updated_time" content="2019-11-07T08:54:04.420Z">
+<meta property="og:updated_time" content="2019-11-14T05:03:38.261Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CV预备知识">
 <meta name="twitter:description" content="CV预备知识">
@@ -405,7 +405,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-11-07 16:54:04" itemprop="dateModified" datetime="2019-11-07T16:54:04+08:00">2019-11-07</time>
+                <time title="修改时间：2019-11-14 13:03:38" itemprop="dateModified" datetime="2019-11-14T13:03:38+08:00">2019-11-14</time>
               
             
           </span>
@@ -552,10 +552,8 @@
 </li>
 </ul>
 <h3 id="图像存储"><a href="#图像存储" class="headerlink" title="图像存储"></a>图像存储</h3><ul>
-<li><p>RGB空间</p>
-</li>
-<li><p>CMY(K)印刷四色</p>
-<ul>
+<li>RGB空间</li>
+<li>CMY(K)印刷四色<ul>
 <li>Cyan通道</li>
 <li>Magenta通道</li>
 <li>Yellow通道</li>
@@ -575,17 +573,24 @@
 <li>XYZ略对应于红绿蓝</li>
 </ul>
 </li>
-<li><p>CIE-Lab对色空间</p>
-<ul>
+<li>CIE-Lab对色空间<ul>
 <li>接近人类视觉，致力于感知均匀性</li>
 <li>L：亮度</li>
 <li>a：红/绿</li>
 <li>b：黄/蓝</li>
 </ul>
 </li>
-<li><p>单通道灰度图</p>
-<ul>
+<li>单通道灰度图<ul>
 <li>Gray=R*0.3+G*0.59+B*0.11</li>
+</ul>
+</li>
+<li>YUV<ul>
+<li>Y明亮度</li>
+<li>U与V存储色度(色讯;chrominance;color) </li>
+</ul>
+</li>
+<li>YUV4MPEG2(Y4M)<ul>
+<li>YUV4MPEG2 是一种简单的文件格式，它被设计用来保存原始的YCbCr（如 YCbCr 4:2:0, YCbCr 4:2:2, YCbCr 4:4:4等）数据。YUV的来源就来源于色彩空间YCbCr（常用于数字媒体中的彩色编码），YUV常在模拟PAL制传输时，应用在电视和视频录像带中。 </li>
 </ul>
 </li>
 </ul>
@@ -607,6 +612,30 @@
 <p> <strong>mean normalization</strong> ：均值归一化</p>
 <p> <strong>feature scaling</strong>  ：特征缩放</p>
 <p>normal equation ：正规方程</p>
+<h1 id="SR-Super-Resolution-算法"><a href="#SR-Super-Resolution-算法" class="headerlink" title="SR(Super-Resolution)算法"></a>SR(Super-Resolution)算法</h1><ul>
+<li>SRCNN：第一个超分辨率的神经网络模型</li>
+<li><p>DBNP：<a href="https://github.com/alterzero/DBPN-Pytorch；有代码，有模型，eccv" target="_blank" rel="external">https://github.com/alterzero/DBPN-Pytorch；有代码，有模型，eccv</a> workshop冠军，这个网络效果的确无敌，奈何电脑渣渣，跑不了。 </p>
+</li>
+<li><p>RDN：<a href="https://github.com/MingtaoGuo/Residual-Dense-Network-Trained-with-cGAN-for-Super-Resolution" target="_blank" rel="external">https://github.com/MingtaoGuo/Residual-Dense-Network-Trained-with-cGAN-for-Super-Resolution</a> </p>
+<p>变种<a href="https://github.com/958099161/Super_resolution" target="_blank" rel="external">https://github.com/958099161/Super_resolution</a> </p>
+</li>
+<li><p>ESPCN： 这个模型是基于小图进行训练。最后提取了 r² 个 Channel 。通过将一个像素扩充为一个3x3的矩阵，模拟为一个像素的矩阵，来达到超分辨率的效果。</p>
+</li>
+<li><p>VDSR： 它认为原始的低分辨率图片与高分辨率图片之间，低频分量几乎一样，缺失的是高频分量，即图片细节。那么训练的时候，只需要针对高频分量进行训练就行了 </p>
+</li>
+<li><p>DRCN： 它还是分为三层。但是在非线性映射这一层，它使用了一个递归网络，也就是说，数据循环多次地通过该层。将这个循环展开的话，等效于使用同一组参数的多个串联的卷积层。 </p>
+</li>
+<li><p>RED：每一个卷积层都对应一个非卷积层。简单来讲，可以理解为是将一张图片进行了编码，然后紧接着进行解码。它的优势在于解决了梯度消失的问题，而且能恢复出更干净的图片。它和 VDSR 有相似的思路。中间卷积层与反卷积层的训练是针对原始图片与目标图片的残差。最后原图会与训练输出结果相加，得到高分辨率的图片。</p>
+</li>
+<li><p>DRRN： 它采用了更深的网络结构来提升性能。其中有很多个图片增强层。可以理解为，一张模糊的图片，经过多个增强层，一级级变得更加清晰，最终得出高清图片。</p>
+</li>
+<li><p>LapSRN：特别之处在于引入了一个分级的网络。每一级都只对原图放大两倍，然后加上残差获得一个结果。如果对图片放大8倍的话，这样处理的性能会更高。同时，在每一级处理时，都可以得到一个输出结果。</p>
+</li>
+<li><p>SRDenseNet：它引入了一个 Desent Block 的结构。上一层网络训练出的特征值会传递到下一层网络，所有特征串联起来。这样做的好处是减轻梯度消失问题、减少参数数量。而且，后面的层可以复用之前训练得出的特征值，不需要重复训练。</p>
+</li>
+<li><p>SRGAN：利用感知损失(perceptual loss)和对抗损失(adversarial loss)来提升恢复出的图片的质量。在这个模型中有两个网络，一个是生成网络，另一个是判别网路，前者会生成高分辨率图片，后者则会判断这张图是否是原图，如果结果为“否”，那么前者会再次进行训练、生成，直到可以骗过判别网络。</p>
+</li>
+</ul>
 
       
     </div>
@@ -684,8 +713,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2023/09/23/研究生生活记录/" rel="prev" title="研究生生活记录">
-                研究生生活记录 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/11/16/安装经验/各种安装坑/" rel="prev" title="各种安装坑">
+                各种安装坑 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -763,7 +792,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">31</span>
+                    <span class="site-state-item-count">32</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -800,7 +829,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">12</span>
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -938,7 +969,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CV基本知识"><span class="nav-text">CV基本知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#研究方向"><span class="nav-text">研究方向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本算法"><span class="nav-text">基本算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开源框架"><span class="nav-text">开源框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像基本知识"><span class="nav-text">图像基本知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图像特征"><span class="nav-text">图像特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图像存储"><span class="nav-text">图像存储</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据集"><span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#收藏文章"><span class="nav-text">收藏文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#术语解释"><span class="nav-text">术语解释</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CV基本知识"><span class="nav-text">CV基本知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#研究方向"><span class="nav-text">研究方向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本算法"><span class="nav-text">基本算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开源框架"><span class="nav-text">开源框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像基本知识"><span class="nav-text">图像基本知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图像特征"><span class="nav-text">图像特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图像存储"><span class="nav-text">图像存储</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据集"><span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#收藏文章"><span class="nav-text">收藏文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#术语解释"><span class="nav-text">术语解释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SR-Super-Resolution-算法"><span class="nav-text">SR(Super-Resolution)算法</span></a></li></ol></div>
             
 
           </div>
