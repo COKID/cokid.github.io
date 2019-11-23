@@ -118,7 +118,7 @@
 <meta property="og:url" content="/2019/11/16/安装经验/各种安装坑/index.html">
 <meta property="og:site_name" content="COKID">
 <meta property="og:description" content="记录安装环境的时候遇到的各种坑">
-<meta property="og:updated_time" content="2019-11-16T00:37:22.000Z">
+<meta property="og:updated_time" content="2019-11-21T06:36:54.769Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="各种安装坑">
 <meta name="twitter:description" content="记录安装环境的时候遇到的各种坑">
@@ -387,12 +387,24 @@
                 
               
 
-              <time title="创建时间：2019-11-16 08:26:50 / 修改时间：08:37:22" itemprop="dateCreated datePublished" datetime="2019-11-16T08:26:50+08:00">2019-11-16</time>
+              <time title="创建时间：2019-11-16 08:26:50" itemprop="dateCreated datePublished" datetime="2019-11-16T08:26:50+08:00">2019-11-16</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-21 14:36:54" itemprop="dateModified" datetime="2019-11-21T14:36:54+08:00">2019-11-21</time>
               
             
           </span>
@@ -466,28 +478,53 @@
       
         <p>记录安装环境的时候遇到的各种坑</p>
 <a id="more"></a>
-<h1 id="CUDA10-1和TensorFlow2-0"><a href="#CUDA10-1和TensorFlow2-0" class="headerlink" title="CUDA10.1和TensorFlow2.0"></a>CUDA10.1和TensorFlow2.0</h1><ul>
-<li><p>软件环境版本</p>
+<h1 id="TensorFlow-amp-Pytorch安装经验"><a href="#TensorFlow-amp-Pytorch安装经验" class="headerlink" title="TensorFlow&amp;Pytorch安装经验"></a>TensorFlow&amp;Pytorch安装经验</h1><p>写在前面：</p>
+<p>一定要版本对应！！！</p>
+<p>不要安最新版</p>
+<p>看官方文档</p>
 <ul>
-<li>Python：Anaconda Python3.7.1</li>
-<li>CUDA：cuda_10.1.243_426.00_win10</li>
-<li>CUDNN：cudnn-10.1-windows10-x64-v7.6.5.32</li>
-<li>Tensorflow： tensorflow -gpu 2.0</li>
+<li>python<ul>
+<li>version：3.7.4（Anaconda） </li>
 </ul>
 </li>
-<li><p>问题</p>
-<p>import tensorflow as tf 报错：找不到cudart64_100.dll</p>
-</li>
-<li><p>解决</p>
-<ul>
-<li>找到CUDA安装路径</li>
-<li>进入bin文件夹</li>
-<li>找到cudart64_101.dll复制一份并改名为cudart64_100.dll</li>
-<li>重新import tensorflow正常</li>
+<li>VS2017<ul>
+<li>CUDA建议先安装VS，可能没有也没关系，以防万一安上，不用选组件安装基本的就可以</li>
 </ul>
 </li>
-<li><p>总结</p>
-<p>以后出现找不到文件问题，进入bin目录找到类似文件复制改名即可</p>
+<li>CUDA<ul>
+<li>version：cuda_10.0.130_411.31_win10</li>
+<li>不要安装10.1(因为tensorflow&gt;=1.13支持到10.0)</li>
+</ul>
+</li>
+<li>CUDNN<ul>
+<li>version：cudnn-10.0-windows10-x64-v7.4.2.24</li>
+<li>和CUDA版本对应</li>
+<li>安装7.4.1版本往上的，因为tensorflow支持7.4.1往上的，可以大一点版本但不要太多，保险</li>
+</ul>
+</li>
+</ul>
+<p><em>参考 <a href="https://blog.csdn.net/CSUWoOd/article/details/92803061" target="_blank" rel="external">https://blog.csdn.net/CSUWoOd/article/details/92803061</a></em> </p>
+<ul>
+<li><p>Tensorflow</p>
+<ul>
+<li>version：gpu版 2.0.0</li>
+</ul>
+</li>
+<li><p>Pytorch</p>
+<ul>
+<li>version：pytorch-1.2.0-py3.7_cuda100_cudnn7_1.tar.bz2</li>
+<li>一定要找好自己的python版本和CUDA版本，建议自己去清华镜像网站单独下本地安装（ <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/win-64/" target="_blank" rel="external">https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/win-64/</a> ）</li>
+</ul>
+</li>
+<li>torchvision<ul>
+<li>version：torchvision-0.4.0-py37_cu100.tar.bz2</li>
+<li>也是python和cuda版本对应，建议也是单独下载本地安装</li>
+</ul>
+</li>
+<li>cudatoolkit<ul>
+<li>version：10.0</li>
+<li>conda install cudatoolkit=10.0</li>
+</ul>
 </li>
 </ul>
 
@@ -821,7 +858,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CUDA10-1和TensorFlow2-0"><span class="nav-text">CUDA10.1和TensorFlow2.0</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorFlow-amp-Pytorch安装经验"><span class="nav-text">TensorFlow&Pytorch安装经验</span></a></li></ol></div>
             
 
           </div>
