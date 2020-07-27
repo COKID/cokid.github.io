@@ -112,17 +112,17 @@
 
 
 
-  <meta name="description" content="安装ssr 1wget -N --no-check-certificate https://makeai.cn/bash/ssrmu.sh &amp;amp;&amp;amp; chmod +x ssrmu.sh &amp;amp;&amp;amp; bash ssrmu.sh 切换内核（为了锐速） wget -N —no-check-certificate https://freed.ga/kernel/ruisu.sh  &amp;">
+  <meta name="description" content="ssr脚本命令">
 <meta name="keywords" content="SSR">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSR安装">
 <meta property="og:url" content="/2018/05/15/安装经验/SSR安装/index.html">
 <meta property="og:site_name" content="COKID">
-<meta property="og:description" content="安装ssr 1wget -N --no-check-certificate https://makeai.cn/bash/ssrmu.sh &amp;amp;&amp;amp; chmod +x ssrmu.sh &amp;amp;&amp;amp; bash ssrmu.sh 切换内核（为了锐速） wget -N —no-check-certificate https://freed.ga/kernel/ruisu.sh  &amp;">
-<meta property="og:updated_time" content="2019-04-24T04:38:32.000Z">
+<meta property="og:description" content="ssr脚本命令">
+<meta property="og:updated_time" content="2019-12-31T06:16:37.232Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSR安装">
-<meta name="twitter:description" content="安装ssr 1wget -N --no-check-certificate https://makeai.cn/bash/ssrmu.sh &amp;amp;&amp;amp; chmod +x ssrmu.sh &amp;amp;&amp;amp; bash ssrmu.sh 切换内核（为了锐速） wget -N —no-check-certificate https://freed.ga/kernel/ruisu.sh  &amp;">
+<meta name="twitter:description" content="ssr脚本命令">
 
 
 
@@ -405,7 +405,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-24 12:38:32" itemprop="dateModified" datetime="2019-04-24T12:38:32+08:00">2019-04-24</time>
+                <time title="修改时间：2019-12-31 14:16:37" itemprop="dateModified" datetime="2019-12-31T14:16:37+08:00">2019-12-31</time>
               
             
           </span>
@@ -477,13 +477,27 @@
       
 
       
-        <p>安装ssr</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -N --no-check-certificate https://makeai.cn/bash/ssrmu.sh &amp;&amp; chmod +x ssrmu.sh &amp;&amp; bash ssrmu.sh</div></pre></td></tr></table></figure>
+        <p>ssr脚本命令</p>
+<a id="more"></a>
+<p>安装ssr</p>
+<p>wget -N —no-check-certificate <a href="https://makeai.cn/bash/ssrmu.sh" target="_blank" rel="external">https://makeai.cn/bash/ssrmu.sh</a> &amp;&amp; chmod +x ssrmu.sh &amp;&amp; bash ssrmu.sh</p>
 <p>切换内核（为了锐速）</p>
 <p>wget -N —no-check-certificate <a href="https://freed.ga/kernel/ruisu.sh" target="_blank" rel="external">https://freed.ga/kernel/ruisu.sh</a>  &amp;&amp;  bash ruisu.sh</p>
 <p>安装锐速</p>
 <p>wget -N —no-check-certificate <a href="https://github.com/91yun/serverspeeder/raw/master/serverspeeder.sh" target="_blank" rel="external">https://github.com/91yun/serverspeeder/raw/master/serverspeeder.sh</a> &amp;&amp; bash serverspeeder.sh</p>
+<h1 id="Vultrl"><a href="#Vultrl" class="headerlink" title="Vultrl"></a>Vultrl</h1><p>上面都不用一段命令搞定（Centos7）</p>
+<p>wget —no-check-certificate -O shadowsocks-all.sh <a href="https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh" target="_blank" rel="external">https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh</a>  &amp;&amp; chmod +x shadowsocks-all.sh &amp;&amp; ./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</p>
+<h1 id="DigitalOcean（Centos7）"><a href="#DigitalOcean（Centos7）" class="headerlink" title="DigitalOcean（Centos7）"></a>DigitalOcean（Centos7）</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install wget</div></pre></td></tr></table></figure>
+<p>安装ssr（centos）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh &amp;&amp; chmod +x ssr.sh &amp;&amp; bash ssr.sh</div><div class="line"></div><div class="line">参考：https://blog.ooolg.com/index.php/20181125/131=131.html</div><div class="line">https://www.hostwinds.top/120.html</div></pre></td></tr></table></figure>
+<p>chacha20支持（ubuntu）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">apt-get install build-essential</div><div class="line"></div><div class="line">wget https://github.com/jedisct1/libsodium/releases/download/1.0.10/libsodium-1.0.10.tar.gz</div><div class="line"></div><div class="line">tar xf libsodium-1.0.10.tar.gz &amp;&amp; cd libsodium-1.0.10</div><div class="line"></div><div class="line">./configure &amp;&amp; make -j2 &amp;&amp; make install</div><div class="line"></div><div class="line">ldconfig</div></pre></td></tr></table></figure>
+<p>chacha20(centos)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yum install epel-release -y</div><div class="line">yum install libsodium -y</div></pre></td></tr></table></figure>
+<p>锐速（centos）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">wget --no-check-certificate -O rskernel.sh https://raw.githubusercontent.com/uxh/shadowsocks_bash/master/rskernel.sh &amp;&amp; bash rskernel.sh</div><div class="line"></div><div class="line">yum install net-tools -y &amp;&amp; wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh &amp;&amp; bash appex.sh install</div><div class="line"></div><div class="line">参考https://www.vultrcn.com/7.html</div></pre></td></tr></table></figure>
 <p> I  P        : xx.xx.xx.xx<br> 加密        : chacha20-ietf<br> 协议        : auth_sha1_v4<br> 混淆        : http_post</p>
+<p>wget xiaofd.github.io/ruisu.sh &amp;&amp; bash ruisu.sh</p>
 
       
     </div>
@@ -611,8 +625,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -631,7 +654,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-count">52</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -805,6 +828,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vultrl"><span class="nav-text">Vultrl</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DigitalOcean（Centos7）"><span class="nav-text">DigitalOcean（Centos7）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -825,7 +864,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
