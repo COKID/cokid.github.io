@@ -112,16 +112,16 @@
 
 
 
-  <meta name="description" content="记录安装环境的时候遇到的各种坑 Pytorch 训练加速技巧">
+  <meta name="description" content="Pytorch 使用技巧">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pytorch加速小技巧">
+<meta property="og:title" content="Pytorch使用经验">
 <meta property="og:url" content="/2019/11/16/安装经验/Pytorch加速小技巧/index.html">
 <meta property="og:site_name" content="COKID">
-<meta property="og:description" content="记录安装环境的时候遇到的各种坑 Pytorch 训练加速技巧">
-<meta property="og:updated_time" content="2020-07-18T11:14:15.189Z">
+<meta property="og:description" content="Pytorch 使用技巧">
+<meta property="og:updated_time" content="2020-08-13T03:05:57.588Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pytorch加速小技巧">
-<meta name="twitter:description" content="记录安装环境的时候遇到的各种坑 Pytorch 训练加速技巧">
+<meta name="twitter:title" content="Pytorch使用经验">
+<meta name="twitter:description" content="Pytorch 使用技巧">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>Pytorch加速小技巧 | COKID</title>
+  <title>Pytorch使用经验 | COKID</title>
   
 
 
@@ -362,7 +362,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Pytorch加速小技巧
+          <h1 class="post-title" itemprop="name headline">Pytorch使用经验
               
             
           </h1>
@@ -404,7 +404,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-07-18 19:14:15" itemprop="dateModified" datetime="2020-07-18T19:14:15+08:00">2020-07-18</time>
+                <time title="修改时间：2020-08-13 11:05:57" itemprop="dateModified" datetime="2020-08-13T11:05:57+08:00">2020-08-13</time>
               
             
           </span>
@@ -445,7 +445,7 @@
 
           
           
-             <span id="/2019/11/16/安装经验/Pytorch加速小技巧/" class="leancloud_visitors" data-flag-title="Pytorch加速小技巧">
+             <span id="/2019/11/16/安装经验/Pytorch加速小技巧/" class="leancloud_visitors" data-flag-title="Pytorch使用经验">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -476,20 +476,25 @@
       
 
       
-        <p>记录安装环境的时候遇到的各种坑</p>
-<p>Pytorch 训练加速技巧</p>
+        <p>Pytorch 使用技巧</p>
 <a id="more"></a>
-<ul>
-<li>安装CUDNN</li>
+<h1 id="pytorch-加速技巧"><a href="#pytorch-加速技巧" class="headerlink" title="pytorch 加速技巧"></a>pytorch 加速技巧</h1><ul>
+<li>安装 CUDNN</li>
 <li>cudnn.benchmark = True</li>
-<li>梯度累计扩大batchSize</li>
+<li>梯度累计扩大 batchSize</li>
 <li>DataLoader( num_workers=10086, pin_memory=True, batch_size=opt.batchSize)<ul>
 <li>扩大读取线程</li>
-<li>设置pin_memory=True</li>
-<li>大batchSize</li>
+<li>设置 pin_memory=True</li>
+<li>大 batchSize</li>
 </ul>
 </li>
 </ul>
+<h1 id="pytorch-坑"><a href="#pytorch-坑" class="headerlink" title="pytorch 坑"></a>pytorch 坑</h1><p>解决：RuntimeError: invalid argument 0: Sizes of tensors must match except in dimension 0. Got 544 and 1935 in dimension 2 at ../aten/src/TH/generic/THTensor.cpp:711</p>
+<p>这种错误有两种可能：</p>
+<p>　　1.你输入的图像数据的维度不完全是一样的，比如是训练的数据有 100 组，其中 99 组是 256<em>256，但有一组是 384</em>384，这样会导致 Pytorch 的检查程序报错<br>　　2.比较隐晦的 batchsize 的问题，Pytorch 中检查你训练维度正确是按照每个 batchsize 的维度来检查的，比如你有 1000 组数据（假设每组数据为三通道 256px<em>256px 的图像），batchsize 为 4，那么每次训练则提取(4,3,256,256)维度的张量来训练，刚好 250 个 epoch 解决(250</em>4=1000)。但是如果你有 999 组数据，你继续使用 batchsize 为 4 的话，这样 999 和 4 并不能整除，你在训练前 249 组时的张量维度都为(4,3,256,256)但是最后一个批次的维度为(3,3,256,256)，Pytorch 检查到(4,3,256,256) != (3,3,256,256)，维度不匹配，自然就会报错了，这可以称为一个小 bug。</p>
+<p>解决办法：</p>
+<p>　　对于第一种：整理一下你的数据集保证每个图像的维度和通道数都一直即可。</p>
+<p>　　对于第二种：挑选一个可以被数据集个数整除的 batchsize 或者直接把 batchsize 设置为 1 即可。</p>
 
       
     </div>
@@ -551,8 +556,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/16/安装经验/各种安装坑/" rel="next" title="各种安装坑">
-                <i class="fa fa-chevron-left"></i> 各种安装坑
+              <a href="/2019/10/07/论文总结/CV预备知识/" rel="next" title="CV预备知识">
+                <i class="fa fa-chevron-left"></i> CV预备知识
               </a>
             
           </div>
@@ -561,8 +566,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/11/17/论文总结/SRCNN/" rel="prev" title="SRCNN">
-                SRCNN <i class="fa fa-chevron-right"></i>
+              <a href="/2019/11/16/安装经验/各种安装坑/" rel="prev" title="各种安装坑">
+                各种安装坑 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -611,8 +616,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -804,6 +818,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch-加速技巧"><span class="nav-text">pytorch 加速技巧</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch-坑"><span class="nav-text">pytorch 坑</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
