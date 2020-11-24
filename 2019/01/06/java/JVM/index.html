@@ -15,10 +15,10 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -36,8 +36,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -60,9 +60,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
@@ -119,6 +119,7 @@
 <meta property="og:url" content="/2019/01/06/java/JVM/index.html">
 <meta property="og:site_name" content="COKID">
 <meta property="og:description" content="JAVA语言和JVM相对独立，JVM主要定义二进制class文件和JVM指令集等 Java语言规范 定义：语法，变量，类型，文法 JVM规范 定义：Class文件类型，运行时数据，帧栈，虚拟机的启动，虚拟机的指令集 本文介绍JVM基本概念，Java内存模型，GC，以及类的加载相关机制。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="/2019/01/06/java/JVM/1-1.png">
 <meta property="og:image" content="/2019/01/06/java/JVM/JVM/1-1.png">
 <meta property="og:image" content="/2019/01/06/java/JVM/1-2.png">
@@ -137,6 +138,7 @@
 <meta property="og:image" content="/2019/01/06/java/JVM/JVM/2-5.png">
 <meta property="og:image" content="/2019/01/06/java/JVM/2-6.png">
 <meta property="og:image" content="/2019/01/06/java/JVM/JVM/2-6.png">
+<meta property="og:image" content="/2019/01/06/java/JVM/3-1.png">
 <meta property="og:image" content="/jvm/3-1.png">
 <meta property="og:updated_time" content="2019-01-11T03:28:14.000Z">
 <meta name="twitter:card" content="summary">
@@ -149,7 +151,7 @@
 
 
 
-  <link rel="canonical" href="/2019/01/06/java/JVM/"/>
+  <link rel="canonical" href="/2019/01/06/java/JVM/">
 
 
 
@@ -198,11 +200,11 @@
 </noscript>
 
   <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
   <script src="/live2d-widget/autoload.js"></script>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -212,7 +214,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -252,7 +254,7 @@
           
           <li class="menu-item menu-item-home">
     <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
   </li>
         
         
@@ -260,7 +262,7 @@
           
           <li class="menu-item menu-item-about">
     <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
   </li>
         
         
@@ -268,7 +270,7 @@
           
           <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
   </li>
         
         
@@ -276,7 +278,7 @@
           
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
   </li>
         
         
@@ -284,7 +286,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
   </li>
 
       
@@ -294,7 +296,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
         </li>
       
     </ul>
@@ -314,9 +316,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -361,20 +361,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="/2019/01/06/java/JVM/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="COKID">
       <meta itemprop="description" content="Enjoy Code&Life">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="COKID">
     </span>
 
@@ -431,7 +431,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -442,7 +442,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
 
                 
                 
@@ -502,9 +502,9 @@
 <p><strong>JVM规范</strong> 定义：Class文件类型，运行时数据，帧栈，虚拟机的启动，虚拟机的指令集</p>
 <p>本文介绍JVM基本概念，Java内存模型，GC，以及类的加载相关机制。</p>
 <a id="more"></a>
-<h1 id="JVM基本概念"><a href="#JVM基本概念" class="headerlink" title="JVM基本概念"></a>JVM基本概念</h1><h3 id="JVM启动流程"><a href="#JVM启动流程" class="headerlink" title="JVM启动流程"></a>JVM启动流程</h3><img src="/2019/01/06/java/JVM/1-1.png" alt="1-1.png" title="">
+<h1 id="JVM基本概念"><a href="#JVM基本概念" class="headerlink" title="JVM基本概念"></a>JVM基本概念</h1><h3 id="JVM启动流程"><a href="#JVM启动流程" class="headerlink" title="JVM启动流程"></a>JVM启动流程</h3><img src="/2019/01/06/java/JVM/1-1.png">
 <p><img src="JVM/1-1.png" alt=""></p>
-<h3 id="JVM基本结构"><a href="#JVM基本结构" class="headerlink" title="JVM基本结构"></a>JVM基本结构</h3><img src="/2019/01/06/java/JVM/1-2.png" alt="1-2.png" title="">
+<h3 id="JVM基本结构"><a href="#JVM基本结构" class="headerlink" title="JVM基本结构"></a>JVM基本结构</h3><img src="/2019/01/06/java/JVM/1-2.png">
 <p><img src="JVM/1-2.png" alt=""></p>
 <ul>
 <li><p>PC寄存器：</p>
@@ -547,8 +547,8 @@
 </ul>
 </li>
 </ul>
-<h3 id="JVM的进化"><a href="#JVM的进化" class="headerlink" title="JVM的进化"></a>JVM的进化</h3><p>参考<a href="http://openjdk.java.net/jeps/122" target="_blank" rel="external">http://openjdk.java.net/jeps/122</a></p>
-<img src="/2019/01/06/java/JVM/1-3.png" alt="1-3.png" title="">
+<h3 id="JVM的进化"><a href="#JVM的进化" class="headerlink" title="JVM的进化"></a>JVM的进化</h3><p>参考<a href="http://openjdk.java.net/jeps/122" target="_blank" rel="noopener">http://openjdk.java.net/jeps/122</a></p>
+<img src="/2019/01/06/java/JVM/1-3.png">
 <p><img src="JVM/1-3.png" alt=""></p>
 <h3 id="JVM内存溢出"><a href="#JVM内存溢出" class="headerlink" title="JVM内存溢出"></a>JVM内存溢出</h3><h5 id="Java堆溢出"><a href="#Java堆溢出" class="headerlink" title="Java堆溢出"></a>Java堆溢出</h5><p>java堆用于存储对象实例，只要不断创建对象，并且保证GC Roots到对象直接有可达的路径来避免垃圾回收机制清除这些对象，那么在对象数量达到最大堆的容量限制后就会产生内存异常。</p>
 <p>通过参数<code>-XX :+HeapDumpOnOutOfMemoryError</code>可以让虚拟机在出现内存异常时Dump出当前的堆内存转存储快照以便事后进行分析。</p>
@@ -566,7 +566,7 @@
 <li>-X: 非标准VM选项，不保证所有VM支持</li>
 <li>-XX: 高级选项，高级特性，但属于不稳定的选项</li>
 </ul>
-<p>参见 <a href="https://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html#Options" target="_blank" rel="external">Java HotSpot VM Options</a></p>
+<p>参见 <a href="https://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html#Options" target="_blank" rel="noopener">Java HotSpot VM Options</a></p>
 <p>题主提到的参数前缀为X，显然属于第二类</p>
 <p>再说这几个参数，其语义分别是：</p>
 <ul>
@@ -591,7 +591,7 @@
 <p>-Xmx –Xms –指定最大堆和最小堆。例：-Xmx20m -Xms5m；Java会尽可能维持在最小堆</p>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">System.out.print(<span class="string">"Xmx="</span>);<span class="comment">//最大空间</span></div><div class="line"></div><div class="line">System.out.println(Runtime.getRuntime().maxMemory()/<span class="number">1024.0</span>/<span class="number">1024</span>+<span class="string">"M"</span>);</div><div class="line"></div><div class="line"></div><div class="line">System.out.print(<span class="string">"free mem="</span>);<span class="comment">//可用空间</span></div><div class="line"></div><div class="line">System.out.println(Runtime.getRuntime().freeMemory()/<span class="number">1024.0</span>/<span class="number">1024</span>+<span class="string">"M"</span>);</div><div class="line"></div><div class="line"></div><div class="line">System.out.print(<span class="string">"total mem="</span>);<span class="comment">//总的空间</span></div><div class="line"></div><div class="line">System.out.println(Runtime.getRuntime().totalMemory()/<span class="number">1024.0</span>/<span class="number">1024</span>+<span class="string">"M"</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">System.out.print(<span class="string">"Xmx="</span>);<span class="comment">//最大空间</span></span><br><span class="line"></span><br><span class="line">System.out.println(Runtime.getRuntime().maxMemory()/<span class="number">1024.0</span>/<span class="number">1024</span>+<span class="string">"M"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">System.out.print(<span class="string">"free mem="</span>);<span class="comment">//可用空间</span></span><br><span class="line"></span><br><span class="line">System.out.println(Runtime.getRuntime().freeMemory()/<span class="number">1024.0</span>/<span class="number">1024</span>+<span class="string">"M"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">System.out.print(<span class="string">"total mem="</span>);<span class="comment">//总的空间</span></span><br><span class="line"></span><br><span class="line">System.out.println(Runtime.getRuntime().totalMemory()/<span class="number">1024.0</span>/<span class="number">1024</span>+<span class="string">"M"</span>);</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>堆的分配参数  (官方推荐新生代占堆的3/8，幸存代占新生代的1/10)</p>
 <ul>
@@ -694,11 +694,11 @@
 </li>
 <li><p>实现原理：</p>
 <p>引用计数器的实现很简单，对于一个对象A，只要有任何一个对象引用了A，则A的引用计数器就加1，当引用失效时，引用计数器就减1。只要对象A的引用计数器的值为0，则对象A就不可能再被使用。</p>
-<img src="/2019/01/06/java/JVM/2-1.png" alt="2-1.png" title="">
+<img src="/2019/01/06/java/JVM/2-1.png">
 <p><img src="JVM/2-1.png" alt=""></p>
 </li>
 <li><p>问题：引用和去引用伴随加法和减法，影响性能；很难处理循环引用；</p>
-<img src="/2019/01/06/java/JVM/2-2.png" alt="2-2.png" title="">
+<img src="/2019/01/06/java/JVM/2-2.png">
 <p><img src="JVM/2-2.png" alt=""></p>
 </li>
 </ul>
@@ -707,7 +707,7 @@
 </li>
 <li><p>实现原理：</p>
 <p>标记-清除算法将垃圾回收分为两个阶段：标记阶段和清除阶段。一种可行的实现是，在标记阶段，首先通过根节点，标记所有从根节点开始的可达对象。因此，未被标记的对象就是未被引用的垃圾对象。然后，在清除阶段，清除所有未被标记的对象。</p>
-<img src="/2019/01/06/java/JVM/2-3.png" alt="2-3.png" title="">
+<img src="/2019/01/06/java/JVM/2-3.png">
 </li>
 </ul>
 <p><img src="JVM/2-3.png" alt=""></p>
@@ -719,14 +719,14 @@
 <p>标记-压缩算法适合用于存活对象较多的场合，如老年代。它在标记-清除算法的基础上做了一些优化。和标记-清除算法一样，标记-压缩算法也首先需要从根节点开始，对所有可达对象做一次标记。但之后，它并不简单的清理未标记的对象，而是将所有的存活对象<strong>压缩到内存的一端</strong>。之后，清理边界外所有的空间。</p>
 </li>
 </ul>
-<img src="/2019/01/06/java/JVM/2-4.png" alt="2-4.png" title="">
+<img src="/2019/01/06/java/JVM/2-4.png">
 <p><img src="JVM/2-4.png" alt=""></p>
 <h3 id="复制算法"><a href="#复制算法" class="headerlink" title="复制算法"></a>复制算法</h3><ul>
 <li><p>实现原理：</p>
 <p>将原有的内存空间分为两块，每次只使用其中一块，在垃圾回收时，将正在使用的内存中的存活对象复制到未使用的内存块中，之后，清除正在使用的内存块中的所有对象，交换两个内存的角色，完成垃圾回收。不适用于存活对象较多的场合 如老年代</p>
 </li>
 </ul>
-<img src="/2019/01/06/java/JVM/2-5.png" alt="2-5.png" title="">
+<img src="/2019/01/06/java/JVM/2-5.png">
 <p><img src="JVM/2-5.png" alt=""></p>
 <ul>
 <li><p>问题：空间浪费 整合标记清理思想</p>
@@ -740,7 +740,7 @@
 <li>然后清除掉Eden和原来Survivor区域</li>
 </ul>
 <p><em>HotSpot虚拟机默认Eden和Survivor为8:1，也就是说每次整个新生代有90%的空间可以利用</em></p>
-<img src="/2019/01/06/java/JVM/2-6.png" alt="2-6.png" title="">
+<img src="/2019/01/06/java/JVM/2-6.png">
 <p><img src="JVM/2-6.png" alt=""></p>
 <p>​</p>
 </li>
@@ -783,7 +783,7 @@
 <li>如果没必要执行finalize()（对象没有覆盖finalize方法，或者该方法已经被调用过），将会被等待回收，否则如果成功重新连接到引用链上，那么对象将会重新复活</li>
 </ul>
 <p><em>系统只会调用一次finalize方法</em></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CanReliveObj</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> CanReliveObj obj;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> <span class="keyword">throws</span> Throwable </span>&#123;</div><div class="line">        <span class="keyword">super</span>.finalize();</div><div class="line">        System.out.println(<span class="string">"CanReliveObj finalize called"</span>);</div><div class="line">        obj = <span class="keyword">this</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"I am CanReliveObj"</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</div><div class="line">        obj = <span class="keyword">new</span> CanReliveObj();</div><div class="line">        obj = <span class="keyword">null</span>; <span class="comment">//可复活</span></div><div class="line">        System.gc();</div><div class="line">        Thread.sleep(<span class="number">1000</span>);</div><div class="line">        <span class="keyword">if</span> (obj == <span class="keyword">null</span>) &#123;</div><div class="line">            System.out.println(<span class="string">"obj 是 null"</span>);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            System.out.println(<span class="string">"obj 可用"</span>);</div><div class="line">        &#125;</div><div class="line">        System.out.println(<span class="string">"第二次gc"</span>);</div><div class="line">        obj = <span class="keyword">null</span>; <span class="comment">//不可复活</span></div><div class="line">        System.gc();</div><div class="line">        Thread.sleep(<span class="number">1000</span>);</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (obj == <span class="keyword">null</span>) &#123;</div><div class="line">            System.out.println(<span class="string">"obj 是 null"</span>);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            System.out.println(<span class="string">"obj 可用"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*</span></div><div class="line">CanReliveObj finalize called</div><div class="line">obj 可用</div><div class="line">第二次gc</div><div class="line">obj 是 null</div><div class="line">*/</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CanReliveObj</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> CanReliveObj obj;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.finalize();</span><br><span class="line">        System.out.println(<span class="string">"CanReliveObj finalize called"</span>);</span><br><span class="line">        obj = <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"I am CanReliveObj"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">        obj = <span class="keyword">new</span> CanReliveObj();</span><br><span class="line">        obj = <span class="keyword">null</span>; <span class="comment">//可复活</span></span><br><span class="line">        System.gc();</span><br><span class="line">        Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">        <span class="keyword">if</span> (obj == <span class="keyword">null</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"obj 是 null"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"obj 可用"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"第二次gc"</span>);</span><br><span class="line">        obj = <span class="keyword">null</span>; <span class="comment">//不可复活</span></span><br><span class="line">        System.gc();</span><br><span class="line">        Thread.sleep(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (obj == <span class="keyword">null</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"obj 是 null"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"obj 可用"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">CanReliveObj finalize called</span></span><br><span class="line"><span class="comment">obj 可用</span></span><br><span class="line"><span class="comment">第二次gc</span></span><br><span class="line"><span class="comment">obj 是 null</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 <p>注意问题：避免使用finalize()，操作不慎可能导致错误。优先级低，何时被调用， 不确定，何时发生GC不确定。可以使用try-catch-finally来替代它</p>
 <h2 id="Stop-The-World"><a href="#Stop-The-World" class="headerlink" title="Stop-The-World"></a>Stop-The-World</h2><p>Java中一种全局暂停的现象。所有Java代码停止，native代码可以执行，但不能和JVM交互。多半由于GC引起，还有一些其他原因例如：Dump线程，死锁检查，堆Dump。</p>
 <ul>
@@ -851,7 +851,7 @@
 <ul>
 <li><p>使用参数：</p>
 <p>-XX:+UseConcMarkSweepGC</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-XX:ParallelCMSThreads（设定CMS的线程数量）</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-XX:ParallelCMSThreads（设定CMS的线程数量）</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>缺点：</p>
 <ul>
@@ -933,9 +933,9 @@
 <li>包含main()方法的类</li>
 <li>使用动态语言支持</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SuperClass</span> </span>&#123;</div><div class="line">    <span class="keyword">static</span> &#123;</div><div class="line">        System.out.println(<span class="string">"superclass init"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> value=<span class="number">123</span>;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SubClass</span> <span class="keyword">extends</span> <span class="title">SuperClass</span></span>&#123;</div><div class="line">    <span class="keyword">static</span> &#123;</div><div class="line">        System.out.println(<span class="string">"subclass init"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        System.out.println(SubClass.value);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SuperClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"superclass init"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> value=<span class="number">123</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SubClass</span> <span class="keyword">extends</span> <span class="title">SuperClass</span></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"subclass init"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(SubClass.value);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上述代码只会只会输出superclass init 和123，而subclass并不会初始化</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SuperClass</span> </span>&#123;</div><div class="line">    <span class="keyword">static</span> &#123;</div><div class="line">        System.out.println(<span class="string">"superclass init"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String value=<span class="string">"123"</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        System.out.println(SuperClass.value);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SuperClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"superclass init"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String value=<span class="string">"123"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(SuperClass.value);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>注意此时静态变量 变成了static final String修饰的，上述代码只会输出123，这是因为java源码中引用了常量，通过编译优化已经讲常量“123”存储到Main的常量池中，以后Main类调用常量value都被转到自身的常量池的引用，也就是两个类没有关系。如果去掉final或者String运行代码都会导致SuperClass被初始化输出superclass init。</p>
 <ul>
 <li>执行类构造器<code>&lt;clinit&gt;</code> 为静态变量静态方法块赋初值</li>
@@ -944,10 +944,10 @@
 </ul>
 <h2 id="ClassLoad类"><a href="#ClassLoad类" class="headerlink" title="ClassLoad类"></a>ClassLoad类</h2><p>ClassLoader是一个抽象类负责类装载过程中的加载阶段，他的实例将读入Java字节码将类装载到JVM中，可以进行定制，以满足不同字节码流获取方式（网络流，文件流等方式获取）</p>
 <p>其中重要方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> Class&lt;?&gt; loadClass(String name) <span class="keyword">throws</span> ClassNotFoundException<span class="comment">//载入并返回一个Class</span></div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">protected</span> <span class="keyword">final</span> Class&lt;?&gt; defineClass(<span class="keyword">byte</span>[] b, <span class="keyword">int</span> off, <span class="keyword">int</span> len)<span class="comment">//定义一个类，不公开调用</span></div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">protected</span> Class&lt;?&gt; findClass(String name) <span class="keyword">throws</span> ClassNotFoundException<span class="comment">//loadClass回调该方法，自定义ClassLoader的推荐做法</span></div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">protected</span> <span class="keyword">final</span> Class&lt;?&gt; findLoadedClass(String name) <span class="comment">//寻找已经加载的类</span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Class&lt;?&gt; loadClass(String name) <span class="keyword">throws</span> ClassNotFoundException<span class="comment">//载入并返回一个Class</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">final</span> Class&lt;?&gt; defineClass(<span class="keyword">byte</span>[] b, <span class="keyword">int</span> off, <span class="keyword">int</span> len)<span class="comment">//定义一个类，不公开调用</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> Class&lt;?&gt; findClass(String name) <span class="keyword">throws</span> ClassNotFoundException<span class="comment">//loadClass回调该方法，自定义ClassLoader的推荐做法</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">final</span> Class&lt;?&gt; findLoadedClass(String name) <span class="comment">//寻找已经加载的类</span></span><br></pre></td></tr></table></figure>
 <p>JVM预定义的三种类型类加载器：</p>
 <ul>
 <li><strong>启动（Bootstrap）类加载器</strong>：是用本地代码实现的类装入器，它负责将 <code>&lt;Java_Runtime_Home&gt;/lib</code>下面的类库加载到内存中（比如<code>rt.jar</code>）。由于引导类加载器涉及到虚拟机本地实现细节，开发者无法直接获取到启动类加载器的引用，所以不允许直接通过引用进行操作。</li>
@@ -955,7 +955,7 @@
 <li><strong>应用程序（Application）类加载器</strong>：是由 Sun 的 <code>AppClassLoader（sun.misc.Launcher$AppClassLoader）</code>实现的。它负责将系统类路径（<code>CLASSPATH</code>）中指定的类库加载到内存中。开发者可以直接使用系统类加载器。由于这个类加载器是ClassLoader中的getSystemClassLoader()方法的返回值，因此一般称为<strong>系统（System）加载器</strong>。</li>
 </ul>
 <p>除了以上列举的三种类加载器，还有一种比较特殊的类型 — 线程上下文类加载器。</p>
-<h2 id="双亲委派模型"><a href="#双亲委派模型" class="headerlink" title="双亲委派模型"></a>双亲委派模型</h2>{% asset_img 3-1.png%}
+<h2 id="双亲委派模型"><a href="#双亲委派模型" class="headerlink" title="双亲委派模型"></a>双亲委派模型</h2><img src="/2019/01/06/java/JVM/3-1.png">
 <p><img src="/jvm/3-1.png" alt="类加载器的双亲委派模型"></p>
 <ol>
 <li><p>双亲委派机制描述<br>某个特定的类加载器在接到加载类的请求时，首先将加载任务委托给父类加载器，<strong>依次递归</strong>，如果父类加载器可以完成类加载任务，就成功返回；只有父类加载器无法完成此加载任务时，才自己去加载。</p>
@@ -994,21 +994,21 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="COKID 微信"/>
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="COKID 微信">
         <p>微信</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="COKID 支付宝"/>
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="COKID 支付宝">
         <p>支付宝</p>
       </div>
     
 
     
       <div id="bitcoin" style="display: inline-block">
-        <img id="bitcoin_qr" src="/images/bitcoin.jpg" alt="COKID 红包码"/>
+        <img id="bitcoin_qr" src="/images/bitcoin.jpg" alt="COKID 红包码">
         <p>红包码</p>
       </div>
     
@@ -1110,11 +1110,9 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="COKID" />
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="COKID">
             
               <p class="site-author-name" itemprop="name">COKID</p>
               <p class="site-description motion-element" itemprop="description">Enjoy Code&Life</p>
@@ -1127,7 +1125,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">55</span>
+                    <span class="site-state-item-count">57</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1310,7 +1308,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JVM基本概念"><span class="nav-text">JVM基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM启动流程"><span class="nav-text">JVM启动流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM基本结构"><span class="nav-text">JVM基本结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM的进化"><span class="nav-text">JVM的进化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM内存溢出"><span class="nav-text">JVM内存溢出</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Java堆溢出"><span class="nav-text">Java堆溢出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#虚拟机栈和本地方法栈溢出"><span class="nav-text">虚拟机栈和本地方法栈溢出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方法区和运行时常量池溢出"><span class="nav-text">方法区和运行时常量池溢出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#本机直接内存溢出"><span class="nav-text">本机直接内存溢出</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM参数配置"><span class="nav-text">JVM参数配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java内存模型"><span class="nav-text">Java内存模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主内存-amp-工作内存"><span class="nav-text">主内存&工作内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存间的交互"><span class="nav-text">内存间的交互</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#volatile型变量"><span class="nav-text">volatile型变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#volatile和synchronized区别"><span class="nav-text">volatile和synchronized区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GC"><span class="nav-text">GC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GC回收算法"><span class="nav-text">GC回收算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引用计数算法"><span class="nav-text">引用计数算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标记-清除算法"><span class="nav-text">标记-清除算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标记-压缩（标记-整理）算法"><span class="nav-text">标记-压缩（标记-整理）算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复制算法"><span class="nav-text">复制算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分代思想"><span class="nav-text">分代思想</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java中的引用"><span class="nav-text">Java中的引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可触及性"><span class="nav-text">可触及性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stop-The-World"><span class="nav-text">Stop-The-World</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GC收集器"><span class="nav-text">GC收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#串行收集器Serial"><span class="nav-text">串行收集器Serial</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#并行收集器ParNew"><span class="nav-text">并行收集器ParNew</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#并行收集器Parallel"><span class="nav-text">并行收集器Parallel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CMS收集器"><span class="nav-text">CMS收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#G1收集器"><span class="nav-text">G1收集器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ClassLoad类的加载"><span class="nav-text">ClassLoad类的加载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类的生命周期"><span class="nav-text">类的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加载"><span class="nav-text">加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接-验证"><span class="nav-text">链接-验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接-准备"><span class="nav-text">链接-准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接-解析"><span class="nav-text">链接-解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-text">初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ClassLoad类"><span class="nav-text">ClassLoad类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双亲委派模型"><span class="nav-text">双亲委派模型</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JVM基本概念"><span class="nav-text">JVM基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM启动流程"><span class="nav-text">JVM启动流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM基本结构"><span class="nav-text">JVM基本结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM的进化"><span class="nav-text">JVM的进化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM内存溢出"><span class="nav-text">JVM内存溢出</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Java堆溢出"><span class="nav-text">Java堆溢出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#虚拟机栈和本地方法栈溢出"><span class="nav-text">虚拟机栈和本地方法栈溢出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方法区和运行时常量池溢出"><span class="nav-text">方法区和运行时常量池溢出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#本机直接内存溢出"><span class="nav-text">本机直接内存溢出</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM参数配置"><span class="nav-text">JVM参数配置</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Java内存模型"><span class="nav-text">Java内存模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主内存-amp-工作内存"><span class="nav-text">主内存&amp;工作内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存间的交互"><span class="nav-text">内存间的交互</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#volatile型变量"><span class="nav-text">volatile型变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#volatile和synchronized区别"><span class="nav-text">volatile和synchronized区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GC"><span class="nav-text">GC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GC回收算法"><span class="nav-text">GC回收算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引用计数算法"><span class="nav-text">引用计数算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标记-清除算法"><span class="nav-text">标记-清除算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标记-压缩（标记-整理）算法"><span class="nav-text">标记-压缩（标记-整理）算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复制算法"><span class="nav-text">复制算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分代思想"><span class="nav-text">分代思想</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java中的引用"><span class="nav-text">Java中的引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可触及性"><span class="nav-text">可触及性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stop-The-World"><span class="nav-text">Stop-The-World</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GC收集器"><span class="nav-text">GC收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#串行收集器Serial"><span class="nav-text">串行收集器Serial</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#并行收集器ParNew"><span class="nav-text">并行收集器ParNew</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#并行收集器Parallel"><span class="nav-text">并行收集器Parallel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CMS收集器"><span class="nav-text">CMS收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#G1收集器"><span class="nav-text">G1收集器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ClassLoad类的加载"><span class="nav-text">ClassLoad类的加载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类的生命周期"><span class="nav-text">类的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加载"><span class="nav-text">加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接-验证"><span class="nav-text">链接-验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接-准备"><span class="nav-text">链接-准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接-解析"><span class="nav-text">链接-解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-text">初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ClassLoad类"><span class="nav-text">ClassLoad类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双亲委派模型"><span class="nav-text">双亲委派模型</span></a></li></ol></li></div>
             
 
           </div>
@@ -1364,7 +1362,7 @@
 <div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-<span id="busuanzi_container_site_uv" style='display:none'>有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+<span id="busuanzi_container_site_uv" style="display:none">有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
 </span>
 <div>
 
@@ -1381,7 +1379,7 @@
 
         
       </div>
-    </footer>
+    </div></div></footer>
 
     
 

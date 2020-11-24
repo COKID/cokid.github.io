@@ -15,10 +15,10 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -36,8 +36,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -60,9 +60,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
@@ -119,6 +119,7 @@
 <meta property="og:url" content="/2018/02/09/java/Java常用原码分析/index.html">
 <meta property="og:site_name" content="COKID">
 <meta property="og:description" content="本文总结面试中常会问到的java原生代码分析，包括HashMap，ArrayList，String等，以及不同JDK版本的变化">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="/2018/02/09/java/Java常用原码分析/Java常用源码分析/1.jpg">
 <meta property="og:updated_time" content="2019-01-11T03:23:00.000Z">
 <meta name="twitter:card" content="summary">
@@ -131,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="/2018/02/09/java/Java常用原码分析/"/>
+  <link rel="canonical" href="/2018/02/09/java/Java常用原码分析/">
 
 
 
@@ -180,11 +181,11 @@
 </noscript>
 
   <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
   <script src="/live2d-widget/autoload.js"></script>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -194,7 +195,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -234,7 +235,7 @@
           
           <li class="menu-item menu-item-home">
     <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
   </li>
         
         
@@ -242,7 +243,7 @@
           
           <li class="menu-item menu-item-about">
     <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
   </li>
         
         
@@ -250,7 +251,7 @@
           
           <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
   </li>
         
         
@@ -258,7 +259,7 @@
           
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
   </li>
         
         
@@ -266,7 +267,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
   </li>
 
       
@@ -276,7 +277,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
         </li>
       
     </ul>
@@ -296,9 +297,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -343,20 +342,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="/2018/02/09/java/Java常用原码分析/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="COKID">
       <meta itemprop="description" content="Enjoy Code&Life">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="COKID">
     </span>
 
@@ -413,7 +412,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -424,7 +423,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
 
                 
                 
@@ -482,23 +481,23 @@
         <p>本文总结面试中常会问到的java原生代码分析，包括HashMap，ArrayList，String等，以及不同JDK版本的变化</p>
 <a id="more"></a>
 <h1 id="String-StringBuffer-StringBuilder"><a href="#String-StringBuffer-StringBuilder" class="headerlink" title="String StringBuffer StringBuilder"></a>String StringBuffer StringBuilder</h1><p>这三个类的区别主要分别在字符串的拼接上</p>
-<h2 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringTest</span> </span>&#123;</div><div class="line"><span class="meta">@Test</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testStringPlus</span><span class="params">()</span> </span>&#123;</div><div class="line">    String str = <span class="string">"111"</span>;</div><div class="line">    str += <span class="string">"222"</span>;</div><div class="line">    str += <span class="string">"333"</span>;</div><div class="line">    System.out.println(str);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringTest</span> </span>&#123;</span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testStringPlus</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    String str = <span class="string">"111"</span>;</span><br><span class="line">    str += <span class="string">"222"</span>;</span><br><span class="line">    str += <span class="string">"333"</span>;</span><br><span class="line">    System.out.println(str);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样的代码在开发中经常使用，不过<strong>编译器每次碰到”+”的时候，会new一个StringBuilder出来，接着调用append方法，在调用toString方法，生成新字符串</strong> ，这种方式是对内存的浪费效率不好。</p>
 <p>在String中自带了一个连接的方法源码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">concat</span><span class="params">(String str)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> olen = str.length();</div><div class="line">    <span class="keyword">if</span> (olen == <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (coder() == str.coder()) &#123;</div><div class="line">        <span class="keyword">byte</span>[] val = <span class="keyword">this</span>.value;</div><div class="line">        <span class="keyword">byte</span>[] oval = str.value;</div><div class="line">        <span class="keyword">int</span> len = val.length + oval.length;</div><div class="line">        <span class="keyword">byte</span>[] buf = Arrays.copyOf(val, len);</div><div class="line">        System.arraycopy(oval, <span class="number">0</span>, buf, val.length, oval.length);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(buf, coder);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> len = length();</div><div class="line">    <span class="keyword">byte</span>[] buf = StringUTF16.newBytesFor(len + olen);</div><div class="line">    getBytes(buf, <span class="number">0</span>, UTF16);</div><div class="line">    str.getBytes(buf, len, UTF16);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> String(buf, UTF16);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">concat</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> olen = str.length();</span><br><span class="line">    <span class="keyword">if</span> (olen == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (coder() == str.coder()) &#123;</span><br><span class="line">        <span class="keyword">byte</span>[] val = <span class="keyword">this</span>.value;</span><br><span class="line">        <span class="keyword">byte</span>[] oval = str.value;</span><br><span class="line">        <span class="keyword">int</span> len = val.length + oval.length;</span><br><span class="line">        <span class="keyword">byte</span>[] buf = Arrays.copyOf(val, len);</span><br><span class="line">        System.arraycopy(oval, <span class="number">0</span>, buf, val.length, oval.length);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(buf, coder);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> len = length();</span><br><span class="line">    <span class="keyword">byte</span>[] buf = StringUTF16.newBytesFor(len + olen);</span><br><span class="line">    getBytes(buf, <span class="number">0</span>, UTF16);</span><br><span class="line">    str.getBytes(buf, len, UTF16);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> String(buf, UTF16);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>意思就是通过两次字符串的拷贝，产生一个新的字符数组buf[]，再根据字符数组buf[]，new一个新的String对象出来，这意味着concat方法调用N次，将发生N*2次数组拷贝以及new出N个String对象，无论对于时间还是空间都是一种浪费。</p>
 <p>不论是“+”还是concat方法拼接字符串都是比较低效的这时我们需要StringBuilder和StringBuffer来拼接字符串</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestMain</span></span></div><div class="line">&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></div><div class="line">    &#123;</div><div class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">"111"</span>);</div><div class="line">        sb.append(<span class="string">"222"</span>);</div><div class="line">        sb.append(<span class="string">"111"</span>);</div><div class="line">        sb.append(<span class="string">"111"</span>);</div><div class="line">        sb.append(<span class="string">"444"</span>);</div><div class="line">        System.out.println(sb.toString());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestMain</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">"111"</span>);</span><br><span class="line">        sb.append(<span class="string">"222"</span>);</span><br><span class="line">        sb.append(<span class="string">"111"</span>);</span><br><span class="line">        sb.append(<span class="string">"111"</span>);</span><br><span class="line">        sb.append(<span class="string">"444"</span>);</span><br><span class="line">        System.out.println(sb.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>StringBuffer和StringBuilder原理一样，无非是在底层维护了一个char数组，每次append的时候就往char数组里面放字符而已，在最终sb.toString()的时候，用一个new String()方法把char数组里面的内容都转成String，这样，整个过程中只产生了一个StringBuilder对象与一个String对象，非常节省空间。StringBuilder唯一的性能损耗点<strong>在于char数组不够的时候需要进行扩容，扩容需要进行数组拷贝，一定程度上降低了效率</strong>。</p>
 <p>StringBuffer和StringBuilder用法一模一样，唯一的区别只是<strong>StringBuffer是线程安全的，它对所有方法都做了同步，StringBuilder是线程非安全的</strong>，所以在不涉及线程安全的场景，比如方法内部，尽量使用StringBuilder，避免同步带来的消耗。</p>
 <p>另外，StringBuffer和StringBuilder还有一个优化点，上面说了，扩容的时候有性能上的损耗，那么<strong>如果可以估计到要拼接的字符串的长度的话，尽量利用构造函数指定他们的长度</strong>。</p>
 <p>那么不能用String的+了吗？</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">    String str = <span class="string">"111"</span> + <span class="string">"222"</span> + <span class="string">"333"</span> + <span class="string">"444"</span>;</div><div class="line">    System.out.println(str);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    String str = <span class="string">"111"</span> + <span class="string">"222"</span> + <span class="string">"333"</span> + <span class="string">"444"</span>;</span><br><span class="line">    System.out.println(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>就这种连续+的情况，实际上编译的时候JVM会只产生一个StringBuilder并连续append等号后面的字符串。但实际上大量的“+”会导致代码的可读性非常差。待拼接的内容可能从各种地方获取，比如调用接口、从.properties文件中、从.xml文件中，这样的场景下尽管用多个“+”的方式也不是不可以，但会让代码维护性不太好</p>
 <h2 id="Java1-9后的变化"><a href="#Java1-9后的变化" class="headerlink" title="Java1.9后的变化"></a>Java1.9后的变化</h2><p>从Java1.9之后，对于String类进行了方法的扩充，便于更加方便对于字符串进行各种操作，其中有一个很有意思的地方就是新增了COMPACT_STRINGS常量和LATIN1常量。</p>
 <p>我们知道java支持Unicode编码，最新的java11已经支持Unicode10支持的越多也就说我们需要用很长的编码来表示字符，这样带来一个坏处就是字符串占用空间会变得很长。有时候我们更多地只需要使用英文与阿拉伯数字字符，那么ASCII码就能满足我们的要求，因此Java9之后String默认开启了对字符串的压缩，使用Latin1编码（扩展ASCII，8位表示一个字符），而Latin1是使用@Native注解修饰的，而且COMPACT_STRINGS是在static代码块中初始化的，也就是说当String类初始化的时候执行了static的代码块就开启了对字符串的压缩。</p>
 <p>StringBuffer和StringBuilder都继承自AbstractStringBuilder，在其import里有如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import static java.lang.String.COMPACT_STRINGS;</div><div class="line">import static java.lang.String.UTF16;</div><div class="line">import static java.lang.String.LATIN1;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import static java.lang.String.COMPACT_STRINGS;</span><br><span class="line">import static java.lang.String.UTF16;</span><br><span class="line">import static java.lang.String.LATIN1;</span><br></pre></td></tr></table></figure>
 <p>因此也都开启了压缩</p>
 <h1 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h1><p>Hash散列将一个任意长度通过哈希算法转换成一个固定值</p>
 <p>java中用的是移位的哈希算法</p>
@@ -517,17 +516,17 @@
 <p>负载因子越小，就越容易触发扩容，数据密度也越小，意味着发生碰撞的几率越小，数组中的链表也就越短，查询和插入时比较的次数也越小，性能会更高。但是会浪费一定的内容空间。而且经常扩容也会影响性能，建议初始化预设大一点的空间。</p>
 </li>
 <li><p>HashMap底层创建</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">HashMap map = <span class="keyword">new</span> HashMap()<span class="comment">//底层创建了长度为16的Entry数组</span></div><div class="line">    					<span class="comment">//JDK1.8之后默认情况下，先不创建长度为16的数组。</span></div><div class="line">map.put()<span class="comment">//JDK1.8开始创建数据</span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HashMap map = <span class="keyword">new</span> HashMap()<span class="comment">//底层创建了长度为16的Entry数组</span></span><br><span class="line">    					<span class="comment">//JDK1.8之后默认情况下，先不创建长度为16的数组。</span></span><br><span class="line">map.put()<span class="comment">//JDK1.8开始创建数据</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>HashMap什么时候扩容？</p>
 <p>put的时候，高于或等于0.75的时候，扩位原来的2倍， 初始大小为16</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">float</span> DEFAULT_LOAD_FACTOR = <span class="number">0.75f</span>;<span class="comment">//在容量的3/4的时候进行扩容</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_INITIAL_CAPACITY = <span class="number">1</span> &lt;&lt; <span class="number">4</span>; <span class="comment">// aka 16</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MAXIMUM_CAPACITY = <span class="number">1</span> &lt;&lt; <span class="number">30</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">float</span> DEFAULT_LOAD_FACTOR = <span class="number">0.75f</span>;<span class="comment">//在容量的3/4的时候进行扩容</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_INITIAL_CAPACITY = <span class="number">1</span> &lt;&lt; <span class="number">4</span>; <span class="comment">// aka 16</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MAXIMUM_CAPACITY = <span class="number">1</span> &lt;&lt; <span class="number">30</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>HashMap的key可以为空，空值hash为0（JDK1.8之后）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Object key)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> h;</div><div class="line">    <span class="keyword">return</span> (key == <span class="keyword">null</span>) ? <span class="number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="number">16</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> h;</span><br><span class="line">    <span class="keyword">return</span> (key == <span class="keyword">null</span>) ? <span class="number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="number">16</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Hash key如果重复不会被覆盖掉</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">final</span> V <span class="title">putVal</span><span class="params">(<span class="keyword">int</span> hash, K key, V value, <span class="keyword">boolean</span> onlyIfAbsent,<span class="keyword">boolean</span> evict)</span> </span>&#123;</div><div class="line">    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; <span class="keyword">int</span> n, i;</div><div class="line">    <span class="keyword">if</span> ((tab = table) == <span class="keyword">null</span> || (n = tab.length) == <span class="number">0</span>)</div><div class="line">        n = (tab = resize()).length;</div><div class="line">    <span class="keyword">if</span> ((p = tab[i = (n - <span class="number">1</span>) &amp; hash]) == <span class="keyword">null</span>)</div><div class="line">        tab[i] = newNode(hash, key, value, <span class="keyword">null</span>);</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        Node&lt;K,V&gt; e; K k;</div><div class="line">        <span class="keyword">if</span> (p.hash == hash &amp;&amp;</div><div class="line">            ((k = p.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</div><div class="line">            e = p;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (p <span class="keyword">instanceof</span> TreeNode)</div><div class="line">            e = ((TreeNode&lt;K,V&gt;)p).putTreeVal(<span class="keyword">this</span>, tab, hash, key, value);</div><div class="line">        <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> binCount = <span class="number">0</span>; ; ++binCount) &#123;</div><div class="line">                <span class="keyword">if</span> ((e = p.next) == <span class="keyword">null</span>) &#123;</div><div class="line">                    p.next = newNode(hash, key, value, <span class="keyword">null</span>);</div><div class="line">                    <span class="keyword">if</span> (binCount &gt;= TREEIFY_THRESHOLD - <span class="number">1</span>) <span class="comment">// -1 for 1st</span></div><div class="line">                        treeifyBin(tab, hash);</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span> (e.hash == hash &amp;&amp;</div><div class="line">                    ((k = e.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                p = e;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (e != <span class="keyword">null</span>) &#123; <span class="comment">// existing mapping for key</span></div><div class="line">            V oldValue = e.value;</div><div class="line">            <span class="keyword">if</span> (!onlyIfAbsent || oldValue == <span class="keyword">null</span>)</div><div class="line">                e.value = value;</div><div class="line">            afterNodeAccess(e);</div><div class="line">            <span class="keyword">return</span> oldValue;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    ++modCount;</div><div class="line">    <span class="keyword">if</span> (++size &gt; threshold)</div><div class="line">        resize();</div><div class="line">    afterNodeInsertion(evict);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">final</span> V <span class="title">putVal</span><span class="params">(<span class="keyword">int</span> hash, K key, V value, <span class="keyword">boolean</span> onlyIfAbsent,<span class="keyword">boolean</span> evict)</span> </span>&#123;</span><br><span class="line">    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; <span class="keyword">int</span> n, i;</span><br><span class="line">    <span class="keyword">if</span> ((tab = table) == <span class="keyword">null</span> || (n = tab.length) == <span class="number">0</span>)</span><br><span class="line">        n = (tab = resize()).length;</span><br><span class="line">    <span class="keyword">if</span> ((p = tab[i = (n - <span class="number">1</span>) &amp; hash]) == <span class="keyword">null</span>)</span><br><span class="line">        tab[i] = newNode(hash, key, value, <span class="keyword">null</span>);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        Node&lt;K,V&gt; e; K k;</span><br><span class="line">        <span class="keyword">if</span> (p.hash == hash &amp;&amp;</span><br><span class="line">            ((k = p.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">            e = p;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (p <span class="keyword">instanceof</span> TreeNode)</span><br><span class="line">            e = ((TreeNode&lt;K,V&gt;)p).putTreeVal(<span class="keyword">this</span>, tab, hash, key, value);</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> binCount = <span class="number">0</span>; ; ++binCount) &#123;</span><br><span class="line">                <span class="keyword">if</span> ((e = p.next) == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    p.next = newNode(hash, key, value, <span class="keyword">null</span>);</span><br><span class="line">                    <span class="keyword">if</span> (binCount &gt;= TREEIFY_THRESHOLD - <span class="number">1</span>) <span class="comment">// -1 for 1st</span></span><br><span class="line">                        treeifyBin(tab, hash);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">                    ((k = e.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                p = e;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (e != <span class="keyword">null</span>) &#123; <span class="comment">// existing mapping for key</span></span><br><span class="line">            V oldValue = e.value;</span><br><span class="line">            <span class="keyword">if</span> (!onlyIfAbsent || oldValue == <span class="keyword">null</span>)</span><br><span class="line">                e.value = value;</span><br><span class="line">            afterNodeAccess(e);</span><br><span class="line">            <span class="keyword">return</span> oldValue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ++modCount;</span><br><span class="line">    <span class="keyword">if</span> (++size &gt; threshold)</span><br><span class="line">        resize();</span><br><span class="line">    afterNodeInsertion(evict);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>java1.8之后HashMap的底层</p>
 <ul>
@@ -560,16 +559,16 @@
 <p>这样会发生多个线程同时对hash数组进行扩容，都在重新计算元素位置以及复制数据，但是最终只有一个线程扩容后的数组会赋给table，也就是说其他线程的都会丢失，并且各自线程put的数据也丢失。且会引起死循环的错误。</p>
 <p>第三、多线程put非null元素后，get操作得到null值</p>
 <p><strong>关于死循环的问题</strong>，博主搜了好多资料，但都是基于JDK1.7讲解得为什么没有JDK1.8的版本呢，因为内部实现修复了这个问题。1.7链表新节点采用的是头插法，这样在线程一扩容迁移元素时，会将元素顺序改变，导致两个线程中出现元素的相互指向而形成循环链表，<strong>1.8采用了尾插法</strong>，从根源上杜绝了这种情况的发生。当然HashMap仍然不是线程安全的。请使用ConcurrentHashMap或者HashTable，曾经有面试官变态问如果就想在多线程使用HashMap怎么办，我能想到的只有把HashMap用Synchronized同步起来，面试官提到一个方法是Collections类里面定义了对常见的集合类的同步化的操作。</p>
-<p>相关面试总结<a href="https://www.cnblogs.com/lchzls/p/6714474.html" target="_blank" rel="external">https://www.cnblogs.com/lchzls/p/6714474.html</a></p>
+<p>相关面试总结<a href="https://www.cnblogs.com/lchzls/p/6714474.html" target="_blank" rel="noopener">https://www.cnblogs.com/lchzls/p/6714474.html</a></p>
 <h2 id="HashTable和ConcurrentHashMap"><a href="#HashTable和ConcurrentHashMap" class="headerlink" title="HashTable和ConcurrentHashMap"></a>HashTable和ConcurrentHashMap</h2><p>Hashtable和ConcurrentHashMap都可以用于多线程的环境，不可以存储null的key和value。</p>
 <p>但是当Hashtable的大小增加到一定的时候，性能会急剧下降，因为迭代时需要被锁定很长的时间，因为ConcurrentHashMap引入了分割(segmentation)，不论它变得多么大，仅仅需要锁定map的某个部分，而其它的线程不需要等到迭代完成才能访问map。简而言之，在迭代的过程中，ConcurrentHashMap仅仅锁定map的某个部分，而Hashtable则会锁定整个map。</p>
 <h1 id="ArrayList、LinkedList、Vector区别？"><a href="#ArrayList、LinkedList、Vector区别？" class="headerlink" title="ArrayList、LinkedList、Vector区别？"></a>ArrayList、LinkedList、Vector区别？</h1><p>ArrayList:线程不安全的，效率高；底层使用<strong>数组</strong>实现(Collections中定义了synchronizedList(Listlist)将此ArrayList转化为线程安全的)</p>
 <p>LinkedList：对于频繁的插入、删除操作，我们建议使用此类，因为效率高；内存消耗较ArrayList大；底层使用<strong>双向链表</strong>实现</p>
 <p>Vector：线程安全的，效率低；底层使用<strong>数组</strong>实现</p>
 <h3 id="ArrayList-源码分析："><a href="#ArrayList-源码分析：" class="headerlink" title="ArrayList 源码分析："></a>ArrayList 源码分析：</h3><p>jdk7：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">ArrayList list= <span class="keyword">new</span> ArrayList();<span class="comment">//初始化一个长度为10的Object[] elementData</span></div><div class="line"></div><div class="line">sysout(list.size());<span class="comment">//返回存储的元素的个数:0</span></div><div class="line"></div><div class="line">list.add(<span class="number">123</span>);</div><div class="line"></div><div class="line">list.add(<span class="number">345</span>);</div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line">当添加第<span class="number">11</span>个元素时，需要扩容，默认扩容为原来的<span class="number">1.5</span>倍。还需要将原有数组中的数据复制到新的数组中。</div><div class="line"></div><div class="line">删除操作：如果删除某一个数组位置的元素，需要其后面的元素依次前移。</div><div class="line"></div><div class="line">remove(Object obj) /remove(intindex)</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ArrayList list= <span class="keyword">new</span> ArrayList();<span class="comment">//初始化一个长度为10的Object[] elementData</span></span><br><span class="line"></span><br><span class="line">sysout(list.size());<span class="comment">//返回存储的元素的个数:0</span></span><br><span class="line"></span><br><span class="line">list.add(<span class="number">123</span>);</span><br><span class="line"></span><br><span class="line">list.add(<span class="number">345</span>);</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">当添加第<span class="number">11</span>个元素时，需要扩容，默认扩容为原来的<span class="number">1.5</span>倍。还需要将原有数组中的数据复制到新的数组中。</span><br><span class="line"></span><br><span class="line">删除操作：如果删除某一个数组位置的元素，需要其后面的元素依次前移。</span><br><span class="line"></span><br><span class="line">remove(Object obj) /remove(intindex)</span><br></pre></td></tr></table></figure>
 <p>jdk8:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">ArrayList list= <span class="keyword">new</span> ArrayList();<span class="comment">//初始化一个长度为0的Object[] elementData</span></div><div class="line"></div><div class="line">sysout(list.size());<span class="comment">//返回存储的元素的个数:0</span></div><div class="line"></div><div class="line">list.add(<span class="number">123</span>);<span class="comment">//此时才创建一个长度为10的Object[] elementData</span></div><div class="line"></div><div class="line">list.add(<span class="number">345</span>);</div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line">当添加第<span class="number">11</span>个元素时，需要扩容，默认扩容为原来的<span class="number">1.5</span>倍。还需要将原有数组中的数据复制到新的数组中。</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ArrayList list= <span class="keyword">new</span> ArrayList();<span class="comment">//初始化一个长度为0的Object[] elementData</span></span><br><span class="line"></span><br><span class="line">sysout(list.size());<span class="comment">//返回存储的元素的个数:0</span></span><br><span class="line"></span><br><span class="line">list.add(<span class="number">123</span>);<span class="comment">//此时才创建一个长度为10的Object[] elementData</span></span><br><span class="line"></span><br><span class="line">list.add(<span class="number">345</span>);</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">当添加第<span class="number">11</span>个元素时，需要扩容，默认扩容为原来的<span class="number">1.5</span>倍。还需要将原有数组中的数据复制到新的数组中。</span><br></pre></td></tr></table></figure>
 <p>开发时的启示：</p>
 <ol>
 <li>建议使用：ArrayList list= new ArrayList(intlength);</li>
@@ -598,21 +597,21 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="COKID 微信"/>
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="COKID 微信">
         <p>微信</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="COKID 支付宝"/>
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="COKID 支付宝">
         <p>支付宝</p>
       </div>
     
 
     
       <div id="bitcoin" style="display: inline-block">
-        <img id="bitcoin_qr" src="/images/bitcoin.jpg" alt="COKID 红包码"/>
+        <img id="bitcoin_qr" src="/images/bitcoin.jpg" alt="COKID 红包码">
         <p>红包码</p>
       </div>
     
@@ -726,11 +725,9 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="COKID" />
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="COKID">
             
               <p class="site-author-name" itemprop="name">COKID</p>
               <p class="site-description motion-element" itemprop="description">Enjoy Code&Life</p>
@@ -743,7 +740,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">55</span>
+                    <span class="site-state-item-count">57</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -926,7 +923,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#String-StringBuffer-StringBuilder"><span class="nav-text">String StringBuffer StringBuilder</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#源码分析"><span class="nav-text">源码分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java1-9后的变化"><span class="nav-text">Java1.9后的变化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HashMap"><span class="nav-text">HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#源码分析-1"><span class="nav-text">源码分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap的不足之处"><span class="nav-text">HashMap的不足之处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashTable和ConcurrentHashMap"><span class="nav-text">HashTable和ConcurrentHashMap</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ArrayList、LinkedList、Vector区别？"><span class="nav-text">ArrayList、LinkedList、Vector区别？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList-源码分析："><span class="nav-text">ArrayList 源码分析：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#String-StringBuffer-StringBuilder"><span class="nav-text">String StringBuffer StringBuilder</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#源码分析"><span class="nav-text">源码分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java1-9后的变化"><span class="nav-text">Java1.9后的变化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HashMap"><span class="nav-text">HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#源码分析-1"><span class="nav-text">源码分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap的不足之处"><span class="nav-text">HashMap的不足之处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashTable和ConcurrentHashMap"><span class="nav-text">HashTable和ConcurrentHashMap</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ArrayList、LinkedList、Vector区别？"><span class="nav-text">ArrayList、LinkedList、Vector区别？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList-源码分析："><span class="nav-text">ArrayList 源码分析：</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -980,7 +977,7 @@
 <div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-<span id="busuanzi_container_site_uv" style='display:none'>有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+<span id="busuanzi_container_site_uv" style="display:none">有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
 </span>
 <div>
 
@@ -997,7 +994,7 @@
 
         
       </div>
-    </footer>
+    </div></div></footer>
 
     
 

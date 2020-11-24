@@ -15,10 +15,10 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -36,8 +36,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -60,9 +60,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
@@ -119,6 +119,7 @@
 <meta property="og:url" content="/2018/08/27/软件开发/数据结构/B树/index.html">
 <meta property="og:site_name" content="COKID">
 <meta property="og:description" content="总结B树的一些知识">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="/2018/08/27/软件开发/数据结构/B树/1.png">
 <meta property="og:image" content="/2018/08/27/软件开发/数据结构/B树/B树/1.png">
 <meta property="og:image" content="/2018/08/27/软件开发/数据结构/B树/2.png">
@@ -166,7 +167,7 @@
 
 
 
-  <link rel="canonical" href="/2018/08/27/软件开发/数据结构/B树/"/>
+  <link rel="canonical" href="/2018/08/27/软件开发/数据结构/B树/">
 
 
 
@@ -215,11 +216,11 @@
 </noscript>
 
   <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
   <script src="/live2d-widget/autoload.js"></script>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -229,7 +230,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -269,7 +270,7 @@
           
           <li class="menu-item menu-item-home">
     <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
   </li>
         
         
@@ -277,7 +278,7 @@
           
           <li class="menu-item menu-item-about">
     <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
   </li>
         
         
@@ -285,7 +286,7 @@
           
           <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
   </li>
         
         
@@ -293,7 +294,7 @@
           
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
   </li>
         
         
@@ -301,7 +302,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
   </li>
 
       
@@ -311,7 +312,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
         </li>
       
     </ul>
@@ -331,9 +332,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -378,20 +377,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="/2018/08/27/软件开发/数据结构/B树/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="COKID">
       <meta itemprop="description" content="Enjoy Code&Life">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="COKID">
     </span>
 
@@ -448,7 +447,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -459,7 +458,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
 
                 
                 
@@ -542,7 +541,7 @@
 </ol>
 <p>B树的叶子节点可以看作外部节点（即查找失败）的结点，通常称为外结点。其实这些结点都是不存在的，指向这些节点的指针为空。所以B树的叶子可以不用画出来，因为叶子都在同一层，所以B树也是树高平衡的。另外，每个结点中关键码的个数为子树的个数减1</p>
 <p>4阶B树</p>
-<img src="/2018/08/27/软件开发/数据结构/B树/1.png" alt="1.png" title="">
+<img src="/2018/08/27/软件开发/数据结构/B树/1.png">
 <p><img src="B树\1.png" alt="1"></p>
 <h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>主要面向动态查找，通常用在文件系统中。一个结点的大小能够填满一个磁盘页，存储在B树中的指针实际上是包含其孩子结点的块号，每个节点一般允许100个或者更多的孩子。</p>
 <p>对于包含n个关键字，高度为h，阶数为m的B树：</p>
@@ -571,52 +570,52 @@
 </ul>
 </li>
 </ul>
-<h4 id="3阶B树插入的例子"><a href="#3阶B树插入的例子" class="headerlink" title="3阶B树插入的例子"></a>3阶B树插入的例子</h4><img src="/2018/08/27/软件开发/数据结构/B树/2.png" alt="2.png" title="">
+<h4 id="3阶B树插入的例子"><a href="#3阶B树插入的例子" class="headerlink" title="3阶B树插入的例子"></a>3阶B树插入的例子</h4><img src="/2018/08/27/软件开发/数据结构/B树/2.png">
 <p><img src="B树\2.png" alt="1"></p>
 <ul>
 <li><p>插入62</p>
-<img src="/2018/08/27/软件开发/数据结构/B树/3.png" alt="3.png" title="">
+<img src="/2018/08/27/软件开发/数据结构/B树/3.png">
 <p><img src="B树\3.png" alt="1"></p>
 </li>
 <li><p>65插入溢出，分裂</p>
 </li>
 </ul>
-<img src="/2018/08/27/软件开发/数据结构/B树/4.png" alt="4.png" title="">
+<img src="/2018/08/27/软件开发/数据结构/B树/4.png">
 <p><img src="B树\4.png" alt="1"></p>
 <ul>
 <li>65提升到父节点，然后分裂</li>
 </ul>
-<img src="/2018/08/27/软件开发/数据结构/B树/5.png" alt="5.png" title="">
+<img src="/2018/08/27/软件开发/数据结构/B树/5.png">
 <p><img src="B树\5.png" alt="1"></p>
 <ul>
 <li>插入30</li>
 </ul>
-<img src="/2018/08/27/软件开发/数据结构/B树/6.png" alt="6.png" title="">
+<img src="/2018/08/27/软件开发/数据结构/B树/6.png">
 <p><img src="B树\6.png" alt="1"></p>
 <ul>
 <li>提升28，溢出在分裂</li>
 </ul>
-<img src="/2018/08/27/软件开发/数据结构/B树/7.png" alt="7.png" title="">
+<img src="/2018/08/27/软件开发/数据结构/B树/7.png">
 <p><img src="B树\7.png" alt="1"></p>
 <ul>
 <li>提升28，分裂20，40</li>
 </ul>
-<img src="/2018/08/27/软件开发/数据结构/B树/8.png" alt="8.png" title="">
+<img src="/2018/08/27/软件开发/数据结构/B树/8.png">
 <p><img src="B树\8.png" alt="1"></p>
 <ul>
 <li>插入86</li>
 </ul>
-<img src="/2018/08/27/软件开发/数据结构/B树/9.png" alt="9.png" title="">
+<img src="/2018/08/27/软件开发/数据结构/B树/9.png">
 <p><img src="B树\9.png" alt="1"></p>
 <ul>
 <li>提升90，分裂</li>
 </ul>
-<img src="/2018/08/27/软件开发/数据结构/B树/10.png" alt="10.png" title="">
+<img src="/2018/08/27/软件开发/数据结构/B树/10.png">
 <p><img src="B树\10.png" alt="1"></p>
 <ul>
 <li>分裂至根节点，加一层</li>
 </ul>
-<img src="/2018/08/27/软件开发/数据结构/B树/11.png" alt="11.png" title="">
+<img src="/2018/08/27/软件开发/数据结构/B树/11.png">
 <p><img src="B树\11.png" alt="1"></p>
 <h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><h4 id="删除步骤："><a href="#删除步骤：" class="headerlink" title="删除步骤："></a>删除步骤：</h4><ul>
 <li>找到关键码所在结点</li>
@@ -644,32 +643,32 @@
 <h4 id="3阶B树删除的例子"><a href="#3阶B树删除的例子" class="headerlink" title="3阶B树删除的例子"></a>3阶B树删除的例子</h4><ul>
 <li>3阶B树</li>
 </ul>
-<img src="/2018/08/27/软件开发/数据结构/B树/12.png" alt="12.png" title="">
+<img src="/2018/08/27/软件开发/数据结构/B树/12.png">
 <p><img src="B树\12.png" alt="12"></p>
 <ul>
 <li>删除90</li>
 </ul>
-<img src="/2018/08/27/软件开发/数据结构/B树/13.png" alt="13.png" title="">
+<img src="/2018/08/27/软件开发/数据结构/B树/13.png">
 <p><img src="B树\13.png" alt="13"></p>
 <ul>
 <li>删除50，向左兄弟借导致40下移，28上移</li>
 </ul>
-<img src="/2018/08/27/软件开发/数据结构/B树/14.png" alt="14.png" title="">
+<img src="/2018/08/27/软件开发/数据结构/B树/14.png">
 <p><img src="B树\14.png" alt="14"></p>
 <ul>
 <li>删除40，兄弟不够借，则删除40，将40结点与22结点合并，然后将28关键码下移</li>
 </ul>
-<img src="/2018/08/27/软件开发/数据结构/B树/15.png" alt="15.png" title="">
+<img src="/2018/08/27/软件开发/数据结构/B树/15.png">
 <p><img src="B树\15.png" alt="15"></p>
 <ul>
 <li>删除70，兄弟不够借，删除70，合并70和96结点，下移90，</li>
 </ul>
-<img src="/2018/08/27/软件开发/数据结构/B树/16.png" alt="16.png" title="">
+<img src="/2018/08/27/软件开发/数据结构/B树/16.png">
 <p><img src="B树\16.png" alt="16"></p>
 <ul>
 <li>合并20和空节点，60下移，导致根空，删除根节点，树高-1</li>
 </ul>
-<img src="/2018/08/27/软件开发/数据结构/B树/17.png" alt="17.png" title="">
+<img src="/2018/08/27/软件开发/数据结构/B树/17.png">
 <p><img src="B树\17.png" alt="17"></p>
 <h1 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h1><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>B+树是B树的一个变体，一棵m阶的B+树在结构上与m阶的B树相同，但在关键码的内部安排上有所不同：</p>
 <ul>
@@ -678,7 +677,7 @@
 <li>所有的终端节点中包含了全部关键码信息，及指向关键码记录的指针</li>
 <li>各终端节点按关键码的大小次序链在一起，形成单链表，并设置头指针。</li>
 </ul>
-<img src="/2018/08/27/软件开发/数据结构/B树/18.png" alt="18.png" title="">
+<img src="/2018/08/27/软件开发/数据结构/B树/18.png">
 <p><img src="B树\18.png" alt="18"></p>
 <h3 id="与B树差异"><a href="#与B树差异" class="headerlink" title="与B树差异"></a>与B树差异</h3><div class="table-container">
 <table>
@@ -733,21 +732,21 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="COKID 微信"/>
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="COKID 微信">
         <p>微信</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="COKID 支付宝"/>
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="COKID 支付宝">
         <p>支付宝</p>
       </div>
     
 
     
       <div id="bitcoin" style="display: inline-block">
-        <img id="bitcoin_qr" src="/images/bitcoin.jpg" alt="COKID 红包码"/>
+        <img id="bitcoin_qr" src="/images/bitcoin.jpg" alt="COKID 红包码">
         <p>红包码</p>
       </div>
     
@@ -849,11 +848,9 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="COKID" />
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="COKID">
             
               <p class="site-author-name" itemprop="name">COKID</p>
               <p class="site-description motion-element" itemprop="description">Enjoy Code&Life</p>
@@ -866,7 +863,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">55</span>
+                    <span class="site-state-item-count">57</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1049,7 +1046,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#B树"><span class="nav-text">B树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用"><span class="nav-text">应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找"><span class="nav-text">查找</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查找步骤："><span class="nav-text">查找步骤：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入"><span class="nav-text">插入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#插入步骤："><span class="nav-text">插入步骤：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3阶B树插入的例子"><span class="nav-text">3阶B树插入的例子</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除"><span class="nav-text">删除</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#删除步骤："><span class="nav-text">删除步骤：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3阶B树删除的例子"><span class="nav-text">3阶B树删除的例子</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#B-树"><span class="nav-text">B+树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与B树差异"><span class="nav-text">与B树差异</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作"><span class="nav-text">操作</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#B树"><span class="nav-text">B树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用"><span class="nav-text">应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找"><span class="nav-text">查找</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查找步骤："><span class="nav-text">查找步骤：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入"><span class="nav-text">插入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#插入步骤："><span class="nav-text">插入步骤：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3阶B树插入的例子"><span class="nav-text">3阶B树插入的例子</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除"><span class="nav-text">删除</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#删除步骤："><span class="nav-text">删除步骤：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3阶B树删除的例子"><span class="nav-text">3阶B树删除的例子</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#B-树"><span class="nav-text">B+树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与B树差异"><span class="nav-text">与B树差异</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作"><span class="nav-text">操作</span></a></li></ol></li></div>
             
 
           </div>
@@ -1103,7 +1100,7 @@
 <div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-<span id="busuanzi_container_site_uv" style='display:none'>有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+<span id="busuanzi_container_site_uv" style="display:none">有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
 </span>
 <div>
 
@@ -1120,7 +1117,7 @@
 
         
       </div>
-    </footer>
+    </div></div></footer>
 
     
 

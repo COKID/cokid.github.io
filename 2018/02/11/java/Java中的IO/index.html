@@ -15,10 +15,10 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -36,8 +36,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -60,9 +60,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
@@ -119,6 +119,7 @@
 <meta property="og:url" content="/2018/02/11/java/Java中的IO/index.html">
 <meta property="og:site_name" content="COKID">
 <meta property="og:description" content="Java NIO（New IO）是从Java 1.4版本开始引入的一个新的IO API，可以替代标准的Java IO API。NIO与原来的IO有同样的作用和目的，但是使用的方式完全不同，NIO支持面向缓冲区的、基于通道的IO操作。NIO将以更加高效的方式进行文件的读写操作。本文先介绍一些基本概念再讲Java中涉及IO的内容">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-02-22T14:00:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java中的IO">
@@ -129,7 +130,7 @@
 
 
 
-  <link rel="canonical" href="/2018/02/11/java/Java中的IO/"/>
+  <link rel="canonical" href="/2018/02/11/java/Java中的IO/">
 
 
 
@@ -178,11 +179,11 @@
 </noscript>
 
   <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
   <script src="/live2d-widget/autoload.js"></script>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -192,7 +193,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -232,7 +233,7 @@
           
           <li class="menu-item menu-item-home">
     <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
   </li>
         
         
@@ -240,7 +241,7 @@
           
           <li class="menu-item menu-item-about">
     <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
   </li>
         
         
@@ -248,7 +249,7 @@
           
           <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
   </li>
         
         
@@ -256,7 +257,7 @@
           
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
   </li>
         
         
@@ -264,7 +265,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
   </li>
 
       
@@ -274,7 +275,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
         </li>
       
     </ul>
@@ -294,9 +295,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -341,20 +340,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="/2018/02/11/java/Java中的IO/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="COKID">
       <meta itemprop="description" content="Enjoy Code&Life">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="COKID">
     </span>
 
@@ -411,7 +410,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -422,7 +421,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
 
                 
                 
@@ -550,7 +549,7 @@
 <li><strong>Selectors（选择器）</strong>：Java NIO引入了选择器的概念，选择器用于监听多个通道的事件（比如：连接打开，数据到达）。因此，单个的线程可以监听多个数据通道。</li>
 </ul>
 <h2 id="传统的IO模型，它存在哪些阻塞点"><a href="#传统的IO模型，它存在哪些阻塞点" class="headerlink" title="传统的IO模型，它存在哪些阻塞点"></a>传统的IO模型，它存在哪些阻塞点</h2><p>传统IO Socket编程</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TraditionalSocketDemo</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String... args)</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">        ExecutorService threadPool= Executors.newCachedThreadPool();</div><div class="line">        ServerSocket serverSocket=<span class="keyword">new</span> ServerSocket(<span class="number">7777</span>);</div><div class="line">        System.out.println(<span class="string">"服务端启动"</span>);</div><div class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</div><div class="line">            <span class="comment">//获取socket客户端套接字</span></div><div class="line">            Socket socket=serverSocket.accept();</div><div class="line"></div><div class="line">            threadPool.execute(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                    <span class="keyword">try</span> &#123;</div><div class="line">                        System.out.println(<span class="string">"有新的客户端连接上来了..."</span>);</div><div class="line">                        InputStream is=socket.getInputStream();</div><div class="line">                        <span class="keyword">byte</span>[] b=<span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</div><div class="line">                        <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</div><div class="line">                            <span class="keyword">int</span> data=is.read(b);</div><div class="line">                            <span class="keyword">if</span>(data!=-<span class="number">1</span>)&#123;</div><div class="line">                                String info=<span class="keyword">new</span> String(b,<span class="number">0</span>,data,<span class="string">"GBK"</span>);</div><div class="line">                                System.out.println(info);</div><div class="line">                            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                                <span class="keyword">break</span>;</div><div class="line">                            &#125;</div><div class="line">                        &#125;</div><div class="line">                    &#125;<span class="keyword">catch</span> (Exception e)&#123;</div><div class="line">                         e.printStackTrace();</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TraditionalSocketDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String... args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        ExecutorService threadPool= Executors.newCachedThreadPool();</span><br><span class="line">        ServerSocket serverSocket=<span class="keyword">new</span> ServerSocket(<span class="number">7777</span>);</span><br><span class="line">        System.out.println(<span class="string">"服务端启动"</span>);</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="comment">//获取socket客户端套接字</span></span><br><span class="line">            Socket socket=serverSocket.accept();</span><br><span class="line"></span><br><span class="line">            threadPool.execute(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        System.out.println(<span class="string">"有新的客户端连接上来了..."</span>);</span><br><span class="line">                        InputStream is=socket.getInputStream();</span><br><span class="line">                        <span class="keyword">byte</span>[] b=<span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">                        <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">                            <span class="keyword">int</span> data=is.read(b);</span><br><span class="line">                            <span class="keyword">if</span>(data!=-<span class="number">1</span>)&#123;</span><br><span class="line">                                String info=<span class="keyword">new</span> String(b,<span class="number">0</span>,data,<span class="string">"GBK"</span>);</span><br><span class="line">                                System.out.println(info);</span><br><span class="line">                            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">                         e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>阻塞点 </p>
 <p>1 <code>Socket socket=serverSocket.accept();</code></p>
 <p>2<code>int data=is.read(b);</code></p>
@@ -563,11 +562,11 @@
 <li>Java NIO中的SocketChannel是一个连接到TCP网络套接字的通道</li>
 <li>Java NIO中的DatagramChannel是一个能收发UDP包的通道。</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NIOSocketDemo</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Selector selector;<span class="comment">//通道选择器（管理器）</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String... args)</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">        NIOSocketDemo nioSocketDemo=<span class="keyword">new</span> NIOSocketDemo();</div><div class="line">        nioSocketDemo.initServer(<span class="number">8888</span>);</div><div class="line">        nioSocketDemo.listenSelector();</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initServer</span> <span class="params">(<span class="keyword">int</span> port)</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">        ServerSocketChannel serverChannel=ServerSocketChannel.open();</div><div class="line">        serverChannel.configureBlocking(<span class="keyword">false</span>);<span class="comment">//设置成非阻塞</span></div><div class="line">        serverChannel.socket().bind(<span class="keyword">new</span> InetSocketAddress(port));</div><div class="line"></div><div class="line">        <span class="keyword">this</span>.selector=Selector.open();</div><div class="line">        serverChannel.register(selector, SelectionKey.OP_ACCEPT);<span class="comment">//连接事件</span></div><div class="line">        System.out.println(<span class="string">"服务已启动..."</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">listenSelector</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">        <span class="comment">//轮询监听Selector</span></div><div class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</div><div class="line">            <span class="comment">//等待客户连接</span></div><div class="line">            <span class="comment">//select模型，多路复用</span></div><div class="line">            <span class="keyword">this</span>.selector.select();</div><div class="line">            System.out.println(<span class="string">"新客户端连接上来了..."</span>);</div><div class="line">            Iterator&lt;SelectionKey&gt; iteKey = <span class="keyword">this</span>.selector.selectedKeys().iterator();</div><div class="line">            <span class="keyword">while</span> (iteKey.hasNext())&#123;</div><div class="line">                SelectionKey key = iteKey.next();</div><div class="line">                iteKey.remove();</div><div class="line">                <span class="comment">//处理请求</span></div><div class="line">                handler(key);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="comment">//处理客户端请求</span></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">handler</span><span class="params">(SelectionKey key)</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">if</span>(key.isAcceptable())&#123;</div><div class="line">            <span class="comment">//处理客户端连接请求时间</span></div><div class="line">            ServerSocketChannel serverChannel= (ServerSocketChannel) key.channel();</div><div class="line">            SocketChannel socketChannel = serverChannel.accept();</div><div class="line">            serverChannel.configureBlocking(<span class="keyword">false</span>);</div><div class="line">            <span class="comment">//接受客户端发送的信息时，需要给通道设置读的权限</span></div><div class="line">            socketChannel.register(selector,SelectionKey.OP_READ);</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(key.isReadable())&#123;</div><div class="line">            <span class="comment">//处理读事件</span></div><div class="line">            SocketChannel socketChannel= (SocketChannel) key.channel();</div><div class="line">            ByteBuffer buffer=ByteBuffer.allocate(<span class="number">1024</span>);</div><div class="line">            socketChannel.read(buffer);</div><div class="line">            <span class="keyword">int</span> readData=socketChannel.read(buffer);</div><div class="line">            <span class="keyword">if</span>(readData&gt;<span class="number">0</span>)&#123;</div><div class="line">                String info =<span class="keyword">new</span> String(buffer.array(),<span class="string">"GBK"</span>).trim();</div><div class="line">                System.out.println(<span class="string">"服务端收到数据："</span>+info);</div><div class="line">            &#125;<span class="keyword">else</span> &#123;</div><div class="line">                System.out.println(<span class="string">"客户端关闭了"</span>);</div><div class="line">                key.cancel();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NIOSocketDemo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Selector selector;<span class="comment">//通道选择器（管理器）</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String... args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        NIOSocketDemo nioSocketDemo=<span class="keyword">new</span> NIOSocketDemo();</span><br><span class="line">        nioSocketDemo.initServer(<span class="number">8888</span>);</span><br><span class="line">        nioSocketDemo.listenSelector();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initServer</span> <span class="params">(<span class="keyword">int</span> port)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        ServerSocketChannel serverChannel=ServerSocketChannel.open();</span><br><span class="line">        serverChannel.configureBlocking(<span class="keyword">false</span>);<span class="comment">//设置成非阻塞</span></span><br><span class="line">        serverChannel.socket().bind(<span class="keyword">new</span> InetSocketAddress(port));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">this</span>.selector=Selector.open();</span><br><span class="line">        serverChannel.register(selector, SelectionKey.OP_ACCEPT);<span class="comment">//连接事件</span></span><br><span class="line">        System.out.println(<span class="string">"服务已启动..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">listenSelector</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//轮询监听Selector</span></span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="comment">//等待客户连接</span></span><br><span class="line">            <span class="comment">//select模型，多路复用</span></span><br><span class="line">            <span class="keyword">this</span>.selector.select();</span><br><span class="line">            System.out.println(<span class="string">"新客户端连接上来了..."</span>);</span><br><span class="line">            Iterator&lt;SelectionKey&gt; iteKey = <span class="keyword">this</span>.selector.selectedKeys().iterator();</span><br><span class="line">            <span class="keyword">while</span> (iteKey.hasNext())&#123;</span><br><span class="line">                SelectionKey key = iteKey.next();</span><br><span class="line">                iteKey.remove();</span><br><span class="line">                <span class="comment">//处理请求</span></span><br><span class="line">                handler(key);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//处理客户端请求</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">handler</span><span class="params">(SelectionKey key)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(key.isAcceptable())&#123;</span><br><span class="line">            <span class="comment">//处理客户端连接请求时间</span></span><br><span class="line">            ServerSocketChannel serverChannel= (ServerSocketChannel) key.channel();</span><br><span class="line">            SocketChannel socketChannel = serverChannel.accept();</span><br><span class="line">            serverChannel.configureBlocking(<span class="keyword">false</span>);</span><br><span class="line">            <span class="comment">//接受客户端发送的信息时，需要给通道设置读的权限</span></span><br><span class="line">            socketChannel.register(selector,SelectionKey.OP_READ);</span><br><span class="line"></span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(key.isReadable())&#123;</span><br><span class="line">            <span class="comment">//处理读事件</span></span><br><span class="line">            SocketChannel socketChannel= (SocketChannel) key.channel();</span><br><span class="line">            ByteBuffer buffer=ByteBuffer.allocate(<span class="number">1024</span>);</span><br><span class="line">            socketChannel.read(buffer);</span><br><span class="line">            <span class="keyword">int</span> readData=socketChannel.read(buffer);</span><br><span class="line">            <span class="keyword">if</span>(readData&gt;<span class="number">0</span>)&#123;</span><br><span class="line">                String info =<span class="keyword">new</span> String(buffer.array(),<span class="string">"GBK"</span>).trim();</span><br><span class="line">                System.out.println(<span class="string">"服务端收到数据："</span>+info);</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">"客户端关闭了"</span>);</span><br><span class="line">                key.cancel();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>阻塞点：<code>this.selector.select();</code></p>
 <p>为什么非阻塞的NIO会有阻塞点呢？我们真正关心的阻塞点是读取数据，读取数据时是没有阻塞的。selector有自带的方法可以设置超时时间，或者wait唤醒，可以根据需要调整阻塞情况。其实Selector看似是一个线程在工作，其实内部也是有多个线程的，不过线程是有限的。线程数小于连接数量。</p>
 <p>NIO非阻塞技术实现的原理是reactor模式，这个模式不仅在NIO出现过，而且在redis等其他地方也出现过，经常在多线程高并发的情况下使用。</p>
-<p><a href="http://blog.csdn.net/u010168160/article/details/53019039" target="_blank" rel="external">http://blog.csdn.net/u010168160/article/details/53019039</a> reactor模式</p>
+<p><a href="http://blog.csdn.net/u010168160/article/details/53019039" target="_blank" rel="noopener">http://blog.csdn.net/u010168160/article/details/53019039</a> reactor模式</p>
 <h1 id="NIO-2-AIO"><a href="#NIO-2-AIO" class="headerlink" title="NIO.2(AIO)"></a>NIO.2(AIO)</h1><p>JDK 7 Java对NIO进行了极大的扩展，增强了对文件处理和文件系统特性的支持，以至于我们称他们为 NIO.2。因为 NIO 提供的一些功能，NIO已经成为文件处理中越来越重要的部分。</p>
 <ul>
 <li><p>Path 与 Paths:</p>
@@ -579,14 +578,14 @@
 </ul>
 <p>Java 7 增加了一个新特性，该特性提供了另外一种管理资源的方式，这种方式能自动关闭文<br>件。这个特性有时被称为自动资源管理(Automatic Resource Management, ARM)， 该特性以 try 语句的扩展版为基础。自动资源管理主要用于，当不再需要文件（或其他资源）时，可以防止无意中忘记释放它们。</p>
 <p> 自动资源管理基于 try 语句的扩展形式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">try(需要关闭的资源声明)&#123;</div><div class="line">//可能发生异常的语句</div><div class="line">&#125;catch(异常类型 变量名)&#123;</div><div class="line">//异常的处理语句</div><div class="line">&#125;</div><div class="line">……</div><div class="line">finally&#123;</div><div class="line">//一定执行的语句</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">try(需要关闭的资源声明)&#123;</span><br><span class="line">//可能发生异常的语句</span><br><span class="line">&#125;catch(异常类型 变量名)&#123;</span><br><span class="line">//异常的处理语句</span><br><span class="line">&#125;</span><br><span class="line">……</span><br><span class="line">finally&#123;</span><br><span class="line">//一定执行的语句</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>当 try 代码块结束时，自动释放资源。因此不需要显示的调用 close() 方法。该形式也称为“带资源的 try 语句”。<br>注意：<br>①try 语句中声明的资源被隐式声明为 final ，资源的作用局限于带资源的 try 语句<br>②可以在一条 try 语句中管理多个资源，每个资源以“;” 隔开即可。<br>③需要关闭的资源，必须实现了 AutoCloseable 接口或其自接口 Closeable</p>
 <h1 id="NIO与AIO"><a href="#NIO与AIO" class="headerlink" title="NIO与AIO"></a>NIO与AIO</h1><p>Java NIO ： 同步非阻塞，服务器实现模式为一个请求一个线程，即客户端发送的连接请求都会注册到多路复用器上，多路复用器轮询到连接有I/O请求时才启动一个线程进行处理。<br>Java AIO(NIO.2) ： 异步非阻塞，服务器实现模式为一个有效请求一个线程，客户端的I/O请求都是由OS先完成了再通知服务器应用去启动线程进行处理，</p>
 <p>NIO方式适用于连接数目多且连接比较短（轻操作）的架构，比如聊天服务器，并发局限于应用中，编程比较复杂，JDK1.4开始支持。<br>AIO方式使用于连接数目多且连接比较长（重操作）的架构，比如相册服务器，充分调用OS参与并发操作，编程比较复杂，JDK7开始支持</p>
 <p>I/O属于底层操作，需要操作系统支持，并发也需要操作系统的支持，所以性能方面不同操作系统差异会比较明显。另外NIO的非阻塞，需要一直轮询，也是一个比较耗资源的。所以出现AIO</p>
-<h2 id="相关阅读"><a href="#相关阅读" class="headerlink" title="相关阅读"></a>相关阅读</h2><p>5种IO模型 <a href="https://blog.csdn.net/tjiyu/article/details/52959418" target="_blank" rel="external">https://blog.csdn.net/tjiyu/article/details/52959418</a></p>
-<p>深入理解非阻塞同步IO和非阻塞异步IO <a href="https://blog.csdn.net/iter_zc/article/details/39291647" target="_blank" rel="external">https://blog.csdn.net/iter_zc/article/details/39291647</a></p>
-<p>IO多路复用机制<a href="http://www.cnblogs.com/Anker/p/3265058.html" target="_blank" rel="external">http://www.cnblogs.com/Anker/p/3265058.html</a></p>
+<h2 id="相关阅读"><a href="#相关阅读" class="headerlink" title="相关阅读"></a>相关阅读</h2><p>5种IO模型 <a href="https://blog.csdn.net/tjiyu/article/details/52959418" target="_blank" rel="noopener">https://blog.csdn.net/tjiyu/article/details/52959418</a></p>
+<p>深入理解非阻塞同步IO和非阻塞异步IO <a href="https://blog.csdn.net/iter_zc/article/details/39291647" target="_blank" rel="noopener">https://blog.csdn.net/iter_zc/article/details/39291647</a></p>
+<p>IO多路复用机制<a href="http://www.cnblogs.com/Anker/p/3265058.html" target="_blank" rel="noopener">http://www.cnblogs.com/Anker/p/3265058.html</a></p>
 
       
     </div>
@@ -610,21 +609,21 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="COKID 微信"/>
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="COKID 微信">
         <p>微信</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="COKID 支付宝"/>
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="COKID 支付宝">
         <p>支付宝</p>
       </div>
     
 
     
       <div id="bitcoin" style="display: inline-block">
-        <img id="bitcoin_qr" src="/images/bitcoin.jpg" alt="COKID 红包码"/>
+        <img id="bitcoin_qr" src="/images/bitcoin.jpg" alt="COKID 红包码">
         <p>红包码</p>
       </div>
     
@@ -726,11 +725,9 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="COKID" />
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="COKID">
             
               <p class="site-author-name" itemprop="name">COKID</p>
               <p class="site-description motion-element" itemprop="description">Enjoy Code&Life</p>
@@ -743,7 +740,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">55</span>
+                    <span class="site-state-item-count">57</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -980,7 +977,7 @@
 <div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-<span id="busuanzi_container_site_uv" style='display:none'>有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+<span id="busuanzi_container_site_uv" style="display:none">有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
 </span>
 <div>
 
@@ -997,7 +994,7 @@
 
         
       </div>
-    </footer>
+    </div></div></footer>
 
     
 
