@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="最近一周在搞学校的服务器，自己做个记录正好老师让形成文档。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vsphere安装记录">
+<meta property="og:url" content="/2021/05/21/安装经验/vsphere安装记录/index.html">
+<meta property="og:site_name" content="COKID">
+<meta property="og:description" content="最近一周在搞学校的服务器，自己做个记录正好老师让形成文档。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="/2021/05/21/安装经验/vsphere安装记录/1.jpg">
+<meta property="og:image" content="/2021/05/21/安装经验/vsphere安装记录/vsphere安装记录/1.jpg">
+<meta property="og:image" content="/2021/05/21/安装经验/vsphere安装记录/2.png">
+<meta property="og:image" content="/2021/05/21/安装经验/vsphere安装记录/vsphere安装记录/2.png">
+<meta property="og:image" content="/2021/05/21/安装经验/vsphere安装记录/3.png">
+<meta property="og:image" content="/2021/05/21/安装经验/vsphere安装记录/vsphere安装记录/3.png">
+<meta property="og:image" content="/2021/05/21/安装经验/vsphere安装记录/4.png">
+<meta property="og:image" content="/2021/05/21/安装经验/vsphere安装记录/vsphere安装记录/4.png">
+<meta property="og:image" content="/2021/05/21/安装经验/vsphere安装记录/5.png">
+<meta property="og:image" content="/2021/05/21/安装经验/vsphere安装记录/vsphere安装记录/5.png">
+<meta property="og:image" content="/2021/05/21/安装经验/vsphere安装记录/6.png">
+<meta property="og:image" content="/2021/05/21/安装经验/vsphere安装记录/vsphere安装记录/6.png">
+<meta property="og:image" content="/2021/05/21/安装经验/vsphere安装记录/7.png">
+<meta property="og:image" content="/2021/05/21/安装经验/vsphere安装记录/vsphere安装记录/7.png">
+<meta property="og:updated_time" content="2021-05-22T13:24:06.754Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vsphere安装记录">
+<meta name="twitter:description" content="最近一周在搞学校的服务器，自己做个记录正好老师让形成文档。">
+<meta name="twitter:image" content="/2021/05/21/安装经验/vsphere安装记录/1.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="/2021/05/21/安装经验/vsphere安装记录/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>vsphere安装记录 | COKID</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+  <script src="/live2d-widget/autoload.js"></script>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">COKID</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">请多多阅读文章</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="/2021/05/21/安装经验/vsphere安装记录/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="COKID">
+      <meta itemprop="description" content="Enjoy Code&Life">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="COKID">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">vsphere安装记录
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-05-21 20:59:16" itemprop="dateCreated datePublished" datetime="2021-05-21T20:59:16+08:00">2021-05-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-05-22 21:24:06" itemprop="dateModified" datetime="2021-05-22T21:24:06+08:00">2021-05-22</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/安装/" itemprop="url" rel="index"><span itemprop="name">安装</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/05/21/安装经验/vsphere安装记录/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2021/05/21/安装经验/vsphere安装记录/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2021/05/21/安装经验/vsphere安装记录/" class="leancloud_visitors" data-flag-title="vsphere安装记录">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近一周在搞学校的服务器，自己做个记录正好老师让形成文档。</p>
+<a id="more"></a>
+<h1 id="硬件环境"><a href="#硬件环境" class="headerlink" title="硬件环境"></a>硬件环境</h1><p>学院的机器有两台，一台服务器，一台存储服务器，均为浪潮产品。</p>
+<ul>
+<li><p>服务器型号NF5280M5，因为没有用浪潮的虚拟化系统。</p>
+</li>
+<li><p>存储服务器为AS2200G2</p>
+</li>
+</ul>
+<p>图中上面为服务器，下方为存储</p>
+<img src="/2021/05/21/安装经验/vsphere安装记录/1.jpg">
+<p><img src="vsphere安装记录/1.jpg" alt="img"></p>
+<h1 id="网络环境"><a href="#网络环境" class="headerlink" title="网络环境"></a>网络环境</h1><p>服务器主机有四个网卡接口其中一个连接到交换机用于上网，另一个接口直接连接存储服务器。学院只给分配了两个ip地址，一个10.1.21.246，一个10.1.21.249</p>
+<p>服务器和存储的连接如下图所示，此图为最终连接示意图，线条颜色和真实连接网线相同。配置的IP将会在下文对应部分一一进行解释</p>
+<p>服务器网口编号和真实网卡编号对应。</p>
+<p>存储网口编号为官方文档编号。为了方便叙述规定上面为控制器1，下面为控制器2，网口从内向外分别编号Port1-4。控制器1和2可以看作中心对称，中心对称对应部分功能相同。</p>
+<img src="/2021/05/21/安装经验/vsphere安装记录/2.png">
+<p><img src="vsphere安装记录/2.png" alt="img"></p>
+<h1 id="安装目标"><a href="#安装目标" class="headerlink" title="安装目标"></a>安装目标</h1><p>根据老师的要求最终安装目标是，服务器安装好vsphere，通过服务器iscsi连接存储服务器，在vsphere中建立一个虚拟机实现代理和路由的功能（下文将解释为什么要安装这些）。</p>
+<h1 id="服务器安装"><a href="#服务器安装" class="headerlink" title="服务器安装"></a>服务器安装</h1><p>服务器安装了普通电脑重装系统没有太大区别</p>
+<h3 id="提前准备"><a href="#提前准备" class="headerlink" title="提前准备"></a>提前准备</h3><ul>
+<li><p>需要去vmware官网下载vsphere镜像，安装时使用的6.7版本，链接如下</p>
+<p><a href="https://my.vmware.com/cn/group/vmware/downloads/info/slug/datacenter_cloud_infrastructure/vmware_vsphere/6_7" target="_blank" rel="noopener">https://my.vmware.com/cn/group/vmware/downloads/info/slug/datacenter_cloud_infrastructure/vmware_vsphere/6_7</a></p>
+</li>
+<li><p>制作U盘启动，可以使用UltraISO等常见制作工具，我推荐使用Ventoy（<a href="https://www.ventoy.net/cn/index.html）使用这个软件处理U盘后直接将系统镜像拷贝到U盘即可，比以往方式更便捷。" target="_blank" rel="noopener">https://www.ventoy.net/cn/index.html）使用这个软件处理U盘后直接将系统镜像拷贝到U盘即可，比以往方式更便捷。</a></p>
+</li>
+</ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>将制作好的启动U盘插进服务器USB接口，重启服务器不断按F11，选择U盘启动，然后选择下载的vsphere镜像，安装即可。</p>
+<p>安装完成后配置ip地址</p>
+<ul>
+<li>ip地址：10.1.21.246</li>
+<li>网关：10.1.21.129</li>
+<li>子网掩码：255.255.255.128</li>
+<li>DNS：202.113.88.10</li>
+</ul>
+<p>学校机房将一个子网划分成两个子网因此子网掩码是128</p>
+<p>除了配置IP还需要去Troubleshooting Options关闭ssh选项，如果不关闭远程web不能登录。</p>
+<p>配置完成后即可远程同通过浏览器访问服务器</p>
+<blockquote>
+<p><em>参考文件：</em></p>
+<ul>
+<li><em>安装：<a href="https://blog.csdn.net/z136370204/article/details/89196909" target="_blank" rel="noopener">https://blog.csdn.net/z136370204/article/details/89196909</a></em></li>
+<li><em>为什么关闭 ssh：<a href="https://blog.csdn.net/GSWWJM/article/details/109488022" target="_blank" rel="noopener">https://blog.csdn.net/GSWWJM/article/details/109488022</a></em></li>
+<li>浪潮服务器所有文档：<a href="http://www.4008600011.com/%e6%9c%8d%e5%8a%a1%e5%99%a8%e4%ba%a7%e5%93%81/nf%e7%b3%bb%e5%88%97%e4%ba%a7%e5%93%81/nf5280m5" target="_blank" rel="noopener">http://www.4008600011.com/%e6%9c%8d%e5%8a%a1%e5%99%a8%e4%ba%a7%e5%93%81/nf%e7%b3%bb%e5%88%97%e4%ba%a7%e5%93%81/nf5280m5</a></li>
+</ul>
+</blockquote>
+<h1 id="存储安装"><a href="#存储安装" class="headerlink" title="存储安装"></a>存储安装</h1><p>本节会解释存储后面两个IP是如何来的</p>
+<p>存储服务器是安装着浪潮的存储管理系统的。存储服务器一开始连不上，因为我不知道连接的ip，根据浪潮的文档可以通过技术员端口进入管理界面，我想着进去看看配置的ip是什么。但是我又不知道管理系统的密码。无奈最后打了浪潮的售后电话400860011，找客服问一下重置密码的方法。</p>
+<p>根据浪潮存储调试文档<a href="http://www.4008600011.com/archives/14412" target="_blank" rel="noopener">http://www.4008600011.com/archives/14412</a> Port1和2均为技术员服务端口用PC连接后即可进行管理，但是根据<a href="http://www.4008600011.com/archives/14180" target="_blank" rel="noopener">http://www.4008600011.com/archives/14180</a> Port2仅在系统初始化前使用，初始化完成之后Port 2就变成和3，4一样的数据业务网口或对存储进行管理配置的网口。由于存储服务器之前是安装好的，已经初始化过了因此就不能通过Port2端口进行管理。</p>
+<p>因此只能通过Port1进入管理界面：</p>
+<ul>
+<li>找一台笔记本电脑，通过网线连接笔记本与Port1。</li>
+<li>Port1内置IP为192.168.70.11，因此需要配置笔记本ip为192.168.70.x(x取值任意不是11就行)。</li>
+<li>打开浏览器访问192.168.70.11，界面如下图。官方文档中默认给的账号和密码（superuser的默认密码是passw0rd（是数字0，不是字母O））</li>
+</ul>
+<img src="/2021/05/21/安装经验/vsphere安装记录/3.png">
+<p><img src="vsphere安装记录/3.png" alt="3"></p>
+<ul>
+<li>如果更改过密码并且忘记的话需要进行密码重置密码重置方法见下文。</li>
+<li>进入系统之后，点击下图的主机端口可以查看到存储设置了ip为192.168.0.10（这个ip自己可以随便设置，可以在管理系统中修改）</li>
+</ul>
+<blockquote>
+<p>访问192.168.70.11/service 登录之后可以进行账号密码修改</p>
+</blockquote>
+<img src="/2021/05/21/安装经验/vsphere安装记录/4.png">
+<p><img src="vsphere安装记录/4.png" alt="4"></p>
+<h3 id="密码重置方法"><a href="#密码重置方法" class="headerlink" title="密码重置方法"></a>密码重置方法</h3><p>可通过U盘重置密码：找一U盘，格式化分区的文件系统类型为FAT32 ，在该分区创建名称为mtop.txt文件，在mtop.txt中写入命令mtop resetpassword 保存，U盘插入存储控制器USB端口，等待1-2分钟，superuser用户的密码已被重置为默认密码passw0rd，成功后U盘此文件会自动删除，如不成功可更换其他品牌U盘。</p>
+<blockquote>
+<p>备注：</p>
+<p>可能有些型号存储服务器的默认密码是Passw0rd!(P大写；英文o是数字0；加叹号)反正学校这个不是。</p>
+<p>在初始化完成后，被访问的控制器会被默认指定为node1。估计存储服务器一开始使用的控制器2初始化的所以控制器2在存储内被制定成了node1。</p>
+<p>浪潮存储服务器所有文档：<a href="http://www.4008600011.com/%e5%ad%98%e5%82%a8%e4%ba%a7%e5%93%81/as%e7%b3%bb%e5%88%97%e4%ba%a7%e5%93%81/as2200g2" target="_blank" rel="noopener">http://www.4008600011.com/%e5%ad%98%e5%82%a8%e4%ba%a7%e5%93%81/as%e7%b3%bb%e5%88%97%e4%ba%a7%e5%93%81/as2200g2</a></p>
+</blockquote>
+<h1 id="服务器调用存储服务器的iscsi"><a href="#服务器调用存储服务器的iscsi" class="headerlink" title="服务器调用存储服务器的iscsi"></a>服务器调用存储服务器的iscsi</h1><p>本节将介绍如何在ESXi中连接存储服务器的存储服务。关于ESXi和Vsphere等区别看本节参考链接。在此之前将会介绍一下ESXi的一些概念。</p>
+<h2 id="ESXi体系介绍"><a href="#ESXi体系介绍" class="headerlink" title="ESXi体系介绍"></a>ESXi体系介绍</h2><p>ESXi是虚拟化服务，可以理解成和您vmware workstation，但是它是系统级的，它将整个物理机直接虚拟化。因此所有的设备都是虚拟化的。联网也是如此。</p>
+<p>远程进入管理端之后，左侧导航栏如下图可以分为四个部分点击“网络”中的”虚拟交换机“可以看到一个vSwitch0。这个是安装系统自带的一个虚拟交换机。</p>
+<img src="/2021/05/21/安装经验/vsphere安装记录/5.png">
+<p><img src="vsphere安装记录/5.png" alt="image-20210522154122596"></p>
+<p>点击虚拟交换机vSwitch0之后可以看到拓扑图。中间灰色的就是虚拟交换机左边是虚拟网卡右边是物理网卡。</p>
+<img src="/2021/05/21/安装经验/vsphere安装记录/6.png">
+<p><img src="vsphere安装记录/6.png" alt="image-20210522155117965"></p>
+<p>这是因为ESXi本身如果要联网并不能直接配置物理网卡的地址，需要建立虚拟交换机让虚拟的网卡和物理网卡连接到到同一个虚拟交换机，虚拟机用虚拟网卡联网。图中的vmk0就是系统自建的虚拟网卡这个虚拟网卡是绑定到vmnic0网卡这个网卡也是我们连接到计算中心的交换机的网卡。配置好虚拟网卡的ip给我们目前使用的ESXi管理端提供网页服务。</p>
+<blockquote>
+<p>相关知识储备</p>
+<p>VMware三种联网模式：<a href="https://blog.csdn.net/qq_39192827/article/details/85872025" target="_blank" rel="noopener">https://blog.csdn.net/qq_39192827/article/details/85872025</a></p>
+<p>帮助理解路由器和交换机：<a href="https://blog.51cto.com/91xueit/1131952" target="_blank" rel="noopener">https://blog.51cto.com/91xueit/1131952</a></p>
+<p>Vsphere和ESXi的区别：<a href="https://blog.csdn.net/hailangnet/article/details/85454282" target="_blank" rel="noopener">https://blog.csdn.net/hailangnet/article/details/85454282</a></p>
+</blockquote>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>因此如果ESXi本身要使用真实的物理网卡接口必须建立相应的虚拟交换机并绑定虚拟网卡。根据图二vmnic3网卡连接是存储Port4接口，因此我们需要给vmnic3配置虚拟交换机。</p>
+<h4 id="服务器配置："><a href="#服务器配置：" class="headerlink" title="服务器配置："></a>服务器配置：</h4><ul>
+<li>远程登录服务器10.1.21.246</li>
+<li>进入“网络”——“虚拟交换机”——”添加标准虚拟交换机“</li>
+<li>名称自定义，为了整齐并和物理网卡顺序对应，命名为vSwitch3。</li>
+<li>上行链路（就是链接真实网卡），我们是给vmnic3建立的虚拟交换机，因此就选择vmnic3</li>
+<li>接下来需要建立虚拟网卡连接到虚拟交换机上，点击”VMkernel网卡“</li>
+<li>添加VMkernel网卡，新建端口组名称随便写，我设定的是iscsi</li>
+<li>”虚拟交换机“选择刚才建立的vSwitch3</li>
+<li>ipv4选择静态填写地址，因为连接在交换机上的设备必须是同一个子网ip这样才能相互访问，因为服务器的真实网卡连接是存储的Port4（192.168.0.10）所以设定ip地址为192.168.0.x(x取值任意不是10就行)，我设定的是192.168.0.246。</li>
+</ul>
+<hr>
+<p>现在虚拟网卡已经连接到虚拟交换机了，接下来是使用虚拟网卡挂在iscsi存储。</p>
+<ul>
+<li>点击导航栏的”存储“——”适配器“</li>
+<li>选中连接存储服务器的那个网卡接口</li>
+<li>点击”软件iscsi“——”添加端口绑定“，选择刚才建立的虚拟网卡</li>
+<li>”添加动态目标“填写ip地址就是存储的ip地址（192.168.0.10）将会自动扫描到静态目标。</li>
+<li>请提前复制”名称和别称“因为在存储服务器那边配置还需要用。</li>
+</ul>
+<blockquote>
+<p>如果没有出现”添加端口绑定“尝试”禁用“然后再”已启用“</p>
+</blockquote>
+<h4 id="存储服务器配置："><a href="#存储服务器配置：" class="headerlink" title="存储服务器配置："></a>存储服务器配置：</h4><p>存储的配置相对简单，登录到存储之后点击左侧的”主机“。可以看到已经有了一个主机这是之前配置的，可以继续用。右键属性点击端口定义。之前配置的端口已经随着重装系统没有用了，可以删除。点击添加iscsi端口，将刚才复制服务器端的”名称和别称“粘贴到这里。</p>
+<p>现在可以回到ESXi在存储设备中重新扫描应该就可以连接到存储服务器了。</p>
+<h1 id="额外配置"><a href="#额外配置" class="headerlink" title="额外配置"></a>额外配置</h1><p>这一节的配置是为了更方便远程管理存储以及方便建立路由器和VPN</p>
+<h2 id="存储管理端口虚拟交换机"><a href="#存储管理端口虚拟交换机" class="headerlink" title="存储管理端口虚拟交换机"></a>存储管理端口虚拟交换机</h2><p>因为存储服务器的Port1是技术员端口，如果每次都笔记本直连就很麻烦，因此直接用网线连接服务器vmnic2网口。然后在ESXi中建立物理网卡vmnic2的虚拟交换机vSwitch2，然后建立端口组绑定虚拟交换机，端口组命名为iscsi Management。以后添加虚拟机只要连上这个虚拟交换机的端口配置好ip192.168.70.x（x任取，除了11）就可以在虚拟机打开浏览器访问，一般的虚拟机不用连接这个端口组，只需要一个管理性质的虚拟机连接这个端口组即可。</p>
+<h2 id="虚拟机内网的虚拟交换机"><a href="#虚拟机内网的虚拟交换机" class="headerlink" title="虚拟机内网的虚拟交换机"></a>虚拟机内网的虚拟交换机</h2><p>因为计算中心只给了我们两个ip一个是10.1.21.246已经被作为提供ESXi的web接口了，如果在ESXi中建立虚拟机，有好多虚拟机需要联网但是只有额外的IP：10.1.21.249可用。</p>
+<p>因此我们需要如下这种网络结构，中间的计算机是一台虚拟机，这个虚拟机需要同时安装两个虚拟网卡。</p>
+<p>一个网卡（为了方便叙述称为<strong>外网网卡</strong>）配制成249连接到vSwitch0就可以访问外网了，因为vSwitch0绑定着物理网卡vmk0这个网卡是连接计算中心的，是可以访问外网的。</p>
+<p>那么对于其他的虚拟机如何联网呢，需要借助中间虚拟机的第二张虚拟网卡（为了方便叙述称为<strong>内网网卡</strong>），这个网卡直连另外一台虚拟交换机VNAT，并配置ip（可以随便配我这配的192.168.10.1），其他虚拟机都连接到同一个虚拟交换机VNAT。其他虚拟机如果想访问互联网都通过192.168.10.1交给中间的虚拟机，中间虚拟机用它的公网ip249去访问互联网。也就是说中间机作为一个路由器因为是虚拟的也称<strong>虚拟路由器</strong>。</p>
+<p>因此我们需要做如下几件事：</p>
+<ol>
+<li>建立虚拟交换机VNAT</li>
+<li>配置中间的虚拟机可以将192.168.10.1的网络请求转换到10.1.21.249</li>
+<li>配置虚拟机的ip访问网络</li>
+</ol>
+<p>由于后两条是在虚拟中配置和ESXi关系不大，只简单提一下。</p>
+<img src="/2021/05/21/安装经验/vsphere安装记录/7.png">
+<p><img src="vsphere安装记录/7.png" alt="7"></p>
+<h4 id="配置——建立虚拟交换机VNAT"><a href="#配置——建立虚拟交换机VNAT" class="headerlink" title="配置——建立虚拟交换机VNAT"></a>配置——建立虚拟交换机VNAT</h4><ul>
+<li>在ESXi web管理端中点击”网络“——”虚拟交换机“——“添加标准虚拟交换机”</li>
+<li>名称随便设，我设的VNAT，然后上行链路直接点右边叉号删除，因为这个交换机是内网用的不需要物理网卡支持。</li>
+<li>然后在端口组中新建端口组，名称随便起，我设的<strong>NAT Network</strong>。虚拟交换机选择刚才建的VNAT。</li>
+</ul>
+<p>经过上面的步骤ESXi的配置就完成了。</p>
+<h4 id="配置——中间虚拟机进行地址转换"><a href="#配置——中间虚拟机进行地址转换" class="headerlink" title="配置——中间虚拟机进行地址转换"></a>配置——中间虚拟机进行地址转换</h4><p>对于第二件事，需要建一个虚拟机，因为不同系统配置网络转换差异较大，请百度。老师推荐我安装m0n0wall 可以管理虚拟路由和VPN。</p>
+<p>这里我只将一下虚拟机”硬件“配置和ip配置，虚拟机必须带两个网络适配器（网卡）：</p>
+<ul>
+<li>一个适配器连接VM Network端口组（这个是安装完ESXi系统自带的）。因为这个端口组是绑定vSwitch0的，也就是能访问外网的。</li>
+<li>另外一个适配器连接上一步建立的<strong>NAT Network端口组</strong>。</li>
+</ul>
+<p>在虚拟机系统内分别配置两个网卡的IP：</p>
+<p>外网网卡：</p>
+<ul>
+<li>ip地址：10.1.21.249</li>
+<li>网关：10.1.21.129</li>
+<li>子网掩码：255.255.255.128</li>
+<li>DNS：202.113.88.10</li>
+</ul>
+<p>内网网卡：</p>
+<ul>
+<li><p>ip地址：192.168.10.1</p>
+</li>
+<li><p>子网掩码：255.255.255.0</p>
+</li>
+<li>其他不用配</li>
+</ul>
+<p>配置好IP之后需要在虚拟机里进行软件的配置，如果是Windows Server系统需要配置NAT服务。其他系统linux或者m0n0wall系统请自行查阅网上其他资料配置NAT转发。</p>
+<h4 id="配置——其他虚拟机ip"><a href="#配置——其他虚拟机ip" class="headerlink" title="配置——其他虚拟机ip"></a>配置——其他虚拟机ip</h4><p>如果上图中间的虚拟机已经配置好了虚拟路由，那么剩下其他的虚拟机需要联网只需要进行如下配置：</p>
+<ul>
+<li>在虚拟机的配置中新增网络适配器绑定<strong>NAT Network端口组</strong></li>
+<li>进入虚拟机之后只需要配置：<ul>
+<li>ip地址：192.168.10.X（X任取别冲突就行）</li>
+<li>子网掩码：255.255.255.0</li>
+<li>网关：192.168.10.1（虚拟路由的内网网卡的地址）</li>
+</ul>
+</li>
+</ul>
+<p>只要虚拟路由是配制好的这些虚拟机应该是可以联网的。</p>
+<h4 id="配置——VPN配置"><a href="#配置——VPN配置" class="headerlink" title="配置——VPN配置"></a>配置——VPN配置</h4><p>上述的所有问题都是为了解决内部虚拟机访问外网的问题，但是外网如果想访问这些虚拟交换机，因为它们都是内网IP地址没法访问，还是得通过中间那个虚拟路由来访问（因为他有公网IP）。这时中间的机器不仅是虚拟路由了还多了一个功能——VPN。这还是属于内部软件配置，不同系统方法不同，这里不赘述。</p>
+<h1 id="Linux-虚拟机配置"><a href="#Linux-虚拟机配置" class="headerlink" title="Linux 虚拟机配置"></a>Linux 虚拟机配置</h1><p> 因为学校的服务器是有一个Tesla V100显卡的我需要用它跑实验。我在ESXi中建立了一个Ubuntu的虚拟机安装的版本是20.04。我虚拟机需要”插上“这个显卡，但是ESXi所有的PCI设备都是虚拟化的。但是Tesla V100显卡是不支持虚拟化的，我们需要直连这个显卡给我们的虚拟机。</p>
+<p><strong>！！！在给Linux虚拟机装机之前请在”虚拟机选项“——”引导选项“——”固件“选择EFI启动</strong></p>
+<ul>
+<li><p>在ESXi找到”主机“——”管理“——”硬件“</p>
+</li>
+<li><p>在PCI设备里面找到显卡硬件更改为”直通“（改完可能需要重启）</p>
+</li>
+<li><p>在虚拟机的选项配置中选择”添加其他设备“——”PCI设备“（请在虚拟机关机的情况下进行操作）</p>
+</li>
+<li><p>在PCI设备中选择显卡并配置”预留所有内存“</p>
+</li>
+<li><p><strong>修改虚拟机内存</strong>建议设置最小内存为虚拟机所分配GPU显存总大小的1.5倍。确保已勾选<strong>预留所有客户机内存(全部锁定)</strong></p>
+</li>
+<li><p><code>虚拟机选项</code>—-&gt;<code>高级</code>—-&gt;<code>编辑配置</code>，添加以下参数：</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pciPassthru.use64bitMMIO=&quot;TRUE&quot;   </span><br><span class="line">pciPassthru.64bitMMIOSizeGB=&quot;128&quot;</span><br></pre></td></tr></table></figure>
+<p>至于为什么是128请参考下面的博客，</p>
+</li>
+</ul>
+<p>上述流程可能不清楚的地方，强烈建议参考下面的博客，很详细。</p>
+<blockquote>
+<p>ESXi GPU直通：<a href="https://blog.51cto.com/zaa47/2596875?share_token=52c016c8-39bb-448a-a8ef-cc16d9b6a277" target="_blank" rel="noopener">https://blog.51cto.com/zaa47/2596875?share_token=52c016c8-39bb-448a-a8ef-cc16d9b6a277</a></p>
+</blockquote>
+<h3 id="不重要的配置"><a href="#不重要的配置" class="headerlink" title="不重要的配置"></a>不重要的配置</h3><p>Linux虚拟机可能不能复制文本到本地，需要在虚拟机选项中配置参数：<a href="https://blog.51cto.com/williamliuwen/1686569" target="_blank" rel="noopener">https://blog.51cto.com/williamliuwen/1686569</a></p>
+<h1 id="非常不重要的配置"><a href="#非常不重要的配置" class="headerlink" title="非常不重要的配置"></a>非常不重要的配置</h1><p>在ESXi通过控制台访问虚拟机的时候使用浏览器窗口非常不方便，可以点击下载VMRC，安装后就可以使用“启动远程控制台”访问了</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果对你有帮助，请赏包辣条</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="COKID 微信">
+        <p>微信</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="COKID 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/bitcoin.jpg" alt="COKID 红包码">
+        <p>红包码</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/05/17/安装经验/git连接配置使用/" rel="next" title="git连接配置使用">
+                <i class="fa fa-chevron-left"></i> git连接配置使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2023/09/23/研究生生活记录/" rel="prev" title="研究生生活记录">
+                研究生生活记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="COKID">
+            
+              <p class="site-author-name" itemprop="name">COKID</p>
+              <p class="site-description motion-element" itemprop="description">Enjoy Code&Life</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">60</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">38</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/COKID" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:COKIDCC@outlook.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#硬件环境"><span class="nav-text">硬件环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络环境"><span class="nav-text">网络环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装目标"><span class="nav-text">安装目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务器安装"><span class="nav-text">服务器安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#提前准备"><span class="nav-text">提前准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#存储安装"><span class="nav-text">存储安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#密码重置方法"><span class="nav-text">密码重置方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务器调用存储服务器的iscsi"><span class="nav-text">服务器调用存储服务器的iscsi</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ESXi体系介绍"><span class="nav-text">ESXi体系介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#服务器配置："><span class="nav-text">服务器配置：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储服务器配置："><span class="nav-text">存储服务器配置：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#额外配置"><span class="nav-text">额外配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#存储管理端口虚拟交换机"><span class="nav-text">存储管理端口虚拟交换机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机内网的虚拟交换机"><span class="nav-text">虚拟机内网的虚拟交换机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置——建立虚拟交换机VNAT"><span class="nav-text">配置——建立虚拟交换机VNAT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置——中间虚拟机进行地址转换"><span class="nav-text">配置——中间虚拟机进行地址转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置——其他虚拟机ip"><span class="nav-text">配置——其他虚拟机ip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置——VPN配置"><span class="nav-text">配置——VPN配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-虚拟机配置"><span class="nav-text">Linux 虚拟机配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#不重要的配置"><span class="nav-text">不重要的配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#非常不重要的配置"><span class="nav-text">非常不重要的配置</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">COKID</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+<span id="busuanzi_container_site_uv" style="display:none">有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+<div>
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </div></div></footer>
+
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'oGsBWh72tqHrNVGmA9kSkN9O-gzGzoHsz',
+        appKey: 'ngWmBvpNuti55zjUcUzDFDfM',
+        placeholder: '欢迎指正',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
+                .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function () {
+                  console.log('Failed to create');
+                });
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "oGsBWh72tqHrNVGmA9kSkN9O-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "oGsBWh72tqHrNVGmA9kSkN9O-gzGzoHsz",
+                'X-LC-Key': "ngWmBvpNuti55zjUcUzDFDfM",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "default";
+      
+          flOptions.boxForm = "vertical";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+</body>
+</html>
