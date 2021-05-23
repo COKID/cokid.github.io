@@ -133,7 +133,7 @@
 <meta property="og:image" content="/2021/05/21/安装经验/vsphere安装记录/vsphere安装记录/6.png">
 <meta property="og:image" content="/2021/05/21/安装经验/vsphere安装记录/7.png">
 <meta property="og:image" content="/2021/05/21/安装经验/vsphere安装记录/vsphere安装记录/7.png">
-<meta property="og:updated_time" content="2021-05-22T13:24:06.754Z">
+<meta property="og:updated_time" content="2021-05-23T13:40:09.945Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vsphere安装记录">
 <meta name="twitter:description" content="最近一周在搞学校的服务器，自己做个记录正好老师让形成文档。">
@@ -418,7 +418,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-05-22 21:24:06" itemprop="dateModified" datetime="2021-05-22T21:24:06+08:00">2021-05-22</time>
+                <time title="修改时间：2021-05-23 21:40:09" itemprop="dateModified" datetime="2021-05-23T21:40:09+08:00">2021-05-23</time>
               
             
           </span>
@@ -646,7 +646,7 @@
 </li>
 <li>其他不用配</li>
 </ul>
-<p>配置好IP之后需要在虚拟机里进行软件的配置，如果是Windows Server系统需要配置NAT服务。其他系统linux或者m0n0wall系统请自行查阅网上其他资料配置NAT转发。</p>
+<p>配置好IP之后需要在虚拟机里进行软件的配置，如果是Windows Server系统需要配置NAT服务。其他系统例如linux和其他软路由系统请自行查阅网上其他资料配置NAT转发。</p>
 <h4 id="配置——其他虚拟机ip"><a href="#配置——其他虚拟机ip" class="headerlink" title="配置——其他虚拟机ip"></a>配置——其他虚拟机ip</h4><p>如果上图中间的虚拟机已经配置好了虚拟路由，那么剩下其他的虚拟机需要联网只需要进行如下配置：</p>
 <ul>
 <li>在虚拟机的配置中新增网络适配器绑定<strong>NAT Network端口组</strong></li>
@@ -659,6 +659,14 @@
 </ul>
 <p>只要虚拟路由是配制好的这些虚拟机应该是可以联网的。</p>
 <h4 id="配置——VPN配置"><a href="#配置——VPN配置" class="headerlink" title="配置——VPN配置"></a>配置——VPN配置</h4><p>上述的所有问题都是为了解决内部虚拟机访问外网的问题，但是外网如果想访问这些虚拟交换机，因为它们都是内网IP地址没法访问，还是得通过中间那个虚拟路由来访问（因为他有公网IP）。这时中间的机器不仅是虚拟路由了还多了一个功能——VPN。这还是属于内部软件配置，不同系统方法不同，这里不赘述。</p>
+<h4 id="虚拟路由（软路由）推荐"><a href="#虚拟路由（软路由）推荐" class="headerlink" title="虚拟路由（软路由）推荐"></a>虚拟路由（软路由）推荐</h4><p>目前现在做虚拟路由不需要单独装windows或者linux然后再进行配置。已经有很多虚拟路由软件直接打包成iso格式像安装系统一样直接安装完系统就可以使用虚拟路由功能。列举一些虚拟路由软件：<a href="https://blog.csdn.net/hellowell_g/article/details/103212062也可以搜索其他软路由软件或者“虚拟机安装软路由”" target="_blank" rel="noopener">https://blog.csdn.net/hellowell_g/article/details/103212062也可以搜索其他软路由软件或者“虚拟机安装软路由”</a></p>
+<p>本人使用的是爱快软件配置的软路由相关参考资料如下：</p>
+<blockquote>
+<p>ESXi搭建爱快路由：<a href="https://blog.csdn.net/DCTANT/article/details/111347367" target="_blank" rel="noopener">https://blog.csdn.net/DCTANT/article/details/111347367</a></p>
+<p><a href="https://www.cnblogs.com/zsl-find/articles/10098824.html" target="_blank" rel="noopener">https://www.cnblogs.com/zsl-find/articles/10098824.html</a></p>
+<p>爱快官方文档：<a href="https://m.ikuai8.com/zhic/ymgn/lyym.html" target="_blank" rel="noopener">https://m.ikuai8.com/zhic/ymgn/lyym.html</a></p>
+<p>爱快搭建VPN<a href="https://kuaibao.qq.com/s/20200215A06SJM00?refer=spider" target="_blank" rel="noopener">https://kuaibao.qq.com/s/20200215A06SJM00?refer=spider</a></p>
+</blockquote>
 <h1 id="Linux-虚拟机配置"><a href="#Linux-虚拟机配置" class="headerlink" title="Linux 虚拟机配置"></a>Linux 虚拟机配置</h1><p> 因为学校的服务器是有一个Tesla V100显卡的我需要用它跑实验。我在ESXi中建立了一个Ubuntu的虚拟机安装的版本是20.04。我虚拟机需要”插上“这个显卡，但是ESXi所有的PCI设备都是虚拟化的。但是Tesla V100显卡是不支持虚拟化的，我们需要直连这个显卡给我们的虚拟机。</p>
 <p><strong>！！！在给Linux虚拟机装机之前请在”虚拟机选项“——”引导选项“——”固件“选择EFI启动</strong></p>
 <ul>
@@ -1014,7 +1022,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#硬件环境"><span class="nav-text">硬件环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络环境"><span class="nav-text">网络环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装目标"><span class="nav-text">安装目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务器安装"><span class="nav-text">服务器安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#提前准备"><span class="nav-text">提前准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#存储安装"><span class="nav-text">存储安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#密码重置方法"><span class="nav-text">密码重置方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务器调用存储服务器的iscsi"><span class="nav-text">服务器调用存储服务器的iscsi</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ESXi体系介绍"><span class="nav-text">ESXi体系介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#服务器配置："><span class="nav-text">服务器配置：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储服务器配置："><span class="nav-text">存储服务器配置：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#额外配置"><span class="nav-text">额外配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#存储管理端口虚拟交换机"><span class="nav-text">存储管理端口虚拟交换机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机内网的虚拟交换机"><span class="nav-text">虚拟机内网的虚拟交换机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置——建立虚拟交换机VNAT"><span class="nav-text">配置——建立虚拟交换机VNAT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置——中间虚拟机进行地址转换"><span class="nav-text">配置——中间虚拟机进行地址转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置——其他虚拟机ip"><span class="nav-text">配置——其他虚拟机ip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置——VPN配置"><span class="nav-text">配置——VPN配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-虚拟机配置"><span class="nav-text">Linux 虚拟机配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#不重要的配置"><span class="nav-text">不重要的配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#非常不重要的配置"><span class="nav-text">非常不重要的配置</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#硬件环境"><span class="nav-text">硬件环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络环境"><span class="nav-text">网络环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装目标"><span class="nav-text">安装目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务器安装"><span class="nav-text">服务器安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#提前准备"><span class="nav-text">提前准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#存储安装"><span class="nav-text">存储安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#密码重置方法"><span class="nav-text">密码重置方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务器调用存储服务器的iscsi"><span class="nav-text">服务器调用存储服务器的iscsi</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ESXi体系介绍"><span class="nav-text">ESXi体系介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#服务器配置："><span class="nav-text">服务器配置：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储服务器配置："><span class="nav-text">存储服务器配置：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#额外配置"><span class="nav-text">额外配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#存储管理端口虚拟交换机"><span class="nav-text">存储管理端口虚拟交换机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机内网的虚拟交换机"><span class="nav-text">虚拟机内网的虚拟交换机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置——建立虚拟交换机VNAT"><span class="nav-text">配置——建立虚拟交换机VNAT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置——中间虚拟机进行地址转换"><span class="nav-text">配置——中间虚拟机进行地址转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置——其他虚拟机ip"><span class="nav-text">配置——其他虚拟机ip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置——VPN配置"><span class="nav-text">配置——VPN配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#虚拟路由（软路由）推荐"><span class="nav-text">虚拟路由（软路由）推荐</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-虚拟机配置"><span class="nav-text">Linux 虚拟机配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#不重要的配置"><span class="nav-text">不重要的配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#非常不重要的配置"><span class="nav-text">非常不重要的配置</span></a></li></div>
             
 
           </div>
@@ -1633,6 +1641,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   
