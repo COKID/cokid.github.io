@@ -1522,15 +1522,15 @@
     
 
     $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + "oGsBWh72tqHrNVGmA9kSkN9O-gzGzoHsz")
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "L0gBn0Ov1Qckju5fjiAk603o-gzGzoHsz")
         .done(function ({ api_server }) {
           var Counter = function (method, url, data) {
             return $.ajax({
               method: method,
               url: `https://${api_server}/1.1${url}`,
               headers: {
-                'X-LC-Id': "oGsBWh72tqHrNVGmA9kSkN9O-gzGzoHsz",
-                'X-LC-Key': "ngWmBvpNuti55zjUcUzDFDfM",
+                'X-LC-Id': "L0gBn0Ov1Qckju5fjiAk603o-gzGzoHsz",
+                'X-LC-Key': "2jcyAOIFdoXakAxqvx3C2vWA",
                 'Content-Type': 'application/json',
               },
               data: data,

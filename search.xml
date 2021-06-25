@@ -86,14 +86,14 @@
     <content type="text"><![CDATA[自用软件破解记录 MathType破解① win+R 打开运行窗口，输入 regedit 打开注册表编辑器。 ②删除目录 HKEY_CURRENT_USER\Software\Install Options下的 Options6.9 文件即可重新获得30天的免费试用，这样每个月重新删除一次就能用了。]]></content>
   </entry>
   <entry>
-    <title><![CDATA[快捷键]]></title>
-    <url>%2F2020%2F06%2F27%2F%E8%87%AA%E6%9F%A5%E8%87%AA%E7%94%A8%2F%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
-    <content type="text"><![CDATA[记录冷门快捷键 Windows 截图：win+shift+s 剪贴板：win+v 语音听写：win+h Ubuntu 查看隐藏文件Ctrl+h]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[软件]]></title>
     <url>%2F2020%2F06%2F27%2F%E8%87%AA%E6%9F%A5%E8%87%AA%E7%94%A8%2F%E8%BD%AF%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[好用，不常用，但用到时候很必要 小工具 utools：https://u.tools/ wox：http://www.wox.one/ 远程输入法：https://mp.weixin.qq.com/s/PLWkVuEdJCk6cLGEQVZDbw https://sspai.com/post/57008 ClickMonitorDDC，调节屏幕 ventory：系统安装 CMD blessed-contrib——node ./examples/dashboard.js unimatrix——unimatrix -n -s 96 -l o 笔记Joplin：https://joplinapp.org/ 链滴笔记：https://github.com/88250/liandi]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[快捷键]]></title>
+    <url>%2F2020%2F06%2F27%2F%E8%87%AA%E6%9F%A5%E8%87%AA%E7%94%A8%2F%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
+    <content type="text"><![CDATA[记录冷门快捷键 Windows 截图：win+shift+s 剪贴板：win+v 语音听写：win+h Ubuntu 查看隐藏文件Ctrl+h]]></content>
   </entry>
   <entry>
     <title><![CDATA[Linux下的环境配置]]></title>
